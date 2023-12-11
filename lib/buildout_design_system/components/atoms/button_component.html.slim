@@ -1,0 +1,10 @@
+-if @path
+  = link_to @path, { class: "btn btn#{@style}#{@variant} #{ @class_name } #{ @placement } #{@size}", **@attrs }  do
+    - if @icon.present?
+      i.fa-solid class="#{ @icon }"
+    = content
+- else  
+  button.btn type="button" class="btn#{@style}#{@variant} #{ @class_name } #{ @placement } #{@size}" *@attrs
+    - if @icon.present?
+      i.fa-solid class="#{ @icon }"
+    = content

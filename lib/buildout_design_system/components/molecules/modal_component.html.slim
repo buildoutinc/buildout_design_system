@@ -1,0 +1,8 @@
+.modal.fade class="#{@class_name}" *@attrs
+  .modal-dialog class="#{ @size ? @size : '' } #{ @centered ? 'modal-dialog-centered' : '' }"
+    .modal-content
+      - if header?
+        = header
+      = body
+      - if footer?
+        = footer
