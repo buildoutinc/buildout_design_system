@@ -3,7 +3,7 @@
 module BuildoutDesignSystem
   module Organisms
     class TabsComponent < ViewComponent::Base
-      renders_many :tabs, DesignSystem::Atoms::TabComponent
+      renders_many :tabs, BuildoutDesignSystem::Atoms::TabComponent
       renders_many :tab_panes, "TabPaneComponent"
 
       VARIANTS = {

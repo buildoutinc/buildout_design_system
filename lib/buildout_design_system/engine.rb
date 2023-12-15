@@ -5,5 +5,10 @@ module BuildoutDesignSystem
         app.config.assets.paths << root.join('app', 'assets', sub).to_s
       end
     end
+    initializer 'buildout_design_system.action_view' do
+      ActiveSupport.on_load(:action_view) do
+        include BuildoutDesignSystem::Helpers::Component
+      end
+    end
   end
 end

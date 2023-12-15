@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module DesignSystem
+module BuildoutDesignSystem
   module Atoms
     class BadgeComponent < ViewComponent::Base
       VARIANTS = {

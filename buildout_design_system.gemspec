@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
-  spec.add_dependency "view_component", "~> 3.6.0"
+  spec.add_dependency "view_component", "~> 3.8.0"
   spec.add_dependency "bootstrap", "~> 5.3.1"
 
   # For more information and examples about making a new gem, check out our
