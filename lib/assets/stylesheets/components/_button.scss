@@ -1,0 +1,14 @@
+@import "../config/theme";
+// Button-Specific Classes
+// Buttons with Icons orders
+.btn {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: row;
+  gap: map-get($spacers, 2);
+  justify-content: center;
+
+  &.end {
+    flex-direction: row-reverse;
+  }
+}

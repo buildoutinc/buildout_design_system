@@ -44,8 +44,8 @@ $border-color: $storm-grey-300;
 // --------------------------------------------------
 // LOAD THEME
 // --------------------------------------------------
-@import "bootstrap/variables";
-@import "bootstrap/variables-dark";
+@import "bootstrap/scss/variables";
+// @import "bootstrap/scss/variables-dark";
 
 $theme-color: (
   "primary": $primary,
@@ -66,5 +66,10 @@ $theme-color: (
   "dark": $dark,
 );
 
-@import "boostrap/maps";
-@import "bootstrap/mixins";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+
+// --------------------------------------------------
+// IMPORT COMPONENTS
+// --------------------------------------------------
+@import "components";

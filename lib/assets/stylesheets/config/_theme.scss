@@ -14,6 +14,7 @@
 // --------------------------------------------------
 $prefix: "ds-";
 $utilities: $custom-utils;
+$enable-dark-mode: false;
 
 // --------------------------------------------------
 // TYPOGRAPHY
@@ -149,8 +150,8 @@ $border-width: 1px;
 // INPUTS / BUTTONS
 // --------------------------------------------------
 $input-padding-x: $spacer; // 16px
-$input-padding-y: map-get($spacer, 2); // 8px
-$input-line-height: 137.5%; // close to 22px for 16px font
+$input-padding-y: map-get($spacers, 2); // 8px
+$input-line-height: 1.2; // close to 22px for 16px font
 
 $btn-line-height: $input-line-height;
 $btn-padding-x: $input-padding-x;
@@ -173,6 +174,7 @@ $list-group-bg: transparent;
 // --------------------------------------------------
 $nav-link-padding-y: map-get($spacers, 3); // 12px;
 $nav-link-padding-x: $spacer; // 16px;
+$navbar-brand-height: 1.5;
 $nav-tabs-border-radius: 0;
 $nav-tabs-border-width: 0;
 $nav-tabs-link-active-bg: transparent;
