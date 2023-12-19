@@ -10,3 +10,8 @@ node_modules
 
 # rspec failure tracking
 .rspec_status
+
+# Files to not include
+*.gem
+*.map.css
+
