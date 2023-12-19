@@ -1,4 +1,6 @@
-.main {
-  background-color: red;
-  color: black;
-}
+@import "bootstrap/functions";
+
+@import "config/theme";
+@import "config/fonts";
+
+@import "config/theme_light";

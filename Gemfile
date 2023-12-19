@@ -12,3 +12,5 @@ gem "rspec", "~> 3.0"
 gem "standard", "~> 1.3"
 
 gem "cssbundling-rails", "~> 1.3"
+
+gem "bootstrap", "~> 5.3"

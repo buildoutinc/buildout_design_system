@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    buildout_design_system (0.1.0)
+    buildout_design_system (0.1.1)
       bootstrap (~> 5.3.1)
       cssbundling-rails (~> 1.3)
       view_component (~> 3.8.0)
@@ -138,6 +138,7 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  bootstrap (~> 5.3)
   buildout_design_system!
   cssbundling-rails (~> 1.3)
   rake (~> 13.0)

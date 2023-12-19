@@ -1,0 +1,70 @@
+@import "colors";
+
+// --------------------------------------------------
+// FILE DESCRIPTION
+// This file controls the variables that apply to the LIGHT MODE
+// of any application this is used. This is meant to be used as the global mode
+// as the DARK MODE will most likely override these variables.
+// --------------------------------------------------
+
+// --------------------------------------------------
+// BASE
+// --------------------------------------------------
+$color-scheme: light;
+
+// --------------------------------------------------
+// COLORS
+// --------------------------------------------------
+$primary: $buildout-blue-500;
+$primary-emphasis: $buildout-blue-600;
+$secondary: $purple-heart-500;
+$secondary-emphasis: $purple-heart-600;
+$info: $seagull-500;
+$info-emphasis: $seagull-600;
+$success: $mountain-meadow-500;
+$success-emphasis: $mountain-meadow-600;
+$warning: $harvest-gold-500;
+$warning-emphasis: $harvest-gold-600;
+$danger: $solid-pink-500;
+$danger-emphasis: $solid-pink-600;
+$neutral: $storm-grey-600;
+$neutral-emphasis: $storm-grey-700;
+$light: $storm-grey-200;
+$dark: $storm-grey-900;
+
+$body-bg: $storm-grey-50;
+$body-color: $storm-grey-950;
+$text-muted: $storm-grey-400;
+
+$link-color: $primary;
+$link-hover-color: $primary-emphasis;
+
+$border-color: $storm-grey-300;
+
+// --------------------------------------------------
+// LOAD THEME
+// --------------------------------------------------
+@import "bootstrap/variables";
+@import "bootstrap/variables-dark";
+
+$theme-color: (
+  "primary": $primary,
+  "primary-emphasis": $primary-emphasis,
+  "secondary": $secondary,
+  "secondary-emphasis": $secondary-emphasis,
+  "info": $info,
+  "info-emphasis": $info-emphasis,
+  "success": $success,
+  "success-emphasis": $success-emphasis,
+  "warning": $warning,
+  "warning-emphasis": $warning-emphasis,
+  "danger": $danger,
+  "danger-emphasis": $danger-emphasis,
+  "neutral": $neutral,
+  "neutral-emphasis": $neutral-emphasis,
+  "light": $light,
+  "dark": $dark,
+);
+
+@import "boostrap/maps";
+@import "bootstrap/mixins";
