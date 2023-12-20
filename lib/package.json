@@ -1,0 +1,21 @@
+{
+  "name": "buildout-design-system",
+  "version": "0.1.1",
+  "description": "Buildout Design System",
+  "private": true,
+  "scripts": {
+    "build:css:precompile": "sass ./lib/assets/stylesheets/design_system.scss:./vendor/assets/stylesheets/design_system.css --no-source-map --load-path=node_modules",
+    "build:css:prefix": "postcss ./vendor/assets/stylesheets/design_system.css --use=autoprefixer --output=./vendor/assets/stylesheets/design_system.css",
+    "build:css": "yarn build:css:precompile && yarn build:css:prefix",
+    "watch:css": "nodemon --watch ./lib/assets/stylesheets --ext scss --exec \"yarn build:css\""
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "autoprefixer": "^10.4.16",
+    "bootstrap": "^5.3.2",
+    "nodemon": "^3.0.2",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.69.5"
+  }
+}
