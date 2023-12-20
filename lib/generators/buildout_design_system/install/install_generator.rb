@@ -3,8 +3,23 @@ module BuildoutDesignSystem
     class InstallGenerator < Rails::Generators::Base
       source_root File.expand_path('../../../..', __FILE__);
 
-      def copy_package_json
-        copy_file 'package.json', 'package.json'
+      def merge_package_json
+        destination = 'package.json'
+        source = File.expand_path(find_in_source_paths('package.json'))
+
+        if File.exist?(destination)
+          destination_data = JSON.parse(File.read(destination))
+          source_data = JSON.parse(File.read(source))
+
+          destination_data['dependencies'] = (destination_data['dependencies'] || {}).merge(source_data['dependencies'] || {})
+          destination_data['devDependencies'] = (destination_data['devDependencies'] || {}).merge(source_data['devDependencies'] || {})
+
+          File.open(destination, 'w') do |f|
+            f.write(JSON.pretty_generate(destination_data))
+          end
+        else
+          say 'package.json not found, skipping merge', :yellow
+        end
       end
 
       def run_yarn_install
