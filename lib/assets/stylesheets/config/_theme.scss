@@ -12,22 +12,22 @@
 // --------------------------------------------------
 // CONFIGURATION
 // --------------------------------------------------
-$prefix: "ds-";
-$utilities: $custom-utils;
-$enable-dark-mode: false;
+$prefix: "ds-" !default;
+$utilities: $custom-utils !default;
+$enable-dark-mode: false !default;
 
 // --------------------------------------------------
 // TYPOGRAPHY
 // --------------------------------------------------
-$font-family-sans-serif: "Proxima Nova", sans-serif;
-$font-size-base: 1rem; // 16px
-$font-size-lg: $font-size-base * 1.25rem; // 20px
-$font-size-sm: $font-size-base * 0.875rem; // 14px
+$font-family-sans-serif: "Proxima Nova", sans-serif !default;
+$font-size-base: 1rem !default; // 16px
+$font-size-lg: $font-size-base * 1.25rem !default; // 20px
+$font-size-sm: $font-size-base * 0.875rem !default; // 14px
 
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-bold:600;
-$font-weight-bolder: 700;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold:600 !default;
+$font-weight-bolder: 700 !default;
 
 $h1-font-size: $font-size-base * 2.986 !default;
 $h2-font-size: $font-size-base * 2.488 !default;
