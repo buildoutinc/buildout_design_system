@@ -5,4 +5,40 @@
   &.end {
     flex-direction: row-reverse;
   }
+
+  &.primary {
+    color: $buildout-blue-50;
+    background: $buildout-blue-700;
+  }
+
+  &.secondary {
+    color: $purple-heart-50;
+    background-color: $purple-heart-500;
+  }
+
+  &.info {
+    color: $seagull-50;
+    background: $seagull-500;
+  }
+
+  &.success {
+    color: $mountain-meadow-50;
+    background: $mountain-meadow-800;
+  }
+
+  &.warning {
+    color: $harvest-gold-50;
+    background: $harvest-gold-500;
+  }
+
+  &.danger {
+    color: $solid-pink-50;
+    background: $solid-pink-500;
+  }
+
+  &.neutral {
+    color: $storm-grey-50;
+    background: $storm-grey-500;
+  }
+
 }

@@ -10,8 +10,7 @@ module BuildoutDesignSystem
         danger: "danger",
         warning: "warning",
         info: "info",
-        light: "light",
-        dark: "dark"
+        neutral: "neutral",
       }.freeze
 
       DEFAULT_VARIANT = VARIANTS.fetch(:primary)
