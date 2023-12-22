@@ -68,7 +68,9 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  config.lookbook.project_name = "Prospect & Nurture"
+  config.public_file_server.enabled = true
+
+  config.lookbook.project_name = "Buildout Design Library"
   config.lookbook.preview_paths = ["app/components/previews"]
   config.view_component.preview_paths = ["app/components/previews"]
   config.lookbook.ui_theme = "zinc"

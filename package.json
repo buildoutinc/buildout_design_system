@@ -4,8 +4,8 @@
   "description": "Buildout Design System",
   "private": true,
   "scripts": {
-    "build:css:precompile": "sass ./lib/assets/stylesheets/design_system.scss:./vendor/assets/stylesheets/design_system.css --no-source-map --load-path=node_modules",
-    "build:css:prefix": "postcss ./vendor/assets/stylesheets/design_system.css --use=autoprefixer --output=./vendor/assets/stylesheets/design_system.css",
+    "build:css:precompile": "sass ./lib/assets/stylesheets/design_system.scss:./vendor/assets/stylesheets/system.css --no-source-map --load-path=node_modules",
+    "build:css:prefix": "postcss ./vendor/assets/stylesheets/system.css --use=autoprefixer --output=./vendor/assets/stylesheets/system.css",
     "build:css": "yarn build:css:precompile && yarn build:css:prefix",
     "watch:css": "nodemon --watch ./lib/assets/stylesheets --ext scss --exec \"yarn build:css\""
   },

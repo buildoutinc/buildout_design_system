@@ -2,6 +2,7 @@ PATH
   remote: ../..
   specs:
     buildout_design_system (0.1.1)
+      slim-rails
       view_component (~> 3.8.0)
 
 GEM
