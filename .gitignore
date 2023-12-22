@@ -14,4 +14,4 @@ node_modules
 # Files to not include
 *.gem
 *.map.css
-
+vendor/assets/stylesheets/*.css
