@@ -12,29 +12,29 @@
 // --------------------------------------------------
 // CONFIGURATION
 // --------------------------------------------------
-$prefix: "bs-" !default;
-$utilities: $custom-utils !default;
-$enable-dark-mode: false !default;
+$prefix: "ds-";
+// $utilities: $custom-utils;
+$enable-dark-mode: false;
 
 // --------------------------------------------------
 // TYPOGRAPHY
 // --------------------------------------------------
-$font-family-sans-serif: "Proxima Nova", sans-serif !default;
-$font-size-base: 1rem !default; // 16px
-$font-size-lg: $font-size-base * 1.25rem !default; // 20px
-$font-size-sm: $font-size-base * 0.875rem !default; // 14px
+$font-family-sans-serif: "Proxima Nova", sans-serif;
+$font-size-base: 1rem; // 16px
+$font-size-lg: $font-size-base * 1.25; // 20px
+$font-size-sm: $font-size-base * 0.875; // 14px
 
-$font-weight-light: 300 !default;
-$font-weight-normal: 400 !default;
-$font-weight-bold:600 !default;
-$font-weight-bolder: 700 !default;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold:600;
+$font-weight-bolder: 700;
 
-$h1-font-size: $font-size-base * 2.986 !default;
-$h2-font-size: $font-size-base * 2.488 !default;
-$h3-font-size: $font-size-base * 2.074 !default;
-$h4-font-size: $font-size-base * 1.728 !default;
-$h5-font-size: $font-size-base * 1.44 !default;
-$h6-font-size: $font-size-base * 1.2 !default;
+$h1-font-size: $font-size-base * 2.986;
+$h2-font-size: $font-size-base * 2.488;
+$h3-font-size: $font-size-base * 2.074;
+$h4-font-size: $font-size-base * 1.728;
+$h5-font-size: $font-size-base * 1.44;
+$h6-font-size: $font-size-base * 1.2;
 
 $font-sizes: (
   1: $h1-font-size,
@@ -182,8 +182,9 @@ $nav-tabs-link-active-bg: transparent;
 // --------------------------------------------------
 // BADGES
 // --------------------------------------------------
-$badge-padding-x: map-get($spacers, "0-5"); // 2px;
-$badge-padding-y: map-get($spacers, 3); // 12px;
+$badge-padding-x: map-get($spacers, 3); // 12px;
+$badge-padding-y: map-get($spacers, 1); // 4px;
+
 
 // --------------------------------------------------
 // TABLES

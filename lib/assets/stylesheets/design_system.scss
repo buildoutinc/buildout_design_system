@@ -1,7 +1,13 @@
 @import "bootstrap/scss/functions";
 
-@import "config/theme";
 @import "config/fonts";
-
+@import "config/theme";
 @import "config/theme_light";
-@import "config/root_light";
+@import "bootstrap/scss/root";
+
+@import "config/bootstrap_c";
+
+// --------------------------------------------------
+// IMPORT COMPONENTS
+// --------------------------------------------------
+@import "config/components";

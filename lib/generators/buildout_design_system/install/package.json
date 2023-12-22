@@ -4,10 +4,10 @@
   "description": "Buildout Design System",
   "private": true,
   "scripts": {
-    "build:css:precompile": "sass ./lib/assets/stylesheets/design_system.scss:./vendor/assets/stylesheets/design_system.css --no-source-map --load-path=node_modules",
-    "build:css:prefix": "postcss ./vendor/assets/stylesheets/design_system.css --use=autoprefixer --output=./vendor/assets/stylesheets/design_system.css",
+    "build:css:precompile": "sass ./app/assets/stylesheets/application.scss:./public/assets/stylesheets/application.css --no-source-map --load-path=node_modules",
+    "build:css:prefix": "postcss ./public/assets/application.css --use=autoprefixer --output=./public/assets/application.css",
     "build:css": "yarn build:css:precompile && yarn build:css:prefix",
-    "watch:css": "nodemon --watch ./lib/assets/stylesheets --ext scss --exec \"yarn build:css\""
+    "watch:css": "nodemon --watch ./app/assets/stylesheets --ext scss --exec \"yarn build:css\""
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",

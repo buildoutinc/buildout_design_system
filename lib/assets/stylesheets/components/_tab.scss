@@ -1,0 +1,45 @@
+.nav {
+  &.nav-pills {
+    .nav-link {
+      border: 1px solid transparent;
+      padding: calc(#{$nav-link-padding-y} - 1px) calc(#{$nav-link-padding-x} - 1px);
+    }
+  }
+
+  &.nav-tabs {
+    --ds-nav-tabs-border-width: 2px;
+    --ds-nav-tabs-border-color: #{$border-color};
+    --ds-nav-tabs-link-hover-border-color: #{$primary-emphasis};
+    --ds-nav-tabs-link-active-border-color: #{$primary};
+
+    display: flex;
+    gap: 0;
+    padding-bottom: -var(--ds-nav-tabs-border-width);
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: map-get($spacers,2);
+      padding: map-get($spacers, 3) $nav-link-padding-x;
+      border: solid transparent;
+      border-width: var(--ds-nav-tabs-border-width) 0 0;
+      color: var(--ds-nav-tabs-border-color);
+      
+
+      &:hover {
+        border: solid $nav-tabs-link-hover-border-color;
+        border-width: var(--ds-nav-tabs-border-width) 0 0;
+        color: var(--ds-nav-tabs-link-hover-border-color);
+      }
+
+
+      &.active {
+        border: solid $nav-tabs-link-active-border-color;
+        border-width: var(--ds-nav-tabs-border-width) 0 0;
+        color: var(--ds-nav-tabs-link-active-border-color);
+        font-weight: $font-weight-bold;
+        background-color: $card-bg;
+      }
+    }
+  }
+}

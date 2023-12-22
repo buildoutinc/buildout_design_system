@@ -1,7 +1,7 @@
 module BuildoutDesignSystem
   module Generators
     class InstallGenerator < Rails::Generators::Base
-      source_root File.expand_path('.', __FILE__);
+      source_root File.expand_path(__dir__);
 
       def merge_package_json
         destination = 'package.json'
@@ -13,12 +13,14 @@ module BuildoutDesignSystem
 
           destination_data['dependencies'] = (destination_data['dependencies'] || {}).merge(source_data['dependencies'] || {})
           destination_data['devDependencies'] = (destination_data['devDependencies'] || {}).merge(source_data['devDependencies'] || {})
+          destination_data['scripts'] = (destination_data['scripts'] || {}).merge(source_data['scripts'] || {})
 
           File.open(destination, 'w') do |f|
             f.write(JSON.pretty_generate(destination_data))
           end
         else
-          say 'package.json not found, skipping merge', :yellow
+          say 'package.json not found, skipping merge and adding new package.json', :yellow
+          copy_file 'package.json', destination
         end
       end
 
@@ -37,6 +39,12 @@ module BuildoutDesignSystem
         else
           say 'Procfile not found, skipping yarn build:css', :yellow
         end
+      end
+
+      def invoke_all
+        merge_package_json
+        run_yarn_install
+        append_to_procfile
       end
     end
   end

@@ -45,7 +45,6 @@ $border-color: $storm-grey-300;
 // LOAD THEME
 // --------------------------------------------------
 @import "bootstrap/scss/variables";
-// @import "bootstrap/scss/variables-dark";
 
 $theme-color: (
   "primary": $primary,
@@ -66,10 +65,21 @@ $theme-color: (
   "dark": $dark,
 );
 
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
+// --------------------------------------------------
+// BOOTSTRAP COLOR OVERRIDES
+// --------------------------------------------------
+// Cards
+$card-bg: $white;
+$card-border-color: $border-color;
+$card-cap-bg: $storm-grey-100;
+// Tabs
+$nav-tabs-border-width: 2px;
+$nav-tabs-border-color: $border-color;
+$nav-tabs-link-hover-border-color: $primary-emphasis;
+$nav-tabs-link-active-border-color: $primary;
 
 // --------------------------------------------------
-// IMPORT COMPONENTS
+// OTHER BOOTSTRAP IMPORTS
 // --------------------------------------------------
-@import "components";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";

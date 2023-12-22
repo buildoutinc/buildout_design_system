@@ -6,6 +6,7 @@
   align-items: center;
   display: inline-flex;
   flex-direction: row;
+  font-weight: $font-weight-bold;
   gap: map-get($spacers, 2);
   justify-content: center;
 
@@ -13,8 +14,22 @@
     flex-direction: row-reverse;
   }
 
-  &.primary {
-    color: $buildout-blue-50;
-    font-weight: $font-weight-bolder;
+  &.btn-primary {
+    --ds-btn-color: #{$buildout-blue-50};
+  }
+  &.btn-secondary {
+    --ds-btn-color: #{$purple-heart-50};
+  }
+  &.btn-info {
+    --ds-btn-color: #{$seagull-50};
+  }
+  &.btn-success {
+    --ds-btn-color: #{$mountain-meadow-50};
+  }
+  &.btn-warning {
+    --ds-btn-color: #{$harvest-gold-50};
+  }
+  &.btn-danger {
+    --ds-btn-color: #{$solid-pink-50};
   }
 }

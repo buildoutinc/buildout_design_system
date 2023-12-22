@@ -4,8 +4,9 @@ module BuildoutDesignSystem
   class Engine < ::Rails::Engine
     initializer 'buildout_design_system.assets.precompile' do |app|
       %w[stylesheets].each do |sub|
-        app.config.assets.paths << root.join('app', 'assets', sub).to_s
+        app.config.assets.paths << root.join('lib', 'assets', sub).to_s
       end
+      app.config.assets.paths << root.join('node_modules').to_s
     end
     initializer 'buildout_design_system.action_view' do
       ActiveSupport.on_load(:action_view) do
