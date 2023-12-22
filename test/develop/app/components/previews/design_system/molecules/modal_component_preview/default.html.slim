@@ -1,0 +1,9 @@
+= render(DesignSystem::Atoms::ButtonComponent.new({ icon: "fa-window"}, data: { "bs-toggle": "modal", "bs-target": "#exampleModal" })) do
+  | Launch Demo Modal
+= render(DesignSystem::Molecules::ModalComponent.new(class_name: "", size: size, id: "exampleModal", centered: centered)) do |modal|
+  - modal.with_header(title: "Modal Title")
+  - modal.with_body do
+    | Modal Body
+  - modal.with_footer do
+    = render(DesignSystem::Atoms::ButtonComponent.new({}, data: { "bs-dismiss": "modal" })) do
+      | Close Modal
