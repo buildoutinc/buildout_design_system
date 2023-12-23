@@ -24,7 +24,7 @@ module DesignSystem
         dismissable: false,
         content: "This is the banner message"
       )
-        render(DesignSystem::Molecules::AlertComponent.new(
+        render(BuildoutDesignSystem::Molecules::AlertComponent.new(
                 status: status,
                 icon: icon,
                 title: title,

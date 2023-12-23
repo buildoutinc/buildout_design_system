@@ -1,0 +1,10 @@
+.p-4.text-center
+  - if @icon
+    .my-4
+      span.fa-stack.fa-xl
+        i.fa-solid.fa-stack-2x.fa-circle.icon-gradient
+        i.fa-solid.fa-stack-1x.fa-inverse class=@icon
+  h6.mb-4.fw-bold=@title
+  - if @text
+    p.mb-4.text-neutral=@text
+  = content

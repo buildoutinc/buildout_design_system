@@ -2,7 +2,6 @@ PATH
   remote: ../..
   specs:
     buildout_design_system (0.1.1)
-      slim-rails
       view_component (~> 3.8.0)
 
 GEM
@@ -97,6 +96,7 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     erubi (1.12.0)
+    ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
     htmlbeautifier (1.4.2)
@@ -114,6 +114,9 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    listen (3.8.0)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -200,6 +203,9 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.1.0)
+    rb-fsevent (0.11.2)
+    rb-inotify (0.10.1)
+      ffi (~> 1.0)
     rdoc (6.6.2)
       psych (>= 4.0.0)
     redcarpet (3.6.0)
@@ -273,12 +279,14 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  actioncable
   bootsnap
   buildout_design_system!
   capybara
   debug
   importmap-rails
   jbuilder
+  listen
   lookbook
   puma (~> 5.0)
   rails (~> 7.0.8)

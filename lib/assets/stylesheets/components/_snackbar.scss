@@ -1,0 +1,66 @@
+.toast {
+  margin: map-get($spacers, 4);
+
+  .toast-header {
+    align-items: center;
+    display: flex;
+    gap: map-get($spacers, 2);
+  }
+
+  .status {
+    align-items: center;
+    border-radius: $border-radius;
+    display: flex;
+    font-size: $font-size-base;
+    height: $spacer * 1.3125;
+    justify-content: center;
+    text-align: center;
+    width: $spacer * 1.3125;
+  }
+
+  &.snack-bar {
+    --ds-snackbar-bg: #{$storm-grey-700};
+    --ds-snackbar-color: #{$storm-grey-50};
+
+    align-items: center;
+    background: var(--ds-snackbar-bg);
+    color: var(--ds-snackbar-color);
+    display: flex;
+    gap: map-get($spacers, 2);
+    left: 50%;
+    max-width: 33%;
+    min-width: 450px;
+    padding: map-get($spacers, 2);
+    position: relative;
+    transform: translateX(-50%);
+
+    // TODO: Find a consistent way to deal with mobile toast messages
+    @include media-breakpoint-down(sm) {
+      left: 46%;
+      min-width: 360px;
+    }
+  }
+
+  .snack-title {
+    color: var(--ds-snackbar-color);
+    font-size: $font-size-sm;
+  }
+
+  .snack-body {
+    color: var(--bs-body-color);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .snack-message {
+    font-size: $font-size-base;
+    font-weight: bold;
+  }
+
+  .snack-actions {
+    display: flex;
+    flex-shrink: 0;
+    gap: $spacer * 0.5;
+  }
+}

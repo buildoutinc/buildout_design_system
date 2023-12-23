@@ -11,9 +11,9 @@ module DesignSystem
       # @param title "Snackbar Title"
       # @param message "Message for Snackbar"
       def default(title: "Snackbar Title", message: "Message for Snackbar")
-        render(DesignSystem::Atoms::SnackbarComponent.new(title: title, message: message)) do |snack|
+        render(BuildoutDesignSystem::Atoms::SnackbarComponent.new(title: title, message: message)) do |snack|
           snack.with_action do |action|
-            action.render(DesignSystem::Atoms::ButtonComponent.new()) do
+            action.render(BuildoutDesignSystem::Atoms::ButtonComponent.new()) do
               "Action"
             end
           end

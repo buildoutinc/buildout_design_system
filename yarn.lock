@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@fortawesome/fontawesome-pro@^6.5.1":
+  version "6.5.1"
+  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-pro/-/6.5.1/fontawesome-pro-6.5.1.tgz#ff59c9eff2133b9cad6136d183b3dcd19d8b4f1f"
+  integrity sha512-XLi5HOQ3XLNtM9UhrCyT5jEj0RHkx5GfzKDmUPpVTea4C/Ekj5plOYVAp9dUWgH+NWo3IrVpwhsnhIFh/FZPgA==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -82,7 +87,7 @@ binary-extensions@^2.0.0:
 
 bootstrap@^5.3.2:
   version "5.3.2"
-  resolved "https://registry.yarnpkg.com/bootstrap/scss/-/bootstrap-5.3.2.tgz#97226583f27aae93b2b28ab23f4c114757ff16ae"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.3.2.tgz#97226583f27aae93b2b28ab23f4c114757ff16ae"
   integrity sha512-D32nmNWiQHo94BKHLmOrdjlL05q1c8oxbtBphQFb9Z5to6eGRDCm0QgeaZ4zFBHzfg2++rqa2JkqCcxDy0sH0g==
 
 brace-expansion@^1.1.7:

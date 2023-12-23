@@ -9,7 +9,7 @@ module DesignSystem
       #
       # @param content  textarea "Card Text Body Content"
       def default(content: "test")
-        render(DesignSystem::Molecules::CardComponent.new(style: "width: 400px")) do |component|
+        render(BuildoutDesignSystem::Molecules::CardComponent.new(style: "width: 400px")) do |component|
           component.with_image(image_url: "https://via.placeholder.com/500")
 
           component.with_header do
@@ -20,10 +20,10 @@ module DesignSystem
 
 
             component.with_footer do
-                button1 = component.render(DesignSystem::Atoms::ButtonComponent.new({ variant: "primary", style: "contained", size: "sm" })) { "Button" }
-                button2 = component.render(DesignSystem::Atoms::ButtonComponent.new({ variant: "secondary", style: "contained", size: "sm" })) { "Button 2" }
+                button1 = component.render(BuildoutDesignSystem::Atoms::ButtonComponent.new({ variant: "primary", style: "contained", size: "sm" })) { "Button" }
+                button2 = component.render(BuildoutDesignSystem::Atoms::ButtonComponent.new({ variant: "secondary", style: "contained", size: "sm" })) { "Button 2" }
               
-              component.render(DesignSystem::Molecules::ArgsDisplayComponent.new(button1, button2))
+              component.render(BuildoutDesignSystem::Molecules::ArgsDisplayComponent.new(button1, button2))
 
 
             end
@@ -38,7 +38,7 @@ module DesignSystem
       end
 
       def card_simple(content: "test")
-        render(DesignSystem::Molecules::CardComponent.new(style: "width: 400px")) do |component|
+        render(BuildoutDesignSystem::Molecules::CardComponent.new(style: "width: 400px")) do |component|
 
           component.with_title(title: "My Awesome Card Title")          
 

@@ -12,13 +12,13 @@ module DesignSystem
       # @param content "Label for the badge"
       # @param icon "Icon Name from FontAwesome"
       # @param placement "Icon Placement" select ["start", "end"]
-      # @param variant select [~, "primary", "secondary", "success", "danger", "warning", "info", "neutral"]
+      # @param variant select [~, "primary", "secondary", "success", "danger", "warning", "info", "neutral", "light", "dark"]
       def default(variant: "primary", content: "Label", icon: "fa-map-pin", placement: "start")
         # render(BuildoutDesignSystem::Atoms::BadgeComponent.new({ variant: variant, icon: icon, placement: placement })) do
         #   content
         # end
         render(BuildoutDesignSystem::Atoms::BadgeComponent.new({ variant: variant, icon: icon, placement: placement })) do
-          content
+          "Hello"
         end
       end
       # @!endgroup

@@ -74,3 +74,8 @@ end
 gem "buildout_design_system", path: "../../"
 gem "lookbook"
 gem "slim-rails"
+
+group :development do 
+  gem "listen"
+  gem "actioncable"
+end
