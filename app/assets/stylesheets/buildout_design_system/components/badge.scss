@@ -1,0 +1,6 @@
+.badge.badge-lg {
+  --#{$prefix}badge-padding-x: 0.75rem;
+  --#{$prefix}badge-padding-y: 0.25rem;
+  @include rfs(1rem, --#{$prefix}badge-font-size);
+  --#{$prefix}badge-font-weight: 600;
+}

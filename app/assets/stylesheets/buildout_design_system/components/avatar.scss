@@ -1,0 +1,42 @@
+.ds-avatar-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.ds-avatar {
+  align-items: center;
+  background: $ds-color-neutral-200;
+  border-radius: 50%;
+  border: 1px solid $ds-color-neutral-100;
+  color: $ds-color-neutral-800;
+  display: inline-flex;
+  justify-content: center;
+  margin-left: -#{map-get($spacers, 1)};
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+  text-transform: uppercase;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &.avatar-sm {
+    width: 24px;
+    height: 24px;
+    font-size: calc(#{$font-size-sm} - 2px);
+  }
+
+  &.avatar-md {
+    width: 32px;
+    height: 32px;
+  }
+
+  &.avatar-lg {
+    width: 48px;
+    height: 48px;
+    margin-left: -#{map-get($spacers, 2)};
+  }
+
+}
