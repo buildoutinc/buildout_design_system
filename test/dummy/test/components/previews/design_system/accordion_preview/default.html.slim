@@ -1,0 +1,17 @@
+.mb-4= render Styleguide::Ds::Accordion.new do |component|
+  = component.with_accordion_item(title: "Space for Lease") do |item|
+    - item.with_action do
+      | Closed
+    - item.with_action do
+      i.fa-solid.fa-copy
+    - item.with_action do
+      i.fa-solid.fa-trash
+    div This is the first item's accordion body.
+  = component.with_accordion_item(title: "Section Two") do
+    div This is the second item's accordion body.
+
+= render Styleguide::Ds::Accordion.new(variant: "secondary") do |component|
+  = component.with_accordion_item(title: "Section One", icon: "fa-solid fa-building") do
+    div This is the first item's accordion body.
+  = component.with_accordion_item(title: "Section Two", icon: "fa-solid fa-bell") do
+    div This is the second item's accordion body.
