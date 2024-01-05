@@ -1,12 +1,20 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# Specify your gem's dependencies in buildout_design_system.gemspec
+# Specify your gem's dependencies in buildout_design_system.gemspec.
 gemspec
 
-gem "rake", "~> 13.0"
+gem "puma"
 
-gem "rspec", "~> 3.0"
+gem "sprockets-rails"
 
-gem "standard", "~> 1.3"
+gem "sass-rails"
+
+gem "slim"
+
+gem "lookbook", ">= 2.2.0"
+
+gem 'bootstrap', '~> 5.3.2'
+
+# Start debugger with binding.b [https://github.com/ruby/debug]
+# gem "debug", ">= 1.0.0"

@@ -1,0 +1,23 @@
+.ds-avatar-container
+  - if @images.length > 5
+    - @images[0..3].each do |avatar|
+      - if avatar[:image].present?
+        = image_tag avatar[:image], class: "ds-avatar #{@size_class}"
+      - if !avatar[:image].present? && avatar[:initials].present?
+        .ds-avatar class="#{@size_class}"
+          = avatar[:initials]
+      - if !avatar[:image].present? && !avatar[:initials].present?
+        .ds-avatar class="#{@size_class}"
+          i.fa-solid.fa-user
+    .ds-avatar class="#{@size_class}"
+      = "+#{@images.length - 4}"
+  - else
+    - @images.each do |avatar|
+      - if avatar[:image].present?
+        = image_tag avatar[:image], class: "ds-avatar #{@size_class}"
+      - if !avatar[:image].present? && avatar[:initials].present?
+        .ds-avatar class="#{@size_class}"
+          = avatar[:initials]
+      - if !avatar[:image].present? && !avatar[:initials].present?
+        .ds-avatar class="#{@size_class}"
+          i.fa-solid.fa-user

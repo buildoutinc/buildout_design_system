@@ -1,0 +1,23 @@
+.accordion-button {
+  font-weight: 700;
+  gap: map-get($spacers, 4);
+
+  &.remove-arrow:after {
+    display: none;
+  }
+}
+
+.accordion-secondary {
+  --#{$prefix}accordion-btn-bg: $body-bg;
+  --#{$prefix}accordion-active-bg: $body-bg;
+
+  .accordion-button {
+    font-weight: $font-weight-normal;
+  }
+
+  .accordion-item {
+    border-left:0;
+    border-right: 0;
+    border-top: 0;
+  }
+}
