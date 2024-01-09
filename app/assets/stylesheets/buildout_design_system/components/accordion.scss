@@ -1,3 +1,10 @@
+.accordion {
+  --#{$prefix}accordion-btn-bg: #{$card-cap-bg};
+  --#{$prefix}accordion-border-color: #{$border-color};
+  --#{$prefix}accordion-btn-color: #{$body-color};
+  --#{$prefix}accordion-start-icon-color: #{$text-muted};
+}
+
 .accordion-button {
   font-weight: 700;
   gap: map-get($spacers, 4);
@@ -8,16 +15,14 @@
 }
 
 .accordion-secondary {
-  --#{$prefix}accordion-btn-bg: $body-bg;
-  --#{$prefix}accordion-active-bg: $body-bg;
+  --#{$prefix}accordion-btn-bg: #{$card-bg};
+  --#{$prefix}accordion-border-color: #{$border-color};
 
   .accordion-button {
     font-weight: $font-weight-normal;
   }
 
   .accordion-item {
-    border-left:0;
-    border-right: 0;
-    border-top: 0;
+    border-width: 0 0 1px 0;
   }
 }
