@@ -1,0 +1,13 @@
+.toast role="alert" aria-live="assertive" aria-atomic="true" *@attrs
+  .toast-header
+    .status class="text-#{@type == "error" || @type == "notice" ? "danger" : @type }"
+      - if @icon.present?
+        i.fa-solid.fa-fw class="#{@icon}"
+      - else
+        i.fa-solid.fa-fw class="#{@type == "error" || @type == "notice" ? "fa-exclamation-square" : "fa-check-square"}"
+    strong.me-auto
+      = @title
+    button.btn.btn-text-secondary.btn-icon.btn-sm type="button" data-bs-dismiss="toast" aria-label="Close"
+      i.fa-solid.fa-times.fa-fw.bw-icon
+  .toast-body
+    = content
