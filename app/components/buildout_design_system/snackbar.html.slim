@@ -1,0 +1,12 @@
+.position-fixed.start-50.translate-middle-x.mb-8.bottom-0.z-index-top
+  .toast.snack-bar.show *@attrs
+    .snack-body
+      .snack-title
+        = @title
+      .snack-message
+        = @message
+    .snack-actions
+      / = component "atoms/button", { variant: "secondary", style: "text" }, data: { "bs-dismiss": "toast" } do 
+        | Dismiss
+      - if action?
+        = action
