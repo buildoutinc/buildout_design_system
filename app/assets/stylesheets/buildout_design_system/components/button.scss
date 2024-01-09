@@ -1,126 +1,59 @@
+@import "../config/theme";
+@import "../config/colors";
+// Button-Specific Classes
+// Buttons with Icons orders
 .btn {
   align-items: center;
   display: inline-flex;
   flex-direction: row;
-  gap: .5rem;
+  font-weight: $font-weight-bold;
+  gap: map-get($spacers, 2);
   justify-content: center;
 
   &.end {
     flex-direction: row-reverse;
   }
-}
 
-.btn-primary {
-  @include button-variant($primary, $primary,
-    $color: $white,
-    $disabled-color: $white,
-    $disabled-background: $ds-color-neutral-500,
-    $disabled-border: $ds-color-neutral-500,
-    $active-background: $ds-color-primary-700,
-    $active-border: $ds-color-primary-400
-  );
-}
+  &.btn-primary {
+    --ds-btn-color: #{$buildout-blue-50};
+  }
+  &.btn-secondary {
+    --ds-btn-color: #{$purple-heart-50};
+  }
+  &.btn-info {
+    --ds-btn-color: #{$seagull-50};
+  }
+  &.btn-success {
+    --ds-btn-color: #{$mountain-meadow-50};
+  }
+  &.btn-warning {
+    --ds-btn-color: #{$harvest-gold-50};
+  }
+  &.btn-danger {
+    --ds-btn-color: #{$solid-pink-50};
+  }
 
-.btn-outline-primary {
-  @include button-outline-variant($primary,
-    $active-color: $ds-color-primary-700,
-    $active-background: $ds-color-primary-100,
-    $color-hover: $ds-color-primary-600
-  );
-  --#{$prefix}btn-hover-bg: $white;
-  --#{$prefix}btn-disabled-color: $ds-color-neutral-500;
-  --#{$prefix}btn-disabled-border-color: $ds-color-neutral-500;
-}
+  &.btn-text-primary {
+    --ds-btn-color: #{$buildout-blue-500};
+  }
 
-.btn-secondary {
-  @include button-variant($ds-color-secondary, $ds-color-secondary,
-    $color: $white,
-    $disabled-color: $white,
-    $disabled-background: $ds-color-neutral-500,
-    $disabled-border: $ds-color-neutral-500,
-    $active-background: $ds-color-secondary-700,
-    $active-border: $ds-color-secondary-400
-  );
-}
+  &.btn-text-secondary {
+    --ds-btn-color: #{$purple-heart-500};
+  }
 
-.btn-outline-secondary {
-  @include button-outline-variant($ds-color-secondary,
-    $active-color: $ds-color-secondary-700,
-    $active-background: $ds-color-secondary-100,
-    $color-hover: $ds-color-secondary-600
-  );
-  --#{$prefix}btn-hover-bg: $white;
-  --#{$prefix}btn-disabled-color: $ds-color-neutral-500;
-  --#{$prefix}btn-disabled-border-color: $ds-color-neutral-500;
-}
+  &.btn-text-info {
+    --ds-btn-color: #{$seagull-500};
+  }
 
-.btn-success {
-  @include button-variant($success, $success,
-    $color: $white,
-    $disabled-color: $white,
-    $disabled-background: $ds-color-neutral-500,
-    $disabled-border: $ds-color-neutral-500,
-    $active-background: $ds-color-success-700,
-    $active-border: $ds-color-success-400
-  );
-}
+  &.btn-text-success {
+    --ds-btn-color: #{$mountain-meadow-500};
+  }
 
-.btn-outline-success {
-  @include button-outline-variant($success,
-    $active-color: $ds-color-success-700,
-    $active-background: $ds-color-success-100,
-    $color-hover: $ds-color-success-600
-  );
-  --#{$prefix}btn-hover-bg: $white;
-  --#{$prefix}btn-disabled-color: $ds-color-neutral-500;
-  --#{$prefix}btn-disabled-border-color: $ds-color-neutral-500;
-}
+  &.btn-text-warning {
+    --ds-btn-color: #{$harvest-gold-500};
+  }
 
-.btn-danger {
-  @include button-variant($danger, $danger,
-    $color: $white,
-    $hover-background: $ds-color-danger-700,
-    $hover-border: $ds-color-danger-700,
-    $active-background: $ds-color-danger-800,
-    $active-border: $ds-color-danger-600,
-    $disabled-color: $white,
-    $disabled-background: $ds-color-neutral-500,
-    $disabled-border: $ds-color-neutral-500,
-  );
-}
-
-.btn-outline-danger {
-  @include button-outline-variant($danger,
-    $active-color: $ds-color-danger-700,
-    $active-background: $ds-color-danger-100,
-    $color-hover: $ds-color-danger-600
-  );
-  --#{$prefix}btn-hover-bg: $white;
-  --#{$prefix}btn-disabled-color: $ds-color-neutral-500;
-  --#{$prefix}btn-disabled-border-color: $ds-color-neutral-500;
-}
-
-.btn-neutral {
-  @include button-variant($ds-color-neutral-700, $ds-color-neutral-700,
-    $color: $white,
-    $hover-color: $white,
-    $hover-background: $ds-color-neutral-800,
-    $disabled-color: $white,
-    $disabled-background: $ds-color-neutral-500,
-    $disabled-border: $ds-color-neutral-500,
-    $active-background: $ds-color-neutral-900,
-    $active-border: $ds-color-neutral-600,
-    $active-color: $white
-  );
-}
-
-.btn-outline-neutral {
-  @include button-outline-variant($neutral,
-    $active-color: $ds-color-neutral-700,
-    $active-background: $ds-color-neutral-100,
-    $color-hover: $ds-color-neutral-600
-  );
-  --#{$prefix}btn-hover-bg: $white;
-  --#{$prefix}btn-disabled-color: $ds-color-neutral-500;
-  --#{$prefix}btn-disabled-border-color: $ds-color-neutral-500;
+  &.btn-text-danger {
+    --ds-btn-color: #{$solid-pink-500};
+  }
 }

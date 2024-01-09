@@ -3,31 +3,42 @@
     .nav-link {
       border: 1px solid transparent;
       padding: calc(#{$nav-link-padding-y} - 1px) calc(#{$nav-link-padding-x} - 1px);
-
-      &.active {
-        border-color: $ds-color-neutral-200;
-      }
     }
   }
 
   &.nav-tabs {
-    border: 0;
+    --ds-nav-tabs-border-width: 2px;
+    --ds-nav-tabs-border-color: #{$border-color};
+    --ds-nav-tabs-link-hover-border-color: #{$primary-emphasis};
+    --ds-nav-tabs-link-active-border-color: #{$primary};
 
-    .nav-item {
-      flex: 1;
-    }
+    display: flex;
+    gap: 0;
+    padding-bottom: -var(--ds-nav-tabs-border-width);
 
     .nav-link {
-      border: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: map-get($spacers,2);
       padding: map-get($spacers, 3) $nav-link-padding-x;
+      border: solid transparent;
+      border-width: var(--ds-nav-tabs-border-width) 0 0;
+      color: var(--ds-nav-tabs-border-color);
+      
 
-      &.active {
-        border-top: $nav-tabs-border-width solid $nav-tabs-link-active-border-color;
-        padding-top: calc(#{map-get($spacers, 3)} - #{$nav-tabs-border-width});
+      &:hover {
+        border: solid $nav-tabs-link-hover-border-color;
+        border-width: var(--ds-nav-tabs-border-width) 0 0;
+        color: var(--ds-nav-tabs-link-hover-border-color);
       }
 
-      &:not(.active) {
-        background: $ds-color-background-light-200;
+
+      &.active {
+        border: solid $nav-tabs-link-active-border-color;
+        border-width: var(--ds-nav-tabs-border-width) 0 0;
+        color: var(--ds-nav-tabs-link-active-border-color);
+        font-weight: $font-weight-bold;
+        background-color: $card-bg;
       }
     }
   }

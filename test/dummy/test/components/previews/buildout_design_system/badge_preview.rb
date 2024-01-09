@@ -10,10 +10,10 @@ module BuildoutDesignSystem
     #
     # @param content "Label for the badge"
     # @param icon "Icon Name from FontAwesome"
-    # @param variant select ["primary", "secondary", "neutral", "success", "danger", "warning", "info", "light", "dark"]
+    # @param variant select ["primary", "secondary", "neutral", "success", "danger", "warning", "info"]
     # @param size select ["", "lg"]
     def default(variant: "primary", content: "Label", icon: "fa-map-pin", size: nil)
-      render(::BuildoutDesignSystem::Badge.new(variant: variant, icon: icon, size: size)) do
+      render(::BuildoutDesignSystem::Badge.new({ variant: variant, icon: icon, size: size })) do
         content
       end
     end
