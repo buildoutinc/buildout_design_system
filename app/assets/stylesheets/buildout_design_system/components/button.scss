@@ -1,5 +1,3 @@
-@import "../config/theme";
-@import "../config/colors";
 // Button-Specific Classes
 // Buttons with Icons orders
 .btn {
@@ -15,45 +13,59 @@
   }
 
   &.btn-primary {
-    --ds-btn-color: #{$buildout-blue-50};
+    --#{$prefix}btn-color: #{$buildout-blue-50};
   }
   &.btn-secondary {
-    --ds-btn-color: #{$purple-heart-50};
+    --#{$prefix}btn-color: #{$purple-heart-50};
+  }
+  &.btn-neutral {
+    --#{$prefix}btn-color: #{$storm-grey-50};
+    --#{$prefix}btn-bg: #{$neutral};
+    --#{$prefix}btn-border-color: #{$neutral};
+    --#{$prefix}btn-hover-color: #{$storm-grey-50};
+    --#{$prefix}btn-hover-bg: #{$neutral-emphasis};
+    --#{$prefix}btn-hover-border-color: #{neutral-emphasis};
+    --#{$prefix}btn-active-color: #{$storm-grey-50};
+    --#{$prefix}btn-active-bg: #{$neutral-emphasis};
+    --#{$prefix}btn-active-border-color: #{$neutral-emphasis};
+    --#{$prefix}btn-disabled-color: #{$storm-grey-50};
+    --#{$prefix}btn-disabled-bg: #{$storm-grey-400};
+    --#{$prefix}btn-disabled-border-color: #{$storm-grey-400};
   }
   &.btn-info {
-    --ds-btn-color: #{$seagull-50};
+    --#{$prefix}btn-color: #{$seagull-50};
   }
   &.btn-success {
-    --ds-btn-color: #{$mountain-meadow-50};
+    --#{$prefix}btn-color: #{$mountain-meadow-50};
   }
   &.btn-warning {
-    --ds-btn-color: #{$harvest-gold-50};
+    --#{$prefix}btn-color: #{$harvest-gold-50};
   }
   &.btn-danger {
-    --ds-btn-color: #{$solid-pink-50};
+    --#{$prefix}btn-color: #{$solid-pink-50};
   }
 
   &.btn-text-primary {
-    --ds-btn-color: #{$buildout-blue-500};
+    --#{$prefix}btn-color: #{$buildout-blue-500};
   }
 
   &.btn-text-secondary {
-    --ds-btn-color: #{$purple-heart-500};
+    --#{$prefix}btn-color: #{$purple-heart-500};
   }
 
   &.btn-text-info {
-    --ds-btn-color: #{$seagull-500};
+    --#{$prefix}btn-color: #{$seagull-500};
   }
 
   &.btn-text-success {
-    --ds-btn-color: #{$mountain-meadow-500};
+    --#{$prefix}btn-color: #{$mountain-meadow-500};
   }
 
   &.btn-text-warning {
-    --ds-btn-color: #{$harvest-gold-500};
+    --#{$prefix}btn-color: #{$harvest-gold-500};
   }
 
   &.btn-text-danger {
-    --ds-btn-color: #{$solid-pink-500};
+    --#{$prefix}btn-color: #{$solid-pink-500};
   }
 }
