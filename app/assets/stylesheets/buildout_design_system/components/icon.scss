@@ -1,5 +1,8 @@
+.icon-gradient {
+  --#{$prefix}--icon-fill: #{$buildout-blue-500};
+}
 .icon-gradient path {
-  fill: url("#icon-gradient") $ds-color-primary-500;
+  fill: url("#icon-gradient") var(--#{$prefix}--icon-fill);
 }
 
 .icon-gradient {

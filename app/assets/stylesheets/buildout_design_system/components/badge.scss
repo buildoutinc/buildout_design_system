@@ -1,6 +1,51 @@
-.badge.badge-lg {
-  --#{$prefix}badge-padding-x: 0.75rem;
-  --#{$prefix}badge-padding-y: 0.25rem;
-  @include rfs(1rem, --#{$prefix}badge-font-size);
-  --#{$prefix}badge-font-weight: 600;
+.badge {
+  display: inline-flex;
+  gap: map-get($spacers, 1);
+
+  &.end {
+    flex-direction: row-reverse;
+  }
+
+  &.primary {
+    color: $buildout-blue-50;
+    background: $buildout-blue-700;
+  }
+
+  &.secondary {
+    color: $purple-heart-50;
+    background-color: $purple-heart-500;
+  }
+
+  &.info {
+    color: $seagull-50;
+    background: $seagull-500;
+  }
+
+  &.success {
+    color: $mountain-meadow-50;
+    background: $mountain-meadow-800;
+  }
+
+  &.warning {
+    color: $harvest-gold-50;
+    background: $harvest-gold-500;
+  }
+
+  &.danger {
+    color: $solid-pink-50;
+    background: $solid-pink-500;
+  }
+
+  &.neutral {
+    color: $storm-grey-50;
+    background: $storm-grey-500;
+  }
+
+  &.badge-lg {
+    --#{$prefix}badge-padding-x: 0.75rem;
+    --#{$prefix}badge-padding-y: 0.25rem;
+    @include rfs(1rem, --#{$prefix}badge-font-size);
+    --#{$prefix}badge-font-weight: 600;
+  }
+
 }

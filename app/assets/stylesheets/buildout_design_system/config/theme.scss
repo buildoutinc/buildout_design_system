@@ -1,0 +1,193 @@
+@import "colors";
+@import "utilities";
+
+// --------------------------------------------------
+// FILE DESCRIPTION
+// Use this file to generate the spacing and other utilities for the overall theme.
+// There should not be any colors in this file. (with the exception of shadows)
+// Use this specifically to change values of Bootstrap or add any custom variable that
+// applies onto the theme.
+// --------------------------------------------------
+
+// --------------------------------------------------
+// CONFIGURATION
+// --------------------------------------------------
+$prefix: "ds-";
+// $utilities: $custom-utils;
+$enable-dark-mode: false;
+
+// --------------------------------------------------
+// TYPOGRAPHY
+// --------------------------------------------------
+$font-family-sans-serif: "Proxima Nova", sans-serif;
+$font-size-base: 1rem; // 16px
+$font-size-lg: $font-size-base * 1.25; // 20px
+$font-size-sm: $font-size-base * 0.875; // 14px
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold:600;
+$font-weight-bolder: 700;
+
+$h1-font-size: $font-size-base * 2.986;
+$h2-font-size: $font-size-base * 2.488;
+$h3-font-size: $font-size-base * 2.074;
+$h4-font-size: $font-size-base * 1.728;
+$h5-font-size: $font-size-base * 1.44;
+$h6-font-size: $font-size-base * 1.2;
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+  "base": $font-size-base,
+);
+
+$line-height: 137.5%; // close to 22px for 16px font
+
+// --------------------------------------------------
+// SPACING
+// Spacers are used for margin, padding, and other spacing needs.
+// They are always calculated in multiples of 4px.
+// --------------------------------------------------
+$spacer: 1rem; // 16px Base
+$spacers: (
+  0: 0,
+  "0-5": ($spacer * 0.125), // 2px
+  1: ($spacer * 0.25), // 4px
+  2: ($spacer * 0.5), // 8px
+  3: ($spacer * 0.75), // 12px
+  4: $spacer, // 16px
+  5: ($spacer * 1.25), // 20px
+  6: ($spacer * 1.5), // 24px
+  7: ($spacer * 1.75), // 32px
+  8: ($spacer * 2), // 32px
+  9: ($spacer * 2.25), // 36px
+  10: ($spacer * 2.5), // 40px
+  12: ($spacer * 3), // 48px
+  14: ($spacer * 3.5), // 56px
+  16: ($spacer * 4), // 64px
+  18: ($spacer * 4.5), // 72px
+  20: ($spacer * 5), // 80px
+  24: ($spacer * 6), // 96px
+  28: ($spacer * 7), // 112px
+  32: ($spacer * 8), // 128px
+  36: ($spacer * 9), // 144px
+  40: ($spacer * 10), // 160px
+);
+
+// --------------------------------------------------
+// BOOTSTRAP GRID SYSTEM
+// --------------------------------------------------
+$enable-grid-classes: false;
+$enable-cssgrid: true;
+$grid-columns: 12;
+$grid-gutter-width: map-get($spacers, 6);
+$gutters: $spacers;
+
+
+// --------------------------------------------------
+// SHADOWS
+// NOTE: This requires some review as it is recommended that shadows
+// should be reflective of the color of the element that is emitting the shadow.
+// --------------------------------------------------
+$box-shadow: 0 0.25rem 0.5rem rgba($black, 0.25);
+$box-shadow-xs: 0 1px 0 0 rgba($black, 0.25);
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.25);
+$box-shadow-md: 0 0.5rem 1rem rgba($black, 0.25);
+$box-shadow-lg: 0 0.75rem 1.5rem rgba($black, 0.25);
+$box-shadow-xl: 0 1rem 2rem rgba($black, 0.35);
+$box-shadow-inset: inset $box-shadow;
+
+// --------------------------------------------------
+// TRANSITIONs
+// --------------------------------------------------
+$standard: cubic-bezier(0.2, 0, 0, 1);
+$standard-decelerate: cubic-bezier(0, 0, 0, 1);
+$standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
+$emphasized-standard: $standard;
+$emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+$emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+
+// Durations
+// This is used for utilities like changing a checkbox, etc.
+$short: 50ms;
+$short2: 100ms;
+$short3: 150ms;
+$short4: 200ms;
+
+// These are used for items that need to travel (expand, contract), like opening a popup, etc.
+$medium: 250ms;
+$medium2: 300ms;
+$medium3: 350ms;
+$medium4: 400ms;
+
+// These can be used for more major transitions, like opening a modal, etc.
+$long: 450ms;
+$long2: 500ms;
+$long3: 550ms;
+$long4: 600ms;
+
+// These probably will be used the least. Shoudl be for automatic animations.
+$xlong: 700ms;
+$xlong2: 800ms;
+$xlong3: 900ms;
+$xlong4: 1000ms;
+
+
+// --------------------------------------------------
+// BORDERS
+// --------------------------------------------------
+$border-radius: map-get($spacers, 1); // 4px
+$border-radius-lg: map-get($spacers, 2); // 8px
+$border-radius-sm: map-get($spacers, "0-5"); // 2px
+$border-width: 1px;
+
+// --------------------------------------------------
+// INPUTS / BUTTONS
+// --------------------------------------------------
+$input-padding-x: $spacer; // 16px
+$input-padding-y: map-get($spacers, 2); // 8px
+$input-line-height: 1.2; // close to 22px for 16px font
+
+$btn-line-height: $input-line-height;
+$btn-padding-x: $input-padding-x;
+$btn-padding-y: $input-padding-y;
+
+// --------------------------------------------------
+// CARDS
+// --------------------------------------------------
+$card-cap-padding-y: $spacer;
+$card-cap-padding-x: $spacer; // 16px
+$card-border-width: 1px;
+
+// --------------------------------------------------
+// LIST GROUPS
+// --------------------------------------------------
+$list-group-bg: transparent;
+
+// --------------------------------------------------
+// TABS
+// --------------------------------------------------
+$nav-link-padding-y: map-get($spacers, 3); // 12px;
+$nav-link-padding-x: $spacer; // 16px;
+$navbar-brand-height: 1.5;
+$nav-tabs-border-radius: 0;
+$nav-tabs-border-width: 0;
+$nav-tabs-link-active-bg: transparent;
+
+// --------------------------------------------------
+// BADGES
+// --------------------------------------------------
+$badge-padding-x: map-get($spacers, 3); // 12px;
+$badge-padding-y: map-get($spacers, 1); // 4px;
+
+
+// --------------------------------------------------
+// TABLES
+// --------------------------------------------------
+$table-bg: none;
+$table-border-width: 0;
