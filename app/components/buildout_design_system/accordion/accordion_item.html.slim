@@ -1,9 +1,9 @@
 .accordion-item
-  h2.accordion-header
-    button.accordion-button.collapsed[type="button" data-bs-toggle="collapse" data-bs-target="##{@id}" class=(actions? ? "remove-arrow" : "")]
+  div.accordion-header
+    button.accordion-button.collapsed[type="button" data-bs-toggle="collapse" data-bs-target="##{@id}"]
       .flex-grow-1
         - if @icon
-          i.me-4 class=@icon
+          i.accordion-icon.me-4 class=@icon
         = @title
       - actions.each do |action|
         div= action
