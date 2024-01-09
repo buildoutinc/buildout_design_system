@@ -5,13 +5,13 @@
   --#{$prefix}accordion-start-icon-color: #{$text-muted};
 }
 
+.accordion-icon {
+  color: var(--#{$prefix}accordion-start-icon-color);
+}
+
 .accordion-button {
   font-weight: 700;
   gap: map-get($spacers, 4);
-
-  &.remove-arrow:after {
-    display: none;
-  }
 }
 
 .accordion-secondary {
@@ -24,5 +24,9 @@
 
   .accordion-item {
     border-width: 0 0 1px 0;
+  }
+
+  .accordion-icon {
+    --#{$prefix}accordion-start-icon-color: #{$body-color};
   }
 }
