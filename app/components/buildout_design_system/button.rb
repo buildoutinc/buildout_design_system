@@ -2,30 +2,45 @@
 
 module BuildoutDesignSystem
   class Button < ViewComponent::Base
-    THEMES = ::BuildoutDesignSystem::Constants::THEMES.merge(
-      primary: "secondary",
-      secondary: "primary"
-    ).freeze
+    TYPES = {
+      primary: "-secondary",
+      secondary: "-primary",
+      success: "-success",
+      danger: "-danger",
+      warning: "-warning",
+      info: "-info",
+      light: "-light",
+      dark: "-dark"
+    }.freeze
 
     SUB_TYPES = {
       contained: "",
-      outline: "-outline"
+      outline: "-outline",
+      text: "-text",
+      shaded: "-shaded"
     }.freeze
 
-    def initialize( # rubocop:disable Lint/MissingSuper,Metrics/ParameterLists
-      variant: "primary",
-      style: "",
-      icon: nil,
-      path: nil,
-      placement: "start",
-      class_name: ""
-    )
-      @variant = THEMES.fetch(variant.to_sym)
-      @style = SUB_TYPES[style.to_sym]
-      @path = path
-      @icon = icon
-      @placement = placement
-      @class_name = class_name
+    BTN_SIZES = {
+      sm: "btn-sm",
+      md: "",
+      lg: "btn-lg"
+    }.freeze
+
+    DEFAULT_TYPE = TYPES.fetch(:primary)
+    DEFAULT_SUB_TYPE = SUB_TYPES.fetch(:contained)
+
+    BASE_CLASS = %w[btn].freeze
+
+    def initialize(options = {}, **attrs)
+      super(**attrs)
+      @variant = TYPES.fetch(options[:variant]&.to_sym || :primary, TYPES[:primary])
+      @style = SUB_TYPES.fetch(options[:style]&.to_sym || :contained, SUB_TYPES[:contained])
+      @size = BTN_SIZES.fetch(options[:size]&.to_sym || :md, BTN_SIZES[:md])
+      @path = options[:path]
+      @icon = options[:icon]
+      @placement = options.fetch(:placement, "start")
+      @class_name = options[:class_name]
+      @attrs = attrs
     end
   end
 end

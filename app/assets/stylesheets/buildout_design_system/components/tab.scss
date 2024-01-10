@@ -1,20 +1,44 @@
 .nav {
   &.nav-pills {
+    --#{$prefix}nav-pills-border-radius: 80px;
+    --#{$prefix}nav-pills-link-active-color: #{$body-color};
+    --#{$prefix}nav-pills-link-active-bg: #{$storm-grey-100};
+    --#{$prefix}nav-pills-border-color: #{$border-color};
+    --#{$prefix}nav-link-color: #{$text-muted};
+    gap: map-get($spacers, "0-5");
+
+    &.nav-square {
+      --#{$prefix}nav-pills-border-radius: #{$border-radius};
+    }
+
+
     .nav-link {
-      border: 1px solid transparent;
+      border: $border-width solid transparent;
       padding: calc(#{$nav-link-padding-y} - 1px) calc(#{$nav-link-padding-x} - 1px);
+      border-radius: var(--#{$prefix}nav-pills-border-radius);
+
+      &:hover:not(.active) {
+        border: $border-width solid var(--#{$prefix}nav-pills-border-color);
+        background: var(--#{$prefix}nav-pills-link-active-bg);
+        color: var(--#{$prefix}nav-link-color);
+      }
+
+      &.active {
+        border: $border-width solid var(--#{$prefix}nav-pills-border-color);
+        font-weight: $font-weight-bold;
+      }
     }
   }
 
   &.nav-tabs {
-    --ds-nav-tabs-border-width: 2px;
-    --ds-nav-tabs-border-color: #{$border-color};
-    --ds-nav-tabs-link-hover-border-color: #{$primary-emphasis};
-    --ds-nav-tabs-link-active-border-color: #{$primary};
+    --#{$prefix}nav-tabs-border-width: 2px;
+    --#{$prefix}nav-tabs-border-color: #{$border-color};
+    --#{$prefix}nav-tabs-link-hover-border-color: #{$primary-emphasis};
+    --#{$prefix}nav-tabs-link-active-border-color: #{$primary};
 
     display: flex;
     gap: 0;
-    padding-bottom: -var(--ds-nav-tabs-border-width);
+    padding-bottom: -var(--#{$prefix}nav-tabs-border-width);
 
     .nav-link {
       display: inline-flex;
@@ -22,21 +46,21 @@
       gap: map-get($spacers,2);
       padding: map-get($spacers, 3) $nav-link-padding-x;
       border: solid transparent;
-      border-width: var(--ds-nav-tabs-border-width) 0 0;
-      color: var(--ds-nav-tabs-border-color);
+      border-width: var(--#{$prefix}nav-tabs-border-width) 0 0;
+      color: var(--#{$prefix}nav-tabs-border-color);
       
 
       &:hover {
         border: solid $nav-tabs-link-hover-border-color;
-        border-width: var(--ds-nav-tabs-border-width) 0 0;
-        color: var(--ds-nav-tabs-link-hover-border-color);
+        border-width: var(--#{$prefix}nav-tabs-border-width) 0 0;
+        color: var(--#{$prefix}nav-tabs-link-hover-border-color);
       }
 
 
       &.active {
         border: solid $nav-tabs-link-active-border-color;
-        border-width: var(--ds-nav-tabs-border-width) 0 0;
-        color: var(--ds-nav-tabs-link-active-border-color);
+        border-width: var(--#{$prefix}nav-tabs-border-width) 0 0;
+        color: var(--#{$prefix}nav-tabs-link-active-border-color);
         font-weight: $font-weight-bold;
         background-color: $card-bg;
       }

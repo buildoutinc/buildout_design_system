@@ -1,8 +1,0 @@
-ul.nav.mb-3 class=@class_names
-  - @tabs.each do |tab|
-    = render tab
-
-- if tab_panes.present?
-  .tab-content class=@content_class_name
-    - tab_panes.each do |tab_pane|
-      = tab_pane
