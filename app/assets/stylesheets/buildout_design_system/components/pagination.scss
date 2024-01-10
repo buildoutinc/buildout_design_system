@@ -1,0 +1,11 @@
+.pagination {
+  .page-link {
+    vertical-align: middle;
+  }
+
+  .page-item:not(.disabled) {
+    i {
+      color: var(--#{$prefix}pagination-active-bg);
+    }
+  }
+}

@@ -80,3 +80,14 @@ $progress-height:1.25rem;
 $progress-bar-bg: $secondary;
 $progress-bg: $body-bg;
 $progress-border-radius: 1.25rem;
+// Pagination
+$pagination-padding-y: map-get($spacers, 2);
+$pagination-padding-x: map-get($spacers, 3);
+$pagination-bg: $card-bg;
+$pagination-color: $body-color;
+$pagination-border-color: $border-color;
+$pagination-hover-bg: $storm-grey-100;
+$pagination-active-bg: $primary;
+$pagination-active-color: $buildout-blue-50;
+$pagination-disabled-color: $text-muted;
+$pagination-disabled-bg: $storm-grey-100;
