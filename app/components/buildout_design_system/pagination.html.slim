@@ -1,0 +1,36 @@
+- pages = @options[:total] && @options[:per_page] ? (@options[:total] / @options[:per_page].to_f).ceil : 1
+
+nav aria-label="page navigation"
+  ul.pagination
+    - if @options[:show_first_last]
+      li.page-item.first class="#{@options[:current_page] == 1 ? 'disabled' : ''}"
+        a href="#{@options[:prefix]}/1" class="page-link"
+          i.fas.fa-fw.fa-angle-double-left
+          - if @options[:show_labels]
+            | First
+    li.page-item.previous class="#{@options[:current_page] == 1 ? 'disabled' : ''}"
+      a href="#{@options[:prefix]}/#{@options[:current_page] - 1}" class="page-link"
+        i.fas.fa-fw.fa-angle-left
+        - if @options[:show_labels]
+          | Previous
+    // loop through pages
+    - (1..pages).each do |page|
+      - if page == @options[:current_page]
+        li.page-item.active
+          a href="#{@options[:prefix]}/#{page}" class="page-link"
+            = page
+      - else
+        li.page-item
+          a href="#{@options[:prefix]}/#{page}" class="page-link"
+            = page
+    li.page-item.next class="#{@options[:current_page] == pages ? 'disabled' : ''}"
+      a href="#{@options[:prefix]}/#{@options[:current_page] + 1}" class="page-link"
+        - if @options[:show_labels]
+          | Next
+        i.fas.fa-fw.fa-angle-right
+    - if @options[:show_first_last]
+      li.page-item.last class="#{@options[:current_page] == pages ? 'disabled' : ''}"
+        a href="#{@options[:prefix]}/#{pages}" class="page-link"
+          - if @options[:show_labels]
+            | Last
+          i.fas.fa-fw.fa-angle-double-right

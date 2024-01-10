@@ -1,0 +1,3 @@
+= render(BuildoutDesignSystem::Card.new()) do | card |
+  - card.with_title(title: "Pagination")
+  = render(BuildoutDesignSystem::Pagination.new(options: options))
