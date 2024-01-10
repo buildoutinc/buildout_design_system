@@ -5,15 +5,15 @@ module BuildoutDesignSystem
     
     VARIANTS = {
       default: "",
-      vartical: "vertical",
+      vertical: "vertical",
     }
 
-    def initialize(variant, steps: [], progress: 0, total: nil, **attrs)
+    def initialize(variant: "default", title: nil, steps: [], progress: 0, **attrs)
       super(**attrs)
       @variant = VARIANTS.fetch(variant&.to_sym || :default, VARIANTS[:default])
       @steps = steps
       @progress = progress
-      @total = total
+      @title = title
       @attrs = attrs
     end
   end

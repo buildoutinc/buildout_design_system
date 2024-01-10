@@ -16,6 +16,6 @@ module BuildoutDesignSystem
                 text: "Get started by clicking on the “New Task Button“")
       render(::BuildoutDesignSystem::EmptyState.new(title: title, icon: icon, text: text))
     end
-    # @!group Empty State
+    # @!endgroup Empty State
   end
 end
