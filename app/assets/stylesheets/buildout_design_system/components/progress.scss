@@ -1,0 +1,55 @@
+.progress-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-title {
+  font-weight: $font-weight-bold;
+
+  .progress-value {
+    color: $progress-bar-bg;
+  }
+}
+
+.progress-step {
+  --#{$prefix}step-bar-width: #{map-get($spacers, 2)};
+
+  align-items: center;
+  display: flex;
+  gap: map-get($spacers, 2);
+  padding-left: map-get($spacers, 4);
+  position: relative;
+
+  .progress-bar {
+    background: $progress-bg;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: var(--#{$prefix}step-bar-width);
+
+    &.complete {
+      background: $progress-bar-bg;
+    }
+  }
+
+  &:first-child {
+    .progress-bar {
+      border-top-left-radius: $progress-border-radius;
+      border-top-right-radius: $progress-border-radius;
+    }
+  }
+
+  &:last-child {
+    .progress-bar {
+      border-bottom-left-radius: $progress-border-radius;
+      border-bottom-right-radius: $progress-border-radius;
+    }
+  }
+
+  .progress-label {
+    font-weight: $font-weight-bold;
+    margin: 0;
+    padding: map-get($spacers, 2) 0;
+  }
+}

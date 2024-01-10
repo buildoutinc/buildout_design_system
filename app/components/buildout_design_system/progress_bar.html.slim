@@ -1,0 +1,15 @@
+.progress-container class="#{@variant}" 
+  - if @steps.present?
+    - @steps.each do | step, index |
+      .progress-step
+        .progress-bar class="#{step[:completed] ? "complete" : ""}"
+        h6.progress-label
+          | #{step[:title]}
+  - else
+    - if @title
+      h6.progress-title
+        | #{@title}: 
+        span.progress-value
+          | #{@progress}%
+    .progress role="progressbar" aria-label="#{@label}" aria-valuenow="#{@progress}" aria-valuemin="0" aria-valuemax="100"
+      .progress-bar style="width: #{@progress}%;"

@@ -1,0 +1,3 @@
+= render(BuildoutDesignSystem::Card.new()) do | card |
+  - card.with_title(title: "Vertical Progress Bar / Steppers")
+  = render(BuildoutDesignSystem::ProgressBar.new(variant: "vertical", steps: steps))
