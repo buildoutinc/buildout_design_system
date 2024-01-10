@@ -6,7 +6,7 @@
   = content
 
   - card.with_footer do
-    = render(BuildoutDesignSystem::Button.new(variant: "primary")) do
+    = render(BuildoutDesignSystem::Button.new({variant: "primary"})) do
       | Click Me
-    = render(BuildoutDesignSystem::Button.new(variant: "secondary")) do 
+    = render(BuildoutDesignSystem::Button.new({ variant: "secondary"})) do 
       | Click Me Too 
