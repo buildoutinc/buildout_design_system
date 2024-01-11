@@ -1,0 +1,7 @@
+.modal-header class="#{@class_name}"
+  - if @title
+    h5.modal-title = @title
+  - else 
+    = content 
+  = render(BuildoutDesignSystem::Button.new({ variant: "secondary", style: "text" }, data: { "bs-dismiss": "modal" })) do 
+      i.fas.fa-times

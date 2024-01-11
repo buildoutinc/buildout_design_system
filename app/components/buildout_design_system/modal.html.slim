@@ -3,6 +3,7 @@
     .modal-content
       - if header?
         = header
-      = body
+      - if body?
+        = body
       - if footer?
         = footer
