@@ -1,3 +1,7 @@
+= render(BuildoutDesignSystem::Button.new(options: { variant: "secondary" }, data: { toggle: "modal", target: "#exampleModal" })) do
+  | Launch demo modal
+
+
 = render(BuildoutDesignSystem::Modal.new(class_name: "show", size: size, id: "exampleModal", centered: centered)) do |modal|
   - modal.with_header(title: "Modal Title")
   - modal.with_body do
