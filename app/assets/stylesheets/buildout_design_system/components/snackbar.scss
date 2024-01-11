@@ -39,6 +39,30 @@
       left: 46%;
       min-width: 360px;
     }
+
+    &.success {
+      --#{$prefix}snackbar-bg: #{$mountain-meadow-700};
+      --#{$prefix}-snackbar-color: #{$mountain-meadow-50};
+    }
+    &.danger {
+      --#{$prefix}snackbar-bg: #{$solid-pink-700};
+      --#{$prefix}-snackbar-color: #{$solid-pink-50};
+    }
+    &.info {
+      --#{$prefix}snackbar-bg: #{$seagull-700};
+      --#{$prefix}-snackbar-color: #{$seagull-50};
+    }
+    &.warning {
+      --#{$prefix}snackbar-bg: #{$harvest-gold-700};
+      --#{$prefix}-snackbar-color: #{$harvest-gold-50};
+    }
+
+  }
+
+  .snack-icon {
+    align-self: flex-start;
+    flex-grow: 0;
+    padding-top: map-get($spacers,1);
   }
 
   .snack-title {

@@ -10,8 +10,9 @@ module BuildoutDesignSystem
       #
       # @param title "Snackbar Title"
       # @param message "Message for Snackbar"
-      def default(title: "Snackbar Title", message: "Message for Snackbar")
-        render(Snackbar.new(title: title, message: message)) do |snack|
+      # @param status select "Type of Snackbar" { choices: ["default", "success", "warning", "danger", "info"]}
+      def default(title: "Snackbar Title", message: "Message for Snackbar", status: "default")
+        render(Snackbar.new(title: title, message: message, status: status)) do |snack|
           snack.with_action do |action|
             action.render(Button.new()) do
               "Action"
