@@ -14,7 +14,8 @@ module BuildoutDesignSystem
     # @param show_first_last toggle "Show first and last page links"
     # @param show_labels toggle "Show labels for pagination links"
     # @param show_jump_to toggle "Show jump to page input"
-    def default(prefix: "page", total: 100, per_page: 10, current_page: 1, show_first_last: true, show_labels: true, show_jump_to: true)
+    # @param align select "Alignment of pagination links", { choices: ["left", "center", "right"]}
+    def default(prefix: "page", align: "left", total: 100, per_page: 10, current_page: 1, show_first_last: true, show_labels: true, show_jump_to: true)
       render_with_template(locals: {
         options: {
           prefix: prefix,
@@ -24,6 +25,7 @@ module BuildoutDesignSystem
           show_first_last: show_first_last,
           show_labels: show_labels,
           show_jump_to: show_jump_to,
+          align: align
         }
       })
     end

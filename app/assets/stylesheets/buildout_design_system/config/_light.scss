@@ -91,3 +91,15 @@ $pagination-active-bg: $primary;
 $pagination-active-color: $buildout-blue-50;
 $pagination-disabled-color: $text-muted;
 $pagination-disabled-bg: $storm-grey-100;
+// Inputs
+$input-padding-x: map-get($spacers, 4);
+$input-padding-y: map-get($spacers, 2);
+$input-border-width: $border-width;
+$input-border-color: $border-color;
+$input-border-radius: $border-radius;
+$input-bg: $white;
+$input-color: $body-color;
+$input-disabled-bg: $storm-grey-300;
+$input-focus-border-color: $buildout-blue-100;
+$input-group-addon-bg: $storm-grey-100;
+
