@@ -1,4 +1,12 @@
+.pagination-container {
+  display: flex;
+  align-items: center;
+  gap: map-get($spacers, 2);
+  width: 100%;
+}
 .pagination {
+  margin: 0;
+
   .page-link {
     vertical-align: middle;
   }
@@ -7,5 +15,30 @@
     i {
       color: var(--#{$prefix}pagination-active-bg);
     }
+  }
+}
+.jump-to {
+  display: flex;
+  gap: map-get($spacers, 2);
+  align-items: center;
+  // max-width: fit-content;
+  // flex-grow: 0;
+  // flex-shrink: 0;
+  
+  .jump-to-input {
+    display: inline-block;
+    max-width: 64px;
+
+    input {
+      width: 100%;
+      text-align: center;
+      padding-left: map-get($spacers, 1);
+      padding-right: map-get($spacers, 1);
+    }
+  }
+
+  .jump-to-label {
+    flex: 0 0 80px;
+    font-weight: $font-weight-bold;
   }
 }

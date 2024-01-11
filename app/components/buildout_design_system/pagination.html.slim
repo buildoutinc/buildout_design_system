@@ -1,6 +1,5 @@
 - pages = @options[:total] && @options[:per_page] ? (@options[:total] / @options[:per_page].to_f).ceil : 1
-
-nav aria-label="page navigation"
+nav.pagination-container class="#{@align}" aria-label="page navigation"
   ul.pagination
     - if @options[:show_first_last]
       li.page-item.first class="#{@options[:current_page] == 1 ? 'disabled' : ''}"
@@ -13,7 +12,6 @@ nav aria-label="page navigation"
         i.fas.fa-fw.fa-angle-left
         - if @options[:show_labels]
           | Previous
-    // loop through pages
     - (1..pages).each do |page|
       - if page == @options[:current_page]
         li.page-item.active
@@ -34,3 +32,9 @@ nav aria-label="page navigation"
           - if @options[:show_labels]
             | Last
           i.fas.fa-fw.fa-angle-double-right
+  - if @options[:show_jump_to]
+    .jump-to
+      .jump-to-label
+        | Go to Page
+      .jump-to-input
+        input.form-control type="text" value="#{@options[:current_page]}" data-total="#{pages}"

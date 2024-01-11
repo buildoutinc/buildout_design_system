@@ -10,9 +10,17 @@ module BuildoutDesignSystem
     # show_first_last
     # show_labels
     # show_jump_to
+
+    ALIGNMENT = {
+      left: "justify-content-start",
+      center: "justify-content-center",
+      right: "justify-content-end"
+  }.freeze
+
     def initialize(options: {}, **attrs)
       super(**attrs)
       @options = options
+      @align = ALIGNMENT[options[:align].to_sym] || ALIGNMENT[:left]
       @attrs = attrs
     end
 
