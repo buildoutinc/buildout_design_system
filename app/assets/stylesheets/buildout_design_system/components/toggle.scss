@@ -5,8 +5,9 @@
   --#{$prefix}toggle-bg: #{$storm-grey-400};
   --#{$prefix}toggle-active-bg: #{$primary-gradient};
   --#{$prefix}toggle-width: #{map-get($spacers, 7)};
+  --#{$prefix}toggle-thumb-margin: #{map-get($spacers, "0-5")};
   --#{$prefix}toggle-start: 0;
-  --#{$prefix}-toggle-end: calc(calc(var(--#{$prefix}toggle-width) - var(--#{$prefix}toggle-thumb-bg)) - calc(var(--#{$prefix}toggle-thumb-width) + 0.125rem));
+  --#{$prefix}toggle-end: calc(calc(var(--#{$prefix}toggle-width) - calc(var(--#{$prefix}toggle-thumb-margin)*2)) - var(--#{$prefix}toggle-thumb-width));
 
   .form-check-input {
     position: relative;
@@ -14,6 +15,7 @@
     height: map-get($spacers, 3);
     background: var(--#{$prefix}toggle-bg);
     border: 0;
+    overflow: hidden;
 
     &::before {
       content: ' ';
@@ -24,7 +26,7 @@
       height: var(--#{$prefix}toggle-thumb-width);
       border-radius: 50%;
       z-index: 1;
-      margin: map-get($spacers, "0-5");
+      margin: var(--#{$prefix}toggle-thumb-margin);
       transform: translateX(0);
       transition: transform $medium $emphasized-standard;
     }
@@ -33,8 +35,25 @@
       background: $primary-gradient;
 
       &::before {
-        transform: translateX(calc(var(--#{$prefix}toggle-width) - calc(var(--#{$prefix}toggle-thumb-width) + 0.125rem)));
+        transform: translateX(var(--#{$prefix}toggle-end));
       }
+    }
+  }
+
+  // Verbose
+  &.verbose {
+    --#{$prefix}toggle-thumb-bg: #{$storm-grey-50};
+    --#{$prefix}toggle-color: #{$storm-grey-50};
+    --#{$prefix}toggle-thumb-width: #{map-get($spacers, 6)};
+    --#{$prefix}toggle-thumb-margin: #{map-get($spacers, 1)};
+    --#{$prefix}toggle-bg: #{$storm-grey-400};
+    --#{$prefix}toggle-active-bg: #{$primary-gradient};
+    --#{$prefix}toggle-width: 4.25rem;
+    --#{$prefix}toggle-height: #{map-get($spacers, 8)};
+
+    .form-check-input {
+      height: var(--#{$prefix}toggle-height);
+
     }
   }
 }
