@@ -1,0 +1,40 @@
+.form-switch {
+  --#{$prefix}toggle-thumb-bg: #{$storm-grey-50};
+  --#{$prefix}toggle-color: #{$storm-grey-50};
+  --#{$prefix}toggle-thumb-width: #{map-get($spacers, 2)};
+  --#{$prefix}toggle-bg: #{$storm-grey-400};
+  --#{$prefix}toggle-active-bg: #{$primary-gradient};
+  --#{$prefix}toggle-width: #{map-get($spacers, 7)};
+  --#{$prefix}toggle-start: 0;
+  --#{$prefix}-toggle-end: calc(calc(var(--#{$prefix}toggle-width) - var(--#{$prefix}toggle-thumb-bg)) - calc(var(--#{$prefix}toggle-thumb-width) + 0.125rem));
+
+  .form-check-input {
+    position: relative;
+    width: var(--#{$prefix}toggle-width);
+    height: map-get($spacers, 3);
+    background: var(--#{$prefix}toggle-bg);
+    border: 0;
+
+    &::before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      background: var(--#{$prefix}toggle-thumb-bg);
+      width: var(--#{$prefix}toggle-thumb-width);
+      height: var(--#{$prefix}toggle-thumb-width);
+      border-radius: 50%;
+      z-index: 1;
+      margin: map-get($spacers, "0-5");
+      transform: translateX(0);
+      transition: transform $medium $emphasized-standard;
+    }
+
+    &:checked {
+      background: $primary-gradient;
+
+      &::before {
+        transform: translateX(calc(var(--#{$prefix}toggle-width) - calc(var(--#{$prefix}toggle-thumb-width) + 0.125rem)));
+      }
+    }
+  }
+}
