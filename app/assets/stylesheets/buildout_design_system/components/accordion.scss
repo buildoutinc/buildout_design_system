@@ -3,6 +3,7 @@
   --#{$prefix}accordion-border-color: #{$border-color};
   --#{$prefix}accordion-btn-color: #{$body-color};
   --#{$prefix}accordion-start-icon-color: #{$text-muted};
+  --#{$prefix}accordion-active-bg: #{$card-cap-bg};
 }
 
 .accordion-icon {
@@ -17,6 +18,7 @@
 .accordion-secondary {
   --#{$prefix}accordion-btn-bg: #{$card-bg};
   --#{$prefix}accordion-border-color: #{$border-color};
+  --#{$prefix}accordion-active-bg: #{card-bg};
 
   .accordion-button {
     font-weight: $font-weight-normal;
