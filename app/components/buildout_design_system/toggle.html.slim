@@ -1,2 +1,5 @@
-.form-check.form-switch 
+.form-check.form-switch class="#{@variant}" 
   input.form-check-input id="#{@id}" role="switch" type="checkbox"
+  - if @variant == 'verbose'
+    label for="#{@id}" 
+      span.inner-label
