@@ -2,22 +2,29 @@
   --#{$prefix}toggle-thumb-bg: #{$storm-grey-50};
   --#{$prefix}toggle-color: #{$storm-grey-50};
   --#{$prefix}toggle-thumb-width: #{map-get($spacers, 2)};
+  --#{$prefix}toggle-thumb-margin: #{map-get($spacers, "0-5")};
   --#{$prefix}toggle-bg: #{$storm-grey-400};
   --#{$prefix}toggle-active-bg: #{$primary-gradient};
   --#{$prefix}toggle-width: #{map-get($spacers, 7)};
-  --#{$prefix}toggle-thumb-margin: #{map-get($spacers, "0-5")};
+  --#{$prefix}toggle-height: #{map-get($spacers, 3)};
   --#{$prefix}toggle-start: 0;
   --#{$prefix}toggle-end: calc(calc(var(--#{$prefix}toggle-width) - calc(var(--#{$prefix}toggle-thumb-margin)*2)) - var(--#{$prefix}toggle-thumb-width));
 
   .form-check-input {
     position: relative;
     width: var(--#{$prefix}toggle-width);
-    height: map-get($spacers, 3);
+    height: var(--#{$prefix}toggle-height);
     background: var(--#{$prefix}toggle-bg);
     border: 0;
     overflow: hidden;
+    margin-top: 0;
+
+    .inner-label {
+      display: none;
+    }
 
     &::before {
+      pointer-events: none;
       content: ' ';
       display: block;
       position: absolute;
@@ -42,18 +49,53 @@
 
   // Verbose
   &.verbose {
-    --#{$prefix}toggle-thumb-bg: #{$storm-grey-50};
-    --#{$prefix}toggle-color: #{$storm-grey-50};
     --#{$prefix}toggle-thumb-width: #{map-get($spacers, 6)};
     --#{$prefix}toggle-thumb-margin: #{map-get($spacers, 1)};
-    --#{$prefix}toggle-bg: #{$storm-grey-400};
-    --#{$prefix}toggle-active-bg: #{$primary-gradient};
     --#{$prefix}toggle-width: 4.25rem;
     --#{$prefix}toggle-height: #{map-get($spacers, 8)};
+    position: relative;
+    width: var(--#{$prefix}toggle-width);
+    overflow: hidden;
+    border-radius: var(--#{$prefix}toggle-height);
+
+    .inner-label {
+      position: absolute;
+      display: flex;
+      flex-wrap: nowrap;
+      width: calc(var(--#{$prefix}toggle-width)*2);
+      // gap: var(--#{$prefix}toggle-thumb-width);
+      transform: translateX(-50%);
+      height: var(--#{$prefix}toggle-height);
+      align-items: center;
+      transform-origin: center center;
+      transition: transform $medium3 $emphasized-standard;
+      overflow: hidden;
+      left: 0;
+
+      &::before {
+        flex: 0 0 50%;
+        content: "ON";
+        color: var(--#{$prefix}toggle-color);
+        background: var(--#{$prefix}toggle-active-bg);
+        padding: var(--#{$prefix}toggle-thumb-margin) calc(var(--#{$prefix}toggle-thumb-margin)*2);
+
+      }
+      &::after{
+        flex: 0 0 50%;
+        content: "OFF";
+        color: var(--#{$prefix}toggle-color);
+        background: var(--#{$prefix}toggle-bg);
+        padding: var(--#{$prefix}toggle-thumb-margin) calc(var(--#{$prefix}toggle-thumb-margin)*2);
+        text-align: right;
+      }
+    }
 
     .form-check-input {
-      height: var(--#{$prefix}toggle-height);
+      background: none;
+    }
 
+    .form-check-input:checked + .inner-label {
+      transform: translateX(0);
     }
   }
 }

@@ -13,7 +13,7 @@ module BuildoutDesignSystem
     end
 
     def verbose
-      render(Toggle.new(checked: false, value: 1, disabled: false, variant: "verbose", id: "test-verbose"))
+      render(Toggle.new(checked: true, value: 1, disabled: false, variant: "verbose", id: "test-verbose"))
     end
     # @!endgroup
   end
