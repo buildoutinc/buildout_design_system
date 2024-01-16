@@ -32,7 +32,7 @@ $dark: $storm-grey-900;
 
 $body-bg: $storm-grey-50;
 $body-color: $storm-grey-950;
-$text-muted: $storm-grey-400;
+$text-muted: $storm-grey-600;
 
 $link-color: $primary;
 $link-hover-color: $primary-emphasis;
@@ -105,3 +105,5 @@ $input-group-addon-bg: $storm-grey-100;
 // Accordion
 $accordion-bg: $card-bg;
 $accordion-border-color: $border-color;
+// Modal
+$modal-content-bg: $card-bg;

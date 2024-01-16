@@ -1,6 +1,7 @@
 .badge {
   display: inline-flex;
   gap: map-get($spacers, 1);
+  align-items: center;
 
   &.end {
     flex-direction: row-reverse;
