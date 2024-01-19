@@ -1,19 +1,14 @@
-module ComponentHelper
-  def component(path, *args, **kwargs)
-    name = path
-      .to_s
-      .split('/')
-      .last
+module BuildoutDesignSystem
+  module ComponentHelper
 
-    class_name = path.to_s.classify
-    name = "#{name}Component".classify
-    class_name = "#{class_name}::#{name}"
-    component_class = class_name.constantize
+    def component(path, *args, **kwargs, &block)
+      component = "Blueprint::#{path.to_s.camelize}".constantize
+      render(component.new(*args, **kwargs), &block)
+    end
 
-    render component_class.new(*args, **kwargs)
-  end
+    def unit(path, *args, **kwargs, &block)
+      component "units/#{path}", *args, **kwargs, &block
+    end
 
-  def atom(path)
-    component "atoms/#{path}"
   end
 end
