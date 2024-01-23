@@ -1,9 +1,9 @@
 .accordion {
-  --#{$prefix}accordion-btn-bg: #{$card-cap-bg};
+  --#{$prefix}accordion-btn-bg: #{$storm-grey-100};
   --#{$prefix}accordion-border-color: #{$border-color};
   --#{$prefix}accordion-btn-color: #{$body-color};
   --#{$prefix}accordion-start-icon-color: #{$text-muted};
-  --#{$prefix}accordion-active-bg: #{$card-cap-bg};
+  --#{$prefix}accordion-active-bg: #{$storm-grey-100};
 }
 
 .accordion-icon {
