@@ -8,6 +8,10 @@
   gap: map-get($spacers, 2);
   justify-content: center;
 
+  &.btn-icon {
+    padding: map-get($spacers, 2);
+  }
+
   &.end {
     flex-direction: row-reverse;
   }
@@ -67,5 +71,43 @@
 
   &.btn-text-danger {
     --#{$prefix}btn-color: #{$solid-pink-500};
+  }
+
+  &.btn-shaded {
+
+    &-primary {
+      --#{$prefix}btn-bg: #{$buildout-blue-50};
+      --#{$prefix}btn-color: #{$buildout-blue-500};
+    }
+
+    &-secondary {
+      --#{$prefix}btn-bg: #{$purple-heart-50};
+      --#{$prefix}btn-color: #{$purple-heart-500};
+    }
+
+    &-neutral {
+      --#{$prefix}btn-bg: #{$storm-grey-50};
+      --#{$prefix}btn-color: #{$storm-grey-500};
+    }
+
+    &-info {
+      --#{$prefix}btn-bg: #{$seagull-50};
+      --#{$prefix}btn-color: #{$seagull-500};
+    }
+
+    &-success {
+      --#{$prefix}btn-bg: #{$mountain-meadow-50};
+      --#{$prefix}btn-color: #{$mountain-meadow-500};
+    }
+
+    &-warning {
+      --#{$prefix}btn-bg: #{$harvest-gold-50};
+      --#{$prefix}btn-color: #{$harvest-gold-500};
+    }
+
+    &-danger {
+      --#{$prefix}btn-bg: #{$solid-pink-50};
+      --#{$prefix}btn-color: #{$solid-pink-500};
+    }
   }
 }

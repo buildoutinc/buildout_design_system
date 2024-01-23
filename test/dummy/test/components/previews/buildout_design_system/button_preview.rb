@@ -22,16 +22,17 @@ module BuildoutDesignSystem
     # @param style select ["contained", "outline", "text", "shaded"]
     # @param size select ["sm", "md", "lg"]
     # @param class_name "Additional Classes to add to the button"
-    def default(variant: "primary", style: "", content: "Button", icon: nil, placement: "start", class_name: "", size: "md")
+    # @param icon_only toggle "If you want to use the button as an icon only button"
+    def default(variant: "primary", style: "", content: "Button", icon: nil, placement: "start", class_name: "", size: "md", icon_only: false)
       # render(DesignSystem::Atoms::ButtonComponent.new({ variant: variant, style: style, size: size, icon: icon, placement: placement, class_name: class_name })) do
-      render(Button.new({ variant: variant, style: style, size: size, icon: icon, placement: placement, class_name: class_name })) do
+      render(Button.new({ variant: variant, style: style, size: size, icon: icon, placement: placement, class_name: class_name, icon_only: icon_only })) do
         content
       end
     end
 
     # @param path "Link Path"
-    def link(variant: "primary", style: "", content: "Button", icon: nil, placement: "start", class_name: "", size: "md", path: "https://google.com")
-      render(Button.new({ variant: variant, style: style, size: size, icon: icon, placement: placement, class_name: class_name , path: path})) do
+    def link(variant: "primary", style: "", content: "Button", icon: nil, placement: "start", class_name: "", size: "md", icon_only: false, path: "https://google.com")
+      render(Button.new({ variant: variant, style: style, size: size, icon: icon, placement: placement, class_name: class_name, icon_only: icon_only, path: path})) do
         content
       end
     end

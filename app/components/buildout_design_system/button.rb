@@ -32,12 +32,15 @@ module BuildoutDesignSystem
     BASE_CLASS = %w[btn].freeze
 
     def initialize(options = {}, **attrs)
+      raise ArgumentError, "To use :icon_only, you must also pass :icon" if options[:icon_only] && !options[:icon]
+      
       super(**attrs)
       @variant = TYPES.fetch(options[:variant]&.to_sym || :primary, TYPES[:primary])
       @style = SUB_TYPES.fetch(options[:style]&.to_sym || :contained, SUB_TYPES[:contained])
       @size = BTN_SIZES.fetch(options[:size]&.to_sym || :md, BTN_SIZES[:md])
       @path = options[:path]
       @icon = options[:icon]
+      @icon_only = options[:icon_only] || false
       @placement = options.fetch(:placement, "start")
       @class_name = options[:class_name]
       @attrs = attrs
