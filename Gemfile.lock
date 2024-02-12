@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    buildout_design_system (0.1.1)
+    buildout_design_system (0.1.2)
       rails (>= 6.0)
       view_component (~> 3.5)
 
@@ -138,7 +138,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.20.0)
     mutex_m (0.2.0)
-    net-imap (0.4.9.1)
+    net-imap (0.4.10)
       date
       net-protocol
     net-pop (0.1.2)

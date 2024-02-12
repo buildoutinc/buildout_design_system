@@ -137,8 +137,9 @@ $border-radius-sm: map-get($spacers, "0-5"); // 2px
 $border-width: 1px;
 
 // --------------------------------------------------
-// INPUTS / BUTTONS
+// INPUTS / BUTTONS / FORMS
 // --------------------------------------------------
+$form-label-font-weight: 700;
 $input-padding-x: $spacer; // 16px
 $input-padding-y: map-get($spacers, 2); // 8px
 $input-line-height: 1.2; // close to 22px for 16px font
