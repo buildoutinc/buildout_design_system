@@ -5,6 +5,7 @@ module BuildoutDesignSystem
     TYPES = {
       primary: "-secondary",
       secondary: "-primary",
+      neutral: "-neutral",
       success: "-success",
       danger: "-danger",
       warning: "-warning",
@@ -33,7 +34,7 @@ module BuildoutDesignSystem
 
     def initialize(options = {}, **attrs)
       raise ArgumentError, "To use :icon_only, you must also pass :icon" if options[:icon_only] && !options[:icon]
-      
+
       super(**attrs)
       @variant = TYPES.fetch(options[:variant]&.to_sym || :primary, TYPES[:primary])
       @style = SUB_TYPES.fetch(options[:style]&.to_sym || :contained, SUB_TYPES[:contained])

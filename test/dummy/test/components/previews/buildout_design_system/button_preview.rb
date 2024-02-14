@@ -18,7 +18,7 @@ module BuildoutDesignSystem
     # @param content "Label for the button"
     # @param icon "Icon Name from FontAwesome"
     # @param placement "Location of Icon" select ["start", "end"]
-    # @param variant select ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"]
+    # @param variant select ["primary", "secondary", "success", "neutral", "danger", "warning", "info", "light", "dark"]
     # @param style select ["contained", "outline", "text", "shaded"]
     # @param size select ["sm", "md", "lg"]
     # @param class_name "Additional Classes to add to the button"
