@@ -8,36 +8,36 @@
 // --------------------------------------------------
 // BASE
 // --------------------------------------------------
-$color-scheme: light;
+$color-scheme: light !default;
 
 // --------------------------------------------------
 // COLORS
 // --------------------------------------------------
-$primary: $buildout-blue-500;
-$primary-emphasis: $buildout-blue-600;
-$secondary: $purple-heart-500;
-$secondary-emphasis: $purple-heart-600;
-$info: $seagull-500;
-$info-emphasis: $seagull-600;
-$success: $mountain-meadow-500;
-$success-emphasis: $mountain-meadow-600;
-$warning: $harvest-gold-500;
-$warning-emphasis: $harvest-gold-600;
-$danger: $solid-pink-500;
-$danger-emphasis: $solid-pink-600;
-$neutral: $storm-grey-600;
-$neutral-emphasis: $storm-grey-700;
-$light: $storm-grey-200;
-$dark: $storm-grey-900;
+$primary: $buildout-blue-500 !default;
+$primary-emphasis: $buildout-blue-600 !default;
+$secondary: $purple-heart-500 !default;
+$secondary-emphasis: $purple-heart-600 !default;
+$info: $seagull-500 !default;
+$info-emphasis: $seagull-600 !default;
+$success: $mountain-meadow-500 !default;
+$success-emphasis: $mountain-meadow-600 !default;
+$warning: $harvest-gold-500 !default;
+$warning-emphasis: $harvest-gold-600 !default;
+$danger: $solid-pink-500 !default;
+$danger-emphasis: $solid-pink-600 !default;
+$neutral: $storm-grey-600 !default;
+$neutral-emphasis: $storm-grey-700 !default;
+$light: $storm-grey-200 !default;
+$dark: $storm-grey-900 !default;
 
-$body-bg: $storm-grey-50;
-$body-color: $storm-grey-950;
-$text-muted: $storm-grey-600;
+$body-bg: $storm-grey-50 !default;
+$body-color: $storm-grey-950 !default;
+$text-muted: $storm-grey-600 !default;
 
-$link-color: $primary;
-$link-hover-color: $primary-emphasis;
+$link-color: $primary !default;
+$link-hover-color: $primary-emphasis !default;
 
-$border-color: $storm-grey-300;
+$border-color: $storm-grey-300 !default;
 
 // --------------------------------------------------
 // LOAD THEME
@@ -59,51 +59,51 @@ $theme-color: (
   "neutral-emphasis": $neutral-emphasis,
   "light": $light,
   "dark": $dark,
-);
+) !default;
 
 // --------------------------------------------------
 // BOOTSTRAP COLOR OVERRIDES
 // --------------------------------------------------
 // Cards
-$card-bg: $white;
-$card-border-color: $border-color;
-$card-cap-bg: $white;
+$card-bg: $white !default;
+$card-border-color: $border-color !default;
+$card-cap-bg: $white !default;
 // Tabs
-$nav-tabs-border-width: 2px;
-$nav-tabs-border-color: $border-color;
-$nav-tabs-link-hover-border-color: $body-color;
-$nav-tabs-link-active-border-color: $body-color;
-$nav-link-padding-x: $spacer;
-$nav-link-padding-y: $spacer * 0.75;
+$nav-tabs-border-width: 2px !default;
+$nav-tabs-border-color: $border-color !default;
+$nav-tabs-link-hover-border-color: $body-color !default;
+$nav-tabs-link-active-border-color: $body-color !default;
+$nav-link-padding-x: $spacer !default;
+$nav-link-padding-y: $spacer * 0.75 !default;
 // Progress Bar
-$progress-height:1.25rem;
-$progress-bar-bg: $secondary;
-$progress-bg: $body-bg;
-$progress-border-radius: 1.25rem;
+$progress-height:1.25rem !default;
+$progress-bar-bg: $secondary !default;
+$progress-bg: $body-bg !default;
+$progress-border-radius: 1.25rem !default;
 // Pagination
-$pagination-padding-y: map-get($spacers, 2);
-$pagination-padding-x: map-get($spacers, 3);
-$pagination-bg: $card-bg;
-$pagination-color: $body-color;
-$pagination-border-color: $border-color;
-$pagination-hover-bg: $storm-grey-100;
-$pagination-active-bg: $primary;
-$pagination-active-color: $buildout-blue-50;
-$pagination-disabled-color: $text-muted;
-$pagination-disabled-bg: $storm-grey-100;
+$pagination-padding-y: map-get($spacers, 2) !default;
+$pagination-padding-x: map-get($spacers, 3) !default;
+$pagination-bg: $card-bg !default;
+$pagination-color: $body-color !default;
+$pagination-border-color: $border-color !default;
+$pagination-hover-bg: $storm-grey-100 !default;
+$pagination-active-bg: $primary !default;
+$pagination-active-color: $buildout-blue-50 !default;
+$pagination-disabled-color: $text-muted !default;
+$pagination-disabled-bg: $storm-grey-100 !default;
 // Inputs
-$input-padding-x: map-get($spacers, 4);
-$input-padding-y: map-get($spacers, 2);
-$input-border-width: $border-width;
-$input-border-color: $border-color;
-$input-border-radius: $border-radius;
-$input-bg: $white;
-$input-color: $body-color;
-$input-disabled-bg: $storm-grey-300;
-$input-focus-border-color: $buildout-blue-100;
-$input-group-addon-bg: $storm-grey-100;
+$input-padding-x: map-get($spacers, 4) !default;
+$input-padding-y: map-get($spacers, 2) !default;
+$input-border-width: $border-width !default;
+$input-border-color: $border-color !default;
+$input-border-radius: $border-radius !default;
+$input-bg: $white !default;
+$input-color: $body-color !default;
+$input-disabled-bg: $storm-grey-300 !default;
+$input-focus-border-color: $buildout-blue-100 !default;
+$input-group-addon-bg: $storm-grey-100 !default;
 // Accordion
-$accordion-bg: $card-bg;
-$accordion-border-color: $border-color;
+$accordion-bg: $card-bg !default;
+$accordion-border-color: $border-color !default;
 // Modal
-$modal-content-bg: $card-bg;
+$modal-content-bg: $card-bg !default;
