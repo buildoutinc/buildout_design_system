@@ -53,7 +53,7 @@
 
       &:hover {
         border: solid $nav-tabs-link-hover-border-color;
-        border-width: var(--#{$prefix}nav-tabs-border-width) var(--#{$prefix}nav-tabs-border-width) 0;
+        border-width: 2px var(--#{$prefix}nav-tabs-border-width) 0;
         color: var(--#{$prefix}nav-tabs-link-hover-border-color);
       }
 
