@@ -38,7 +38,7 @@
     --#{$prefix}nav-link-color: #{$text-muted};
 
     display: flex;
-    gap: 0;
+    gap: map-get($spacers, "0-5");
     padding-bottom: -var(--#{$prefix}nav-tabs-border-width);
 
     .nav-link {
@@ -47,7 +47,7 @@
       gap: map-get($spacers,2);
       padding: map-get($spacers, 3) $nav-link-padding-x;
       border: solid transparent;
-      border-width: var(--#{$prefix}nav-tabs-border-width) var(--#{$prefix}nav-tabs-border-width) 0;
+      border-width: 2px var(--#{$prefix}nav-tabs-border-width) 0;
       color: var(--#{$prefix}nav-link-color);
 
 
