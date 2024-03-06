@@ -64,26 +64,32 @@
 
   &.btn-text-primary {
     --#{$prefix}btn-color: #{$primary};
+    --#{$prefix}btn-hover-bg: #{$buildout-blue-50};
   }
 
   &.btn-text-secondary {
     --#{$prefix}btn-color: #{$secondary};
+    --#{$prefix}btn-hover-bg: #{$purple-heart-50};
   }
 
   &.btn-text-info {
     --#{$prefix}btn-color: #{$info};
+    --#{$prefix}btn-hover-bg: #{$seagull-50};
   }
 
   &.btn-text-success {
     --#{$prefix}btn-color: #{$success};
+    --#{$prefix}btn-hover-bg: #{$mountain-meadow-50};
   }
 
   &.btn-text-warning {
     --#{$prefix}btn-color: #{$warning};
+    --#{$prefix}btn-hover-bg: #{$harvest-gold-50};
   }
 
   &.btn-text-danger {
     --#{$prefix}btn-color: #{$danger};
+    --#{$prefix}btn-hover-bg: #{$solid-pink-50};
   }
 
   &.btn-text-neutral {
