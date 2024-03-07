@@ -2,3 +2,33 @@
   font-weight: $font-weight-bolder;
   font-size: $font-size-lg;
 }
+
+.alert {
+  &-info {
+    --#{$prefix}alert-color: #{$seagull-950};
+    --#{$prefix}alert-bg: #{$seagull-50};
+    --#{$prefix}alert-border-color: #{$seagull-400};
+    --#{$prefix}alert-link-color: #{$seagull-700};
+  }
+
+  &-success {
+    --#{$prefix}alert-color: #{$mountain-meadow-950};
+    --#{$prefix}alert-bg: #{$mountain-meadow-50};
+    --#{$prefix}alert-border-color: #{$mountain-meadow-400};
+    --#{$prefix}alert-link-color: #{$mountain-meadow-700};
+  }
+
+  &-warning {
+    --#{$prefix}alert-color: #{$harvest-gold-950};
+    --#{$prefix}alert-bg: #{$harvest-gold-50};
+    --#{$prefix}alert-border-color: #{$harvest-gold-400};
+    --#{$prefix}alert-link-color: #{$harvest-gold-700};
+  }
+
+  &-danger {
+    --#{$prefix}alert-color: #{$solid-pink-950};
+    --#{$prefix}alert-bg: #{$solid-pink-50};
+    --#{$prefix}alert-border-color: #{$solid-pink-400};
+    --#{$prefix}alert-link-color: #{$solid-pink-700};
+  }
+}
