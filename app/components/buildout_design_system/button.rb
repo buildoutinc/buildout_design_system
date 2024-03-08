@@ -15,9 +15,9 @@ module BuildoutDesignSystem
     }.freeze
 
     SUB_TYPES = {
-      contained: "",
-      outline: "-outline",
-      text: "-text",
+      contained: "-contained",
+      outline: "-outlined",
+      text: "-plain",
       shaded: "-shaded"
     }.freeze
 

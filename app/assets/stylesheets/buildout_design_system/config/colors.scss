@@ -108,4 +108,126 @@ $strawberry-900: #920945;
 $strawberry-950: #5B0026;
 
 // Gradient
-$primary-gradient: linear-gradient(116deg, #{$buildout-blue-600} 13.34%, #{$purple-heart-500} 83.43%)
+$primary-gradient: linear-gradient(116deg, #{$buildout-blue-600} 13.34%, #{$purple-heart-500} 83.43%);
+
+$ds-color-primary-100: #a8baf0;
+$ds-color-primary-200: #87a0e8;
+$ds-color-primary-300: #6685e0;
+$ds-color-primary-400: #456bd8;
+$ds-color-primary-500: #2450d0;
+$ds-color-primary-600: #2042a7;
+$ds-color-primary-700: #1d357e;
+$ds-color-primary-800: #192755;
+$ds-color-primary-900: #15192c;
+$ds-color-primary: $ds-color-primary-500;
+
+$ds-color-secondary-100: #cfbbeb;
+$ds-color-secondary-200: #b190df;
+$ds-color-secondary-300: #924fdc;
+$ds-color-secondary-400: #8338d5;
+$ds-color-secondary-500: #7422ce;
+$ds-color-secondary-600: #651db3;
+$ds-color-secondary-700: #551997;
+$ds-color-secondary-800: #46147c;
+$ds-color-secondary-900: #2e0e52;
+$ds-color-secondary: $ds-color-secondary-500;
+
+$ds-color-accent-100: #eef5bc;
+$ds-color-accent-200: #e3f194;
+$ds-color-accent-300: #d8eb6d;
+$ds-color-accent-400: #cfe552;
+$ds-color-accent-500: #c7e03b;
+$ds-color-accent-600: #b9cc34;
+$ds-color-accent-700: #a6b32b;
+$ds-color-accent-800: #949b25;
+$ds-color-accent-900: #77731c;
+$ds-color-accent: $ds-color-accent-400;
+
+$ds-color-danger-100: #ecb5bb;
+$ds-color-danger-200: #e18a92;
+$ds-color-danger-300: #d5646d;
+$ds-color-danger-400: #cb4e53;
+$ds-color-danger-500: #c2403e;
+$ds-color-danger-600: #b23a3d;
+$ds-color-danger-700: #9e3439;
+$ds-color-danger-800: #8b2d37;
+$ds-color-danger-900: #6a2332;
+$ds-color-danger: $ds-color-danger-800;
+
+$ds-color-warning-100: #f8efdc;
+$ds-color-warning-200: #eed8a9;
+$ds-color-warning-300: #e5bf77;
+$ds-color-warning-400: #dba74a;
+$ds-color-warning-500: #d18624;
+$ds-color-warning-600: #cd7c22;
+$ds-color-warning-700: #c66d1f;
+$ds-color-warning-800: #be601c;
+$ds-color-warning-900: #b54a17;
+$ds-color-warning: $ds-color-warning-300;
+
+$ds-color-success-100: #e4f6ef;
+$ds-color-success-200: #b3e5d2;
+$ds-color-success-300: #82d5b5;
+$ds-color-success-400: #50c498;
+$ds-color-success-500: #1fb37b;
+$ds-color-success-600: #1aa96f;
+$ds-color-success-700: #159f63;
+$ds-color-success-800: #0f9557;
+$ds-color-success-900: #0a8b4b;
+$ds-color-success: $ds-color-success-500;
+
+$ds-color-info-100: #b5e7f3;
+$ds-color-info-200: #89d9ec;
+$ds-color-info-300: #65c9e3;
+$ds-color-info-400: #50bfdc;
+$ds-color-info-500: #4ab4d7;
+$ds-color-info-600: #43a3c1;
+$ds-color-info-700: #3a8ea4;
+$ds-color-info-800: #32798b;
+$ds-color-info-900: #24575f;
+$ds-color-info: $ds-color-info-300;
+
+$ds-color-neutral-100: #f3f5f6;
+$ds-color-neutral-200: #dbddde;
+$ds-color-neutral-300: #c2c4c6;
+$ds-color-neutral-400: #aaacae;
+$ds-color-neutral-500: #929496;
+$ds-color-neutral-600: #797b7e;
+$ds-color-neutral-700: #616366;
+$ds-color-neutral-800: #484a4e;
+$ds-color-neutral-900: #303236;
+$ds-color-neutral: $ds-color-neutral-500;
+
+$ds-color-background-light-100: #ffffff;
+$ds-color-background-light-200: #f0f0f2;
+$ds-color-background-light-300: #e1e2e4;
+$ds-color-background-light-400: #d2d3d7;
+$ds-color-background-light-500: #c3c5c9;
+$ds-color-background-light-600: #b4b6bc;
+$ds-color-background-light-700: #a5a7ae;
+$ds-color-background-light-800: #9699a1;
+$ds-color-background-light-900: #878a93;
+$ds-color-background-light: $ds-color-background-light-100;
+
+$ds-color-background-dark-100: #32293d;
+$ds-color-background-dark-200: #2f2639;
+$ds-color-background-dark-300: #2b2335;
+$ds-color-background-dark-400: #282031;
+$ds-color-background-dark-500: #251d2e;
+$ds-color-background-dark-600: #21192a;
+$ds-color-background-dark-700: #1e1626;
+$ds-color-background-dark-800: #1a1322;
+$ds-color-background-dark-900: #17101e;
+$ds-color-background-dark: $ds-color-background-dark-900;
+
+$ds-color-text-dark: $ds-color-neutral-900;
+$ds-color-text-light: $ds-color-background-light-100;
+
+$ds-spacing-xs: 4px;
+$ds-spacing-sm: 8px;
+$ds-spacing-md: 16px;
+
+$ds-border-radius: 4px;
+$ds-font-weight-bold: 700;
+
+$ds-border-radius: 4px;
