@@ -1,391 +1,179 @@
-// // Button-Specific Classes
-// // Buttons with Icons orders
-// .btn {
-//   align-items: center;
-//   display: inline-flex;
-//   flex-direction: row;
-//   font-weight: $font-weight-bold;
-//   gap: map-get($spacers, 2);
-//   justify-content: center;
-
-//   &.btn-icon {
-//     padding: map-get($spacers, 2);
-//   }
-
-//   &.end {
-//     flex-direction: row-reverse;
-//   }
-
-//   &.btn-primary {
-//     --#{$prefix}btn-color: #{$buildout-blue-50};
-//   }
-//   &.btn-secondary {
-//     --#{$prefix}btn-color: #{$purple-heart-50};
-//   }
-//   &.btn-neutral {
-//     @include button-variant(
-//       $neutral, // bg
-//       $neutral, // border
-//       $storm-grey-50,  // color
-//       $neutral-emphasis, // hover-bg
-//       $neutral-emphasis, // hover-border
-//       $storm-grey-50, // hover-color
-//       $neutral-emphasis, // active-bg
-//       $neutral-emphasis, // active-border
-//       $storm-grey-50, // active-color
-//       $storm-grey-400, // disabled-bg
-//       $storm-grey-400, // disabled-border
-//       $storm-grey-50 // disabled-color
-//     )
-//   }
-//   &.btn-info {
-//     --#{$prefix}btn-color: #{$seagull-50};
-//   }
-//   &.btn-success {
-//     --#{$prefix}btn-color: #{$mountain-meadow-50};
-//   }
-//   &.btn-warning { 
-//     --#{$prefix}btn-color: #{$harvest-gold-50};
-//   }
-//   &.btn-danger {
-//     --#{$prefix}btn-color: #{$solid-pink-50};
-//   }
-
-//   &.btn-outline-neutral {
-//     @include button-outline-variant(
-//       $neutral, // color
-//       $neutral-emphasis, // hover-color
-//       $storm-grey-50, // active-bg
-//       $neutral-emphasis, // active-border
-//       $neutral // active-color
-//     )
-//   }
-  
-
-//   &.btn-text-primary {
-//     --#{$prefix}btn-color: #{$primary};
-//   }
-
-//   &.btn-text-secondary {
-//     --#{$prefix}btn-color: #{$secondary};
-//   }
-
-//   &.btn-text-info {
-//     --#{$prefix}btn-color: #{$info};
-//   }
-
-//   &.btn-text-success {
-//     --#{$prefix}btn-color: #{$success};
-//   }
-
-//   &.btn-text-warning {
-//     --#{$prefix}btn-color: #{$warning};
-//   }
-
-//   &.btn-text-danger {
-//     --#{$prefix}btn-color: #{$danger};
-//   }
-
-//   &.btn-text-neutral {
-//     --#{$prefix}btn-color: #{$neutral};
-//     --#{$prefix}btn-hover-bg: #{$storm-grey-50};
-
-//     &:hover {
-//       --#{$prefix}btn-color: #{$neutral-emphasis};
-//     }
-//   }
-
-
-
-//   &.btn-shaded {
-
-//     &-primary {
-//       --#{$prefix}btn-bg: #{$buildout-blue-50};
-//       --#{$prefix}btn-color: #{$buildout-blue-500};
-
-//       &:hover {
-//         --#{$prefix}btn-hover-bg: #{$buildout-blue-100};
-//         --#{$prefix}btn-hover-color: #{$buildout-blue-600};
-//       }
-//     }
-
-//     &-secondary {
-//       --#{$prefix}btn-bg: #{$purple-heart-50};
-//       --#{$prefix}btn-color: #{$purple-heart-500};
-
-//       &:hover {
-//         --#{$prefix}btn-hover-bg: #{$purple-heart-100};
-//         --#{$prefix}btn-hover-color: #{$purple-heart-600};
-//       }
-//     }
-
-//     &-neutral {
-//       --#{$prefix}btn-bg: #{$storm-grey-50};
-//       --#{$prefix}btn-color: #{$storm-grey-500};
-
-//       &:hover {
-//         --#{$prefix}btn-hover-bg: #{$storm-grey-100};
-//         --#{$prefix}btn-hover-color: #{$storm-grey-600};
-//       }
-//     }
-
-//     &-info {
-//       --#{$prefix}btn-bg: #{$seagull-50};
-//       --#{$prefix}btn-color: #{$seagull-500};
-
-//       &:hover {
-//         --#{$prefix}btn-hover-bg: #{$seagull-100};
-//         --#{$prefix}btn-hover-color: #{$seagull-600};
-//       }
-//     }
-
-//     &-success {
-//       --#{$prefix}btn-bg: #{$mountain-meadow-50};
-//       --#{$prefix}btn-color: #{$mountain-meadow-500};
-
-//       &:hover {
-//         --#{$prefix}btn-hover-bg: #{$mountain-meadow-100};
-//         --#{$prefix}btn-hover-color: #{$mountain-meadow-600};
-//       }
-//     }
-
-//     &-warning {
-//       --#{$prefix}btn-bg: #{$harvest-gold-50};
-//       --#{$prefix}btn-color: #{$harvest-gold-500};
-
-//       &:hover {
-//         --#{$prefix}btn-hover-bg: #{$harvest-gold-100};
-//         --#{$prefix}btn-hover-color: #{$harvest-gold-600};
-//       }
-//     }
-
-//     &-danger {
-//       --#{$prefix}btn-bg: #{$solid-pink-50};
-//       --#{$prefix}btn-color: #{$solid-pink-500};
-
-//       &:hover {
-//         --#{$prefix}btn-hover-bg: #{$solid-pink-100};
-//         --#{$prefix}btn-hover-color: #{$solid-pink-600};
-//       }
-//     }
-//   }
-// }
-
-
-.ds-button {
-  min-height: 38px;
-  line-height: 0;
-  display: inline-flex;
+// Button-Specific Classes
+// Buttons with Icons orders
+.btn {
   align-items: center;
-  gap: 8px;
-  transition: all $long $emphasized-standard;
+  display: inline-flex;
+  flex-direction: row;
+  font-weight: $font-weight-bold;
+  gap: map-get($spacers, 2);
+  justify-content: center;
 
-  padding: $ds-spacing-sm $ds-spacing-md;
-  border-radius: $ds-border-radius;
-
-  color: $ds-color-text-light;
-  font-weight: $ds-font-weight-bold;
-  white-space: nowrap;
-
-  &.ds-button--contained {
-    background: $ds-color-neutral-500;
-    border: 1px solid $ds-color-neutral-500;
+  &.btn-icon {
+    padding: map-get($spacers, 2);
   }
 
-  &.ds-button--outlined {
-    border: 1px solid $ds-color-neutral-500;
-    color: $ds-color-neutral-500;
-  }
-
-  &.ds-button--plain {
-    background: none;
-    border: 1px solid transparent;
-    color: $ds-color-neutral-500;
-  }
-
-  // .ds-button__icon {
-  //   margin-right: $ds-spacing-sm;
-
-  //   &--right {
-  //     margin-right: 0;
-  //     margin-left: $ds-spacing-sm;
-  //   }
-  // }
   &.end {
     flex-direction: row-reverse;
   }
-}
 
-@mixin button-variant(
-  $filled-foreground-color: $ds-color-text-light,
+  &.btn-primary {
+    --#{$prefix}btn-color: #{$buildout-blue-50};
+  }
+  &.btn-secondary {
+    --#{$prefix}btn-color: #{$purple-heart-50};
+  }
+  &.btn-neutral {
+    @include button-variant(
+      $neutral, // bg
+      $neutral, // border
+      $storm-grey-50,  // color
+      $neutral-emphasis, // hover-bg
+      $neutral-emphasis, // hover-border
+      $storm-grey-50, // hover-color
+      $neutral-emphasis, // active-bg
+      $neutral-emphasis, // active-border
+      $storm-grey-50, // active-color
+      $storm-grey-400, // disabled-bg
+      $storm-grey-400, // disabled-border
+      $storm-grey-50 // disabled-color
+    )
+  }
+  &.btn-info {
+    --#{$prefix}btn-color: #{$seagull-50};
+  }
+  &.btn-success {
+    --#{$prefix}btn-color: #{$mountain-meadow-50};
+  }
+  &.btn-warning { 
+    --#{$prefix}btn-color: #{$harvest-gold-50};
+  }
+  &.btn-danger {
+    --#{$prefix}btn-color: #{$solid-pink-50};
+  }
 
-  $filled-color: none,
-  $filled-hover-color: none,
-  $filled-focus-color: none,
-  $filled-focus-border-color: none,
+  &.btn-outline-neutral {
+    @include button-outline-variant(
+      $neutral, // color
+      $neutral-emphasis, // hover-color
+      $storm-grey-50, // active-bg
+      $neutral-emphasis, // active-border
+      $neutral // active-color
+    )
+  }
+  
 
-  $outlined-color: $filled-color,
-  $outlined-hover-color: $filled-hover-color,
-  $outlined-focus-color: $filled-focus-color,
-  $outlined-focus-background-color: none,
+  &.btn-text-primary {
+    --#{$prefix}btn-color: #{$primary};
+    --#{$prefix}btn-hover-bg: #{$buildout-blue-50};
+  }
 
-  $plain-color: $filled-color,
-  $plain-hover-color: $filled-hover-color,
-  $plain-hover-background-color: none,
-  $plain-focus-color: $filled-focus-color,
-  $plain-focus-background-color: none,
-) {
-  &:not(.ds-button--disabled) {
-    &.ds-button--contained {
-      background: $filled-color;
-      border: 1px solid $filled-color;
-      color: $filled-foreground-color;
+  &.btn-text-secondary {
+    --#{$prefix}btn-color: #{$secondary};
+    --#{$prefix}btn-hover-bg: #{$purple-heart-50};
+  }
+
+  &.btn-text-info {
+    --#{$prefix}btn-color: #{$info};
+    --#{$prefix}btn-hover-bg: #{$seagull-50};
+  }
+
+  &.btn-text-success {
+    --#{$prefix}btn-color: #{$success};
+    --#{$prefix}btn-hover-bg: #{$mountain-meadow-50};
+  }
+
+  &.btn-text-warning {
+    --#{$prefix}btn-color: #{$warning};
+    --#{$prefix}btn-hover-bg: #{$harvest-gold-50};
+  }
+
+  &.btn-text-danger {
+    --#{$prefix}btn-color: #{$danger};
+    --#{$prefix}btn-hover-bg: #{$solid-pink-50};
+  }
+
+  &.btn-text-neutral {
+    --#{$prefix}btn-color: #{$neutral};
+    --#{$prefix}btn-hover-bg: #{$storm-grey-50};
+
+    &:hover {
+      --#{$prefix}btn-color: #{$neutral-emphasis};
+    }
+  }
+
+
+
+  &.btn-shaded {
+
+    &-primary {
+      --#{$prefix}btn-bg: #{$buildout-blue-50};
+      --#{$prefix}btn-color: #{$buildout-blue-500};
 
       &:hover {
-        background: $filled-hover-color;
-        border-color: $filled-hover-color;
-      }
-
-      &:focus {
-        background: $filled-focus-color;
-        border-color: $filled-focus-border-color;
+        --#{$prefix}btn-hover-bg: #{$buildout-blue-100};
+        --#{$prefix}btn-hover-color: #{$buildout-blue-600};
       }
     }
 
-    &.ds-button--outlined {
-      background: none;
-      border: 1px solid $outlined-color;
-      color: $outlined-color;
+    &-secondary {
+      --#{$prefix}btn-bg: #{$purple-heart-50};
+      --#{$prefix}btn-color: #{$purple-heart-500};
 
       &:hover {
-        border-color: $outlined-hover-color;
-        color: $outlined-hover-color;
-      }
-
-      &:focus {
-        background: $outlined-focus-background-color;
-        border-color: $outlined-focus-color;
-        color: $outlined-focus-color;
+        --#{$prefix}btn-hover-bg: #{$purple-heart-100};
+        --#{$prefix}btn-hover-color: #{$purple-heart-600};
       }
     }
 
-    &.ds-button--plain {
-      background: none;
-      border: 1px solid transparent;
-      color: $plain-color;
+    &-neutral {
+      --#{$prefix}btn-bg: #{$storm-grey-50};
+      --#{$prefix}btn-color: #{$storm-grey-500};
 
       &:hover {
-        background: $plain-hover-background-color;
-        color: $plain-hover-color;
+        --#{$prefix}btn-hover-bg: #{$storm-grey-100};
+        --#{$prefix}btn-hover-color: #{$storm-grey-600};
       }
+    }
 
-      &:focus {
-        background: $plain-focus-background-color;
-        color: $plain-focus-color;
+    &-info {
+      --#{$prefix}btn-bg: #{$seagull-50};
+      --#{$prefix}btn-color: #{$seagull-500};
+
+      &:hover {
+        --#{$prefix}btn-hover-bg: #{$seagull-100};
+        --#{$prefix}btn-hover-color: #{$seagull-600};
+      }
+    }
+
+    &-success {
+      --#{$prefix}btn-bg: #{$mountain-meadow-50};
+      --#{$prefix}btn-color: #{$mountain-meadow-500};
+
+      &:hover {
+        --#{$prefix}btn-hover-bg: #{$mountain-meadow-100};
+        --#{$prefix}btn-hover-color: #{$mountain-meadow-600};
+      }
+    }
+
+    &-warning {
+      --#{$prefix}btn-bg: #{$harvest-gold-50};
+      --#{$prefix}btn-color: #{$harvest-gold-500};
+
+      &:hover {
+        --#{$prefix}btn-hover-bg: #{$harvest-gold-100};
+        --#{$prefix}btn-hover-color: #{$harvest-gold-600};
+      }
+    }
+
+    &-danger {
+      --#{$prefix}btn-bg: #{$solid-pink-50};
+      --#{$prefix}btn-color: #{$solid-pink-500};
+
+      &:hover {
+        --#{$prefix}btn-hover-bg: #{$solid-pink-100};
+        --#{$prefix}btn-hover-color: #{$solid-pink-600};
       }
     }
   }
 }
 
-.ds-button--primary {
-  $ds-color-secondary-accessible: #b07bea;
-
-  @include button-variant(
-    $filled-color: $ds-color-secondary-500,
-    $filled-hover-color: $ds-color-secondary-600,
-    $filled-focus-color: $ds-color-secondary-700,
-    $filled-focus-border-color: $ds-color-secondary-400,
-
-    $outlined-focus-background-color: $ds-color-secondary-100,
-
-    $plain-hover-background-color: rgba($ds-color-secondary-accessible, 0.2),
-    $plain-focus-background-color: rgba($ds-color-secondary-accessible, 0.4),
-  );
-}
-
-
-.ds-button--secondary {
-  $ds-color-primary-accessible: #a8baf0;
-
-  @include button-variant(
-    $filled-color: $ds-color-primary-500,
-    $filled-hover-color: $ds-color-primary-600,
-    $filled-focus-color: $ds-color-primary-700,
-    $filled-focus-border-color: $ds-color-primary-400,
-
-    $outlined-focus-background-color: $ds-color-primary-100,
-
-    $plain-hover-background-color: rgba($ds-color-primary-accessible, 0.2),
-    $plain-focus-background-color: rgba($ds-color-primary-accessible, 0.4),
-  );
-}
-
-.ds-button--accent {
-  @include button-variant(
-    $filled-color: $ds-color-neutral-700,
-    $filled-hover-color: $ds-color-neutral-800,
-    $filled-focus-color: $ds-color-neutral-900,
-    $filled-focus-border-color: $ds-color-neutral-600,
-
-    $outlined-focus-color: $ds-color-neutral-700,
-    $outlined-focus-background-color: $ds-color-neutral-200,
-
-    $plain-hover-background-color: $ds-color-neutral-100,
-    $plain-focus-color: $ds-color-neutral-700,
-    $plain-focus-background-color: $ds-color-neutral-200,
-  );
-}
-
-.ds-button--success {
-  @include button-variant(
-    $filled-foreground-color: $ds-color-neutral-900,
-
-    $filled-color: $ds-color-success-400,
-    $filled-hover-color: $ds-color-success-500,
-    $filled-focus-color: $ds-color-success-600,
-    $filled-focus-border-color: $ds-color-success-400,
-
-    $outlined-color: $ds-color-success-700,
-    $outlined-hover-color: $ds-color-success-800,
-    $outlined-focus-color: $ds-color-success-800,
-    $outlined-focus-background-color: $ds-color-success-100,
-
-    $plain-color: $ds-color-success-700,
-    $plain-hover-color: $ds-color-success-800,
-    $plain-hover-background-color: $ds-color-success-100,
-    $plain-focus-color: $ds-color-success-800,
-    $plain-focus-background-color: $ds-color-success-200,
-  );
-}
-
-.ds-button--warning {
-  @include button-variant(
-    $filled-foreground-color: $ds-color-neutral-900,
-
-    $filled-color: $ds-color-warning-400,
-    $filled-hover-color: $ds-color-warning-500,
-    $filled-focus-color: $ds-color-warning-600,
-    $filled-focus-border-color: $ds-color-warning-400,
-
-    $outlined-focus-background-color: $ds-color-warning-100,
-
-    $plain-hover-background-color: $ds-color-warning-100,
-    $plain-focus-background-color: $ds-color-warning-200,
-  );
-}
-
-.ds-button--danger {
-  $ds-color-danger-accessible: #ecb5bb;
-
-  @include button-variant(
-    $filled-color: $ds-color-danger-600,
-    $filled-hover-color: $ds-color-danger-700,
-    $filled-focus-color: $ds-color-danger-800,
-    $filled-focus-border-color: $ds-color-danger-600,
-
-    $outlined-focus-background-color: $ds-color-danger-100,
-
-    $plain-hover-background-color: rgba($ds-color-danger-accessible, 0.2),
-    $plain-focus-background-color: rgba($ds-color-danger-accessible, 0.4),
-  );
-}
