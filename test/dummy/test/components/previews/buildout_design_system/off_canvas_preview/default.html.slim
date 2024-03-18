@@ -1,0 +1,10 @@
+= render(BuildoutDesignSystem::Button.new({ variant: 'secondary' }, data: { "bs-toggle": "offcanvas", "bs-target": "#offcanvasExample"}))
+  | Open Offcanvas
+
+= render(BuildoutDesignSystem::OffCanvas.new(class_name: class_name, position: position, id: "offcanvasExample")) do |offcanvas|
+  - offcanvas.with_header(title: "Offcanvas Title")
+  - offcanvas.with_body do
+    | Some text as the body of the offcanvas
+  - offcanvas.with_footer do
+    = render(BuildoutDesignSystem::Button.new({ variant: "secondary" }, data: { "bs-dismiss": "offcanvas"})) do 
+      | Close
