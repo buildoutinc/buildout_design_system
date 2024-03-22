@@ -172,6 +172,11 @@ $nav-tabs-border-width: 0 !default;
 $nav-tabs-link-active-bg: transparent !default;
 
 // --------------------------------------------------
+// POPOVER
+// --------------------------------------------------
+$popover-box-shadow: $box-shadow;
+
+// --------------------------------------------------
 // BADGES
 // --------------------------------------------------
 $badge-padding-x: map-get($spacers, 3) !default; // 12px
