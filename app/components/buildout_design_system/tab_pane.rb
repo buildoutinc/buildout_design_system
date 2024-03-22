@@ -2,12 +2,12 @@
 
 module BuildoutDesignSystem
   class TabPane < ViewComponent::Base
-    attr_reader :class_name, :active, :id
-    def initialize(class_name: "", active: false, id: nil)
+    attr_reader :class_name, :active, :name
+    def initialize(class_name: "", active: false, name: nil)
       super()
       @class_name = class_name
       @active = active
-      @id = id
+      @name = name
     end
   end
 end

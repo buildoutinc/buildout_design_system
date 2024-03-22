@@ -2,13 +2,14 @@
 = render(BuildoutDesignSystem::Card.new()) do | card |
   
   = render(BuildoutDesignSystem::Tabs.new(variant: "square")) do | tab_container |
-    = tab_container.with_tab(name: "tab1content", label: "Tab 1", active: true)
-    = tab_container.with_tab(name: "tab2content", label: "Tab 2", icon: "fa-otter")
+    = tab_container.with_tab(name: "tab1contentsquare", label: "Tab 1", active: true)
+    = tab_container.with_tab(name: "tab2contentsquare", label: "Tab 2", icon: "fa-otter")
     
-    = tab_container.with_tab_pane(id: "tab1content", active: true) do
+  = render(BuildoutDesignSystem::TabPanes.new()) do | pane |
+    = pane.with_tab_pane(name: "tab1contentsquare", active: true) do
       .p-4
         p Tab 1 Content
     
-    = tab_container.with_tab_pane(id: "tab2content") do
+    = pane.with_tab_pane(name: "tab2contentsquare") do
       .p-4
         p Tab 2 Content

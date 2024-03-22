@@ -10,5 +10,7 @@ module BuildoutDesignSystem
     def pills; end
 
     def square; end
+
+    def vertical; end
   end
 end
