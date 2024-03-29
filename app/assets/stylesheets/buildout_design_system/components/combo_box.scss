@@ -1,0 +1,23 @@
+$input-height: 38px;
+
+.combo-box {
+  .search-icon {
+    left: 1px;
+    bottom: 1px;
+    height: ($input-height - 2px);
+    width: $input-height;
+    border-radius: 3px 1px 1px 3px;
+    background-color: $storm-grey-100;
+    border-right: 1px solid $storm-grey-300;
+  }
+
+  input {
+    height: $input-height;
+    padding-left: 54px;
+  }
+
+  .combo-button {
+    right: 2px;
+    bottom: 2px;
+  }
+}

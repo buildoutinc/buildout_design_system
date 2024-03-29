@@ -1,0 +1,7 @@
+label.mb-2 for="#{@id}"
+  = @label
+.combo-box.position-relative
+  span.search-icon.position-absolute.d-inline-flex.justify-content-center.align-items-center
+    i.fas.fa-search
+  input.form-control class="#{@class_name}" id="#{@id}"
+  = render BuildoutDesignSystem::Button.new({ variant: "neutral", icon_only: true, icon: "fa-chevron-down", style: "text", class_name: "position-absolute combo-button" })
