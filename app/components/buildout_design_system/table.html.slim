@@ -1,0 +1,6 @@
+table.table class="#{@class_name}" *@attrs
+  - if header?
+    = header 
+  tbody
+    - rows.each do |row|
+      = row
