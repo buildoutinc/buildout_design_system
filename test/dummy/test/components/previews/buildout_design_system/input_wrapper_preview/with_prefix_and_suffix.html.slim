@@ -1,0 +1,10 @@
+= render(BuildoutDesignSystem::InputWrapper.new) do |input_wrapper|
+  - input_wrapper.with_input(disabled: disabled, class: "#{invalid ? "is-invalid" : ""}", readonly: readonly, required: required, type: type)
+  - input_wrapper.with_prefix do
+    i.fas.fa-search
+  - input_wrapper.with_suffix do
+    span 0.00
+  - if label
+    - input_wrapper.with_label(required: required) { label }
+  - if helper_message
+    - input_wrapper.with_helper_message { helper_message }

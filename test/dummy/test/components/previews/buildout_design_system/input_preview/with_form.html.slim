@@ -1,0 +1,12 @@
+= form_with url: "/", id: "test-form" do |form|
+  = render(BuildoutDesignSystem::Input.new(type: type, class: "#{invalid ? "is-invalid" : ""}", disabled: disabled, readonly: readonly, form_context: form, field_name: :test))
+  button Send me
+
+javascript:
+  const form = document.getElementById("test-form");
+  form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const dataForAlert = [...formData].map(formField => `${formField[0]}: ${formField[1]}`).join("\n")
+      alert(dataForAlert)
+  });

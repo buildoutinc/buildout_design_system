@@ -143,11 +143,17 @@ $border-width: 1px !default;
 $form-label-font-weight: 700 !default;
 $input-padding-x: $spacer !default; // 16px
 $input-padding-y: map-get($spacers, 2) !default; // 8px
-$input-line-height: 1.2 !default; // close to 22px for 16px font
+$input-line-height: 1.375 !default; // close to 22px for 16px font
 
 $btn-line-height: $input-line-height !default;
 $btn-padding-x: $input-padding-x !default;
 $btn-padding-y: $input-padding-y !default;
+$input-height: 40px !default;
+$button-height: 40px !default;
+$form-feedback-valid-color: $storm-grey-300;
+$form-feedback-invalid-color: $solid-pink-400;
+$form-feedback-icon-valid: none;
+$form-feedback-icon-invalid: none;
 
 // --------------------------------------------------
 // CARDS
