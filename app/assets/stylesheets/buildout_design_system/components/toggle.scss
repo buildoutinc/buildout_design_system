@@ -9,6 +9,7 @@
   --#{$prefix}toggle-height: #{map-get($spacers, 3)};
   --#{$prefix}toggle-start: 0;
   --#{$prefix}toggle-end: calc(calc(var(--#{$prefix}toggle-width) - calc(var(--#{$prefix}toggle-thumb-margin)*2)) - var(--#{$prefix}toggle-thumb-width));
+  --#{$prefix}toggle-verbose-height: 32px;
 
   .form-check-input {
     position: relative;
@@ -73,20 +74,34 @@
       left: 0;
 
       &::before {
+        height: var(--#{$prefix}toggle-verbose-height);
         flex: 0 0 50%;
-        content: "ON";
+        content: "";
         color: var(--#{$prefix}toggle-color);
         background: var(--#{$prefix}toggle-active-bg);
         padding: var(--#{$prefix}toggle-thumb-margin) calc(var(--#{$prefix}toggle-thumb-margin)*2);
 
       }
       &::after{
+        height: var(--#{$prefix}toggle-verbose-height);
         flex: 0 0 50%;
-        content: "OFF";
+        content: "";
         color: var(--#{$prefix}toggle-color);
         background: var(--#{$prefix}toggle-bg);
         padding: var(--#{$prefix}toggle-thumb-margin) calc(var(--#{$prefix}toggle-thumb-margin)*2);
         text-align: right;
+      }
+
+      .indicator {
+        color: $storm-grey-50
+      }
+
+      .on-indicator {
+        left: calc(var(--#{$prefix}toggle-thumb-margin)*2);
+      }
+
+      .off-indicator {
+        right: calc(var(--#{$prefix}toggle-thumb-margin)*2);
       }
     }
 

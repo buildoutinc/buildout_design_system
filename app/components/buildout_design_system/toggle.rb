@@ -8,8 +8,7 @@ module BuildoutDesignSystem
       verbose: "verbose"
     }
 
-
-    def initialize(class_name: "", checked: false, value: nil, disabled: false, variant: VARIANT[:simple], **attrs)
+    def initialize(class_name: "", checked: false, value: nil, disabled: false, variant: VARIANT[:simple], on_icon: "", off_icon: "", **attrs)
       super(**attrs)
       @class_name = class_name
       @checked = checked
@@ -18,7 +17,8 @@ module BuildoutDesignSystem
       @value = value
       @disabled = disabled
       @id = attrs[:id]
+      @on_icon = on_icon
+      @off_icon = off_icon
     end
-
   end
 end
