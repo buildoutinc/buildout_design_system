@@ -1,4 +1,2 @@
-- column_span = @span == "auto" && @type == "grid" ? "" : "-auto"
-- column_type = @type == "grid" ? "g-col#{column_span}" : "col#{column_span}"
-div class="#{@class_name} #{@self_align} #{column_type}"
+div class="#{@class_name} #{@self_align} #{@breakpoints} #{@type}#{@span} " *@attrs
   = content

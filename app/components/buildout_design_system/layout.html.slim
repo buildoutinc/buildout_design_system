@@ -1,2 +1,2 @@
-div class="#{@type} #{@direction} gap-#{@gap} #{@align} #{@justify} #{@columns}" *@attrs
+div class="#{@type} #{type != "grid" ? @direction : ''} gap-#{@gap} #{@align} #{@justify} #{type == "grid" ? @columns : ''} #{@class_name}" *@attrs
   = content

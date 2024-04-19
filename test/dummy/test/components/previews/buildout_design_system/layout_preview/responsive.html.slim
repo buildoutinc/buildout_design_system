@@ -1,0 +1,10 @@
+= render(BuildoutDesignSystem::Card.new()) do 
+  h6 Example of a Responsive Layout
+  .p-5
+    = render(BuildoutDesignSystem::Layout.new(class_name: "", type: type, gap: gap, direction: direction, align: align, justify: justify, columns: 12)) do |layout|
+      = layout.with_column(span: 3, class_name: 'border border-success', breakpoints: { sm: 6, lg: 3 }) do
+        p Left Sidebar
+      = layout.with_column(span: 6, class_name: 'border border-primary', breakpoints: { sm: 6, lg: 6 }) do
+        p Main Content
+      = layout.with_column(span: 3, class_name: 'border border-warning', breakpoints: { sm: 6, lg: 3 }) do
+        p Right Sidebar

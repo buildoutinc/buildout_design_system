@@ -1,12 +1,18 @@
 module BuildoutDesignSystem
   class Column < ViewComponent::Base
     
-    def initialize(class_name: "", type: "flex", span: nil)
+    def initialize(type: "flex", class_name: "", span: 'auto', breakpoints: {}, **attrs)
       super()
+      
       @class_name = class_name
-      @span = span || "auto"
-      # @attrs = attrs
-      @type = type
+      @span = span == 'auto' && type == 'grid' ? '' : "-#{span}"
+      @type = class_prefix(type)
+      @breakpoints = breakpoints.map { |breakpoint, value| "#{@type}-#{breakpoint}-#{value}" }.join(' ')
+      @attrs = attrs
+    end
+
+    def class_prefix(type)
+      return type == "grid" ? "g-col" : "col"
     end
 
   end

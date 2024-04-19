@@ -1,8 +1,11 @@
 module BuildoutDesignSystem
   class Layout < ViewComponent::Base
-    renders_many :columns, -> do
-      BuildoutDesignSystem::Column.new(type: @type)
+    renders_many :columns, ->(span: "auto", class_name: '', breakpoints: {}) do
+      BuildoutDesignSystem::Column.new(type: @type, span: span, class_name: class_name, breakpoints: breakpoints)
     end
+    # renders_many :columns, -> do 
+    #   BuildoutDesignSystem::Column.new(type: @type, span: span)
+    # end
 
     DIRECTION = {
       horizontal: "flex-row",
@@ -24,9 +27,11 @@ module BuildoutDesignSystem
     }
 
     TYPES = {
-      flex: "d-flex",
+      flex: "row",
       grid: "grid"
     }
+
+    attr_reader :type
 
     def initialize(class_name: "", type: "flex", gap: 0, direction: "horizontal", align: "start", justify: "start", columns: 12, **attrs)
       super(**attrs)
@@ -39,6 +44,5 @@ module BuildoutDesignSystem
       @attrs = attrs
       @columns = "columns-#{columns}"
     end
-
   end
 end
