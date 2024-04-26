@@ -1,0 +1,10 @@
+= render(BuildoutDesignSystem::Card.new()) do 
+  h6 An example of a layout with columns that span multiple columns.
+  .p-5
+    = render(BuildoutDesignSystem::Layout.new(class_name: "", type: type, gap: gap, direction: direction, align: align, justify: justify, columns: 12)) do |layout|
+      = layout.with_column(span: 3, class_name: 'border border-success') do
+        p Left Sidebar
+      = layout.with_column(span: 6, class_name: 'border border-primary') do
+        p Main Content
+      = layout.with_column(span: 3, class_name: 'border border-warning') do
+        p Right Sidebar
