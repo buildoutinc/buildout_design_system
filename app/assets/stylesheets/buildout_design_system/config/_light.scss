@@ -116,3 +116,16 @@ $table-striped-bg: $storm-grey-50 !default;
 // --------------------------------------------------
 $popover-bg: $card-bg;
 $popover-border-color: $card-bg;
+
+// --------------------------------------------------
+// DROPDOWN
+// --------------------------------------------------
+$dropdown-bg: $card-bg;
+$dropdown-color: $body-color;
+$dropdown-item-padding-y: map-get($spacers, 2);
+$dropdown-item-padding-x: map-get($spacers, 3);
+$dropdown-border-color: $border-color;
+$dropdown-link-hover-bg: $body-bg;
+$dropdown-box-shadow: $box-shadow-sm;
+$dropdown-link-active-bg: $storm-grey-100;
+$dropdown-link-active-color: $body-color;
