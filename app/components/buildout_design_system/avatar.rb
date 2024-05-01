@@ -8,12 +8,9 @@ module BuildoutDesignSystem
       lg: "lg"
     }.freeze
 
-    def initialize( # rubocop:disable Lint/MissingSuper
-      images: [],
-      size: "sm"
-    )
+    def initialize(images: [], size: "sm")
 
-      @images = images.is_a?(Array) ? images : [images]
+      @images = Array.wrap(images)
       @size_class = SIZES[size.to_sym] ? "avatar-#{size}" : ""
     end
   end
