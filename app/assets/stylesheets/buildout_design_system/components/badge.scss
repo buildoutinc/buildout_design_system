@@ -2,6 +2,11 @@
   display: inline-flex;
   gap: map-get($spacers, 1);
   align-items: center;
+  line-height: var(--#{$prefix}badge-line-height);
+  --#{$prefix}badge-padding-x: 0.75rem;
+  @include rfs(1rem, --#{$prefix}badge-font-size);
+  --#{$prefix}badge-font-weight: 600;
+  --#{$prefix}badge-line-height: 1.375rem;
 
   &.end {
     flex-direction: row-reverse;
@@ -42,11 +47,18 @@
     background: $storm-grey-500;
   }
 
-  &.badge-lg {
-    --#{$prefix}badge-padding-x: 0.75rem;
-    --#{$prefix}badge-padding-y: 0.25rem;
-    @include rfs(1rem, --#{$prefix}badge-font-size);
-    --#{$prefix}badge-font-weight: 600;
+  &.badge-sm, &.badge-xs {
+    --#{$prefix}badge-font-weight: 400;
+    --#{$prefix}badge-line-height: 1rem;
+    --#{$prefix}badge-padding-x: 0.5rem;
   }
 
+  &.badge-sm {
+    @include rfs(0.875rem, --#{$prefix}badge-font-size);
+  }
+
+  &.badge-xs {
+    @include rfs(0.75rem, --#{$prefix}badge-font-size);
+    --#{$prefix}badge-padding-y: 0.125rem;
+  }
 }
