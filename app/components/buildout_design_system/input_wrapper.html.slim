@@ -1,0 +1,11 @@
+label.d-flex.flex-column.gap-2 class=@class_name *@attrs
+  - if label?
+    = label
+  span.d-flex.input-group
+    - if prefix?
+      = prefix
+    = input
+    - if suffix?
+      = suffix
+  - if helper_message?
+    = helper_message

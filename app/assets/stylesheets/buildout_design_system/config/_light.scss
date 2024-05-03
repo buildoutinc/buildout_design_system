@@ -99,9 +99,13 @@ $input-border-color: $border-color !default;
 $input-border-radius: $border-radius !default;
 $input-bg: $white !default;
 $input-color: $body-color !default;
-$input-disabled-bg: $storm-grey-300 !default;
+$input-disabled-bg: $storm-grey-100 !default;
 $input-focus-border-color: $buildout-blue-100 !default;
 $input-group-addon-bg: $storm-grey-100 !default;
+$input-invalid-color: $solid-pink-50 !default;
+$input-invalid-border-color: $solid-pink-400 !default;
+$input-invalid-bg-color: $solid-pink-50 !default;
+$input-invalid-helper-color: $solid-pink-400 !default;
 // Accordion
 $accordion-bg: $card-bg !default;
 $accordion-border-color: $border-color !default;
