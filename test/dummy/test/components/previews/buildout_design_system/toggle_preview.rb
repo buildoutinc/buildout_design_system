@@ -12,8 +12,10 @@ module BuildoutDesignSystem
       render(Toggle.new(checked: false, value: 1, disabled: false, variant: "simple", id: "test"))
     end
 
-    def verbose
-      render(Toggle.new(checked: true, value: 1, disabled: false, variant: "verbose", id: "test-verbose"))
+    # @param on_icon
+    # @param off_icon
+    def verbose(on_icon: "", off_icon: "")
+      render(Toggle.new(checked: true, value: 1, disabled: false, variant: "verbose", id: "test-verbose", on_icon: on_icon, off_icon: off_icon))
     end
     # @!endgroup
   end
