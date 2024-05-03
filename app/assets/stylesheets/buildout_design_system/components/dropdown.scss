@@ -1,0 +1,22 @@
+.dropdown-menu {
+  box-shadow: var(--#{$prefix}dropdown-box-shadow);
+}
+
+.dropdown-item {
+  border-style: solid;
+  border-color: transparent;
+  border-width: 1px 0;
+  transition: all $short3 $emphasized-standard;
+  display: inline-flex;
+  align-items: center;
+  gap: map-get($spacers, 2);
+
+  &:hover {
+    border-color: var(--#{$prefix}dropdown-border-color);
+  }
+
+  .shortcut {
+    color: $text-muted;
+    font-size: $font-size-sm;
+  }
+}

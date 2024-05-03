@@ -1,0 +1,11 @@
+= content_tag(@path ? :a : :button, class: "dropdown-item #{ @class_name }", href:@path, **@attrs) do
+  - if @startIcon.present?
+    i.fas.fa-fw class=@startIcon
+  span.flex-grow-1
+    = @label
+  - if @endIcon.present? || @shortcut.present?
+    span.d-inline-flex.gap-1.flex.align-items-center
+      - if @shortcut.present?
+        span.shortcut = @shortcut
+      - if @endIcon.present?
+        i.fas.fa-fw class=@endIcon
