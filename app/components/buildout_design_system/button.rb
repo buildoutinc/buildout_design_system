@@ -36,15 +36,22 @@ module BuildoutDesignSystem
       raise ArgumentError, "To use :icon_only, you must also pass :icon" if options[:icon_only] && !options[:icon]
 
       super(**attrs)
-      @variant = TYPES.fetch(options[:variant]&.to_sym || :primary, TYPES[:primary])
-      @style = SUB_TYPES.fetch(options[:style]&.to_sym || :contained, SUB_TYPES[:contained])
-      @size = BTN_SIZES.fetch(options[:size]&.to_sym || :md, BTN_SIZES[:md])
-      @path = options[:path]
-      @icon = options[:icon]
-      @icon_only = options[:icon_only] || false
-      @placement = options.fetch(:placement, "start")
-      @class_name = options[:class_name]
-      @attrs = attrs
+      values = options.merge(attrs)
+      @variant = TYPES.fetch(values[:variant]&.to_sym || :primary, TYPES[:primary])
+      @style = SUB_TYPES.fetch(values[:style]&.to_sym || :contained, SUB_TYPES[:contained])
+      @size = BTN_SIZES.fetch(values[:size]&.to_sym || :md, BTN_SIZES[:md])
+      @path = values[:path]
+      @icon = values[:icon]
+      @icon_only = values[:icon_only] || false
+      @placement = values.fetch(:placement, "start")
+      @class_name = values[:class_name] || values[:class]
+      @attrs = values.except(values_to_not_spread)
+    end
+
+    private
+
+    def values_to_not_spread
+      [:class, :class_name, :variant, :style, :size, :path, :icon, :icon_only, :placement]
     end
   end
 end

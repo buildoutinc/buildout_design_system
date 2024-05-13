@@ -1,11 +1,14 @@
--if @path
-  = link_to @path, { class: "btn btn#{@style}#{@variant} #{ @class_name } #{ @placement } #{@size} #{@icon_only ? "btn-icon" : ""}", **@attrs }  do
+ruby:
+  shared_class = "btn btn#{@style}#{@variant} #{ @class_name } #{ @placement } #{@size} #{@icon_only ? "btn-icon" : ""}"
+
+- if @path
+  = link_to @path, { class: shared_class, **@attrs }  do
     - if @icon.present?
       i.fa-solid class="#{ @icon }"
     - if !@icon_only
       = content
 - else  
-  button.btn type="button" class="btn#{@style}#{@variant} #{ @class_name } #{ @placement }  #{@icon_only ? "btn-icon" : ""}" *@attrs
+  button.btn type="button" class=shared_class *@attrs
     - if @icon.present?
       i.fa-solid class="#{ @icon }"
     - if !@icon_only
