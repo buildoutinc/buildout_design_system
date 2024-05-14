@@ -1,0 +1,4 @@
+= render(BuildoutDesignSystem::Alert.new(status: status, icon: icon, title: title, class_name: class_name, dismissable: dismissable)) do |alert|
+  = content
+  - alert.with_action do
+    = render(BuildoutDesignSystem::Button.new) { "Action" }

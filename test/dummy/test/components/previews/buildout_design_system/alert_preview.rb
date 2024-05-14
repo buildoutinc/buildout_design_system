@@ -15,7 +15,7 @@ module BuildoutDesignSystem
     # @param content "Message of the banner"
     # @param class_name "Additional Classes to add to the banner"
     # @param dismissable toggle "Boolean to determine if the banner is dismissable"
-    def default(  # rubocop:disable Metrics/ParameterLists
+    def default(
       status: "info",
       icon: "fa-info-circle",
       title: "Alert Title",
@@ -23,15 +23,18 @@ module BuildoutDesignSystem
       dismissable: false,
       content: "This is the banner message"
     )
-      render(Alert.new(
-              status: status,
-              icon: icon,
-              title: title,
-              class_name: class_name,
-              dismissable: dismissable
-            )) do
-        content
-      end
+      render_with_template(locals: { status: status, icon: icon, title: title, class_name: class_name, dismissable: dismissable, content: content })
+    end
+
+    def with_action(
+      status: "info",
+      icon: "fa-info-circle",
+      title: "Alert Title",
+      class_name: "",
+      dismissable: false,
+      content: "This is the banner message"
+    )
+      render_with_template(locals: { status: status, icon: icon, title: title, class_name: class_name, dismissable: dismissable, content: content })
     end
     # @!endgroup
   end

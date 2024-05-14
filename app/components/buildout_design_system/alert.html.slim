@@ -1,10 +1,12 @@
-.alert.d-flex.align-items-start.gap-2 class="alert-#{@status} #{@class_name} #{@dismissable ? "alert-dismissable" : ""}" role="alert"
+.alert.d-flex.align-items-start.gap-2 class="alert-#{@status} #{@class_name} #{@dismissable ? "alert-dismissable" : ""}" role="alert" *@attrs
   i.fa-solid.fa-fw.mt-1 class="#{@icon}"
   .alert-content.flex-grow-1
     - if @title.present?
       h6.alert-heading.m-0 = @title
     - if content.present?
       p.mb-0 = content
+  - if action?
+    = action
   - if @dismissable.present?
     button.btn.p-0 arial-label="Dismiss" data-bs-dismiss="alert"
       i.fa-solid.fa-fw.fa-times
