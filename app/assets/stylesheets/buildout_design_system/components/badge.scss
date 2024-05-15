@@ -7,45 +7,34 @@
   @include rfs(1rem, --#{$prefix}badge-font-size);
   --#{$prefix}badge-font-weight: 600;
   --#{$prefix}badge-line-height: 1.375rem;
+  color: var(--#{$prefix}badge-color);
+  background-color: var(--#{$prefix}badge-background-color);
+  border: 1px solid var(--#{$prefix}badge-border-color, var(--#{$prefix}badge-background-color));
 
   &.end {
     flex-direction: row-reverse;
   }
 
-  &.primary {
-    color: $buildout-blue-50;
-    background: $buildout-blue-700;
+  @mixin badgeCreator($className, $badgeColor, $backgroundColor) {
+    &.#{$className} {
+      --#{$prefix}badge-color: #{$badgeColor};
+      --#{$prefix}badge-background-color: #{$backgroundColor};
+    }
+
+    &.#{$className}-outline {
+      --#{$prefix}badge-color: #{$backgroundColor};
+      --#{$prefix}badge-border-color: #{$backgroundColor};
+      --#{$prefix}badge-background-color: transparent;
+    }
   }
 
-  &.secondary {
-    color: $purple-heart-50;
-    background-color: $purple-heart-500;
-  }
-
-  &.info {
-    color: $seagull-50;
-    background: $seagull-500;
-  }
-
-  &.success {
-    color: $mountain-meadow-50;
-    background: $mountain-meadow-800;
-  }
-
-  &.warning {
-    color: $harvest-gold-50;
-    background: $harvest-gold-500;
-  }
-
-  &.danger {
-    color: $solid-pink-50;
-    background: $solid-pink-500;
-  }
-
-  &.neutral {
-    color: $storm-grey-50;
-    background: $storm-grey-500;
-  }
+  @include badgeCreator("primary", $buildout-blue-50, $buildout-blue-700);
+  @include badgeCreator("secondary", $purple-heart-50, $purple-heart-500);
+  @include badgeCreator("info", $seagull-50, $seagull-500);
+  @include badgeCreator("success", $mountain-meadow-50, $mountain-meadow-800);
+  @include badgeCreator("warning", $harvest-gold-50, $harvest-gold-500);
+  @include badgeCreator("danger", $solid-pink-50, $solid-pink-500);
+  @include badgeCreator("neutral", $storm-grey-50, $storm-grey-500);
 
   &.badge-sm, &.badge-xs {
     --#{$prefix}badge-font-weight: 400;
@@ -59,6 +48,6 @@
 
   &.badge-xs {
     @include rfs(0.75rem, --#{$prefix}badge-font-size);
-    --#{$prefix}badge-padding-y: 0.125rem;
+    --#{$prefix}badge-padding-y: 0.0625rem;
   }
 }
