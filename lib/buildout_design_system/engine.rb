@@ -7,5 +7,9 @@ module BuildoutDesignSystem
     config.to_prepare do
       ::ApplicationController.helper BuildoutDesignSystem::ApplicationHelper
     end
+
+    initializer "buildout_design_system.assets.precompile" do |app|
+      app.config.assets.precompile += %w(buildout_design_system/your_script.js)
+    end
   end
 end
