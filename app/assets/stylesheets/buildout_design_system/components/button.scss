@@ -7,10 +7,19 @@
   font-weight: $font-weight-bold;
   gap: map-get($spacers, 2);
   justify-content: center;
-  height: $button-height;
+  --btn-height: #{$button-height};
+  height: var(--btn-height);
 
   &.btn-icon {
     padding: map-get($spacers, 2);
+  }
+
+  &.btn-sm {
+    --btn-height: #{$sm-button-height};
+  }
+
+  &.btn-lg {
+    --btn-height: #{$lg-button-height};
   }
 
   &.end {
