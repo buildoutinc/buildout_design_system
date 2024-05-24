@@ -7,10 +7,11 @@ module BuildoutDesignSystem
       @icon = icon
       @label = label
       @name = name
-      @attrs = attrs
+      @class_names = attrs[:class] || ""
+      @class_names += " active" if active
+      @href = attrs[:href]
 
-      @class_names = []
-      @class_names << "active" if active
+      @attrs = attrs.except(:class)
     end
   end
 end
