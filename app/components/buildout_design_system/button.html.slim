@@ -8,7 +8,7 @@ ruby:
     - if !@icon_only
       = content
 - else  
-  button.btn type="button" class=shared_class *@attrs
+  button.btn type=@button_type class=shared_class *@attrs
     - if @icon.present?
       i.fa-solid class="#{ @icon }"
     - if !@icon_only
