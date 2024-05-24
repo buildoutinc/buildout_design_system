@@ -186,7 +186,7 @@ $popover-box-shadow: $box-shadow;
 // BADGES
 // --------------------------------------------------
 $badge-padding-x: map-get($spacers, 3) !default; // 12px
-$badge-padding-y: 0.1875rem !default; // 3px
+$badge-padding-y: map-get($spacers, 1) !default; // 4px
 
 
 // --------------------------------------------------
