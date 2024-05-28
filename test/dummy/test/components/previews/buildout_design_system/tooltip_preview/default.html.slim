@@ -1,7 +1,5 @@
-p
-  ' Lorem ipsum dolor sit
-  a#example> href="#" data-bs-toggle="tooltip" data-bs-title="Default tooltip" consectetur
-  ' amet, adipisicing elit. Quisquam, tempore!
-
-javascript:
-  new bootstrap.Tooltip(document.getElementById("example"))
+.p-10
+  = render(BuildoutDesignSystem::Tooltip.new(placement: placement, class: class_name)) do |tooltip|
+    - tooltip.with_title do
+      .text-primary cool text
+    i.fa.fa-question-circle
