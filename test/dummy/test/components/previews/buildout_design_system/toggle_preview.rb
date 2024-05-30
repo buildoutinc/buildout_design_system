@@ -17,6 +17,11 @@ module BuildoutDesignSystem
     def verbose(on_icon: "", off_icon: "")
       render(Toggle.new(checked: true, value: 1, disabled: false, variant: "verbose", id: "test-verbose", on_icon: on_icon, off_icon: off_icon))
     end
+
+    # @param variant select ["simple", "verbose"]
+    def simple_form(variant: "simple")
+      render_with_template(locals: { variant: variant })
+    end
     # @!endgroup
   end
 end
