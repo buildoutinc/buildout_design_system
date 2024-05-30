@@ -6,7 +6,7 @@ module BuildoutDesignSystem
     VARIANT = {
       simple: "simple",
       verbose: "verbose"
-    }
+    }.freeze
 
     def initialize(class_name: "", checked: false, value: nil, disabled: false, variant: VARIANT[:simple], on_icon: "", off_icon: "", **attrs)
       super(**attrs)
@@ -16,9 +16,17 @@ module BuildoutDesignSystem
       @name = name
       @value = value
       @disabled = disabled
-      @id = attrs[:id]
+      @id = attrs[:id] || generate_id
       @on_icon = on_icon
       @off_icon = off_icon
+      @form_context = attrs[:form_context]
+      @field_name = attrs[:field_name]
+    end
+
+    private
+
+    def generate_id
+      [*("A".."Z")].sample(10).join("")
     end
   end
 end

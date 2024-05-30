@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    buildout_design_system (0.1.8)
+    buildout_design_system (0.1.9)
       rails (>= 6.0)
       view_component (~> 3.5)
 
@@ -212,6 +212,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    simple_form (5.3.1)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     slim (5.2.0)
       temple (~> 0.10.0)
       tilt (>= 2.1.0)
@@ -249,6 +252,7 @@ DEPENDENCIES
   lookbook (>= 2.2.0)
   puma
   sass-rails
+  simple_form
   slim
   sprockets-rails
 
