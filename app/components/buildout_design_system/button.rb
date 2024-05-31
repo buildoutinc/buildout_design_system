@@ -45,13 +45,14 @@ module BuildoutDesignSystem
       @icon_only = values[:icon_only] || false
       @placement = values.fetch(:placement, "start")
       @class_name = values[:class_name] || values[:class]
+      @button_type = values[:type] || values[:button_type] || "button"
       @attrs = values.except(values_to_not_spread)
     end
 
     private
 
     def values_to_not_spread
-      [:class, :class_name, :variant, :style, :size, :path, :icon, :icon_only, :placement]
+      [:class, :class_name, :variant, :style, :size, :path, :icon, :icon_only, :placement, :type, :button_type]
     end
   end
 end

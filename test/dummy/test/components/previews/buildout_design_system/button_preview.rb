@@ -23,8 +23,9 @@ module BuildoutDesignSystem
     # @param size select ["sm", "md", "lg"]
     # @param class_name "Additional Classes to add to the button"
     # @param icon_only toggle "If you want to use the button as an icon only button"
-    def default(variant: "primary", style: "", content: "Button", icon: nil, placement: "start", class_name: "", size: "md", icon_only: false)
-      render(Button.new(variant: variant, style: style, size: size, icon: icon, placement: placement, class_name: class_name, icon_only: icon_only )) do
+    # @param button_type "type for button"
+    def default(variant: "primary", style: "", content: "Button", icon: nil, placement: "start", class_name: "", size: "md", icon_only: false, button_type: "")
+      render(Button.new(variant: variant, style: style, size: size, icon: icon, placement: placement, class_name: class_name, icon_only: icon_only, button_type: button_type )) do
         content
       end
     end
