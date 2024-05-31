@@ -12,5 +12,7 @@ module BuildoutDesignSystem
     def square; end
 
     def vertical; end
+
+    def text; end
   end
 end
