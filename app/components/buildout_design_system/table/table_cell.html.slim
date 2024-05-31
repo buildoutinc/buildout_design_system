@@ -1,2 +1,6 @@
-td.table-cell class="#{@class_name}" *@attrs
-  = content
+- if @header
+  th.table-cell class="#{@class_name}" *@attrs
+    = content
+- else
+  td.table-cell class="#{@class_name}" *@attrs
+    = content

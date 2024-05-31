@@ -3,7 +3,7 @@
 module BuildoutDesignSystem
   class Table
     class TableHeader < ViewComponent::Base
-      renders_many :cells, ::BuildoutDesignSystem::Table::TableCell
+      renders_many :cells, -> { ::BuildoutDesignSystem::Table::TableCell.new(header: true) }
       attr_reader :class_name
 
       def initialize(class_name: '', **attrs)

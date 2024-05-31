@@ -1,11 +1,5 @@
 .table {
-  thead {
-    td {
-      font-weight: 500;
-    }
-  }
-
   tr {
-    border-bottom: 1px solid #{$storm-grey-200};
+    border-bottom: 1px solid #{$table-border-color};
   }
 }
