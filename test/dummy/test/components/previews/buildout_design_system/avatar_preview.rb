@@ -25,6 +25,7 @@ module BuildoutDesignSystem
     #
     # @param style "Select Variant" select ["single", "stacked"]
     # @param size "Select Size" select ["sm", "md", "lg"]
+
     def default(style: "single", size: "sm")
       images = if style == "single"
          {
@@ -62,50 +63,67 @@ module BuildoutDesignSystem
       render_with_template(locals: { images: images, size: size })
     end
 
+
+    TEN_AVATARS = [
+      {
+        image: "https://picsum.photos/200?random=1",
+        initials: "JD",
+        tooltip: "JD"
+      },
+      {
+        image: "https://picsum.photos/200?random=2",
+        initials: "JD",
+        tooltip: "JD 2"
+      },
+      {
+        image: nil,
+        initials: "JD",
+        tooltip: "JD 3"
+      },
+      {
+        image: nil,
+        initials: nil
+      },
+      {
+        image: "https://picsum.photos/200?random=3",
+        initials: "JD",
+        tooltip: "JD 4"
+      },
+      {
+        image: "https://picsum.photos/200?random=3",
+        initials: "JD",
+        tooltip: "JD 5"
+      },
+      {
+        image: "https://picsum.photos/200?random=3",
+        initials: "JD",
+        tooltip: "JD 6"
+      },
+      {
+        image: "https://picsum.photos/200?random=3",
+        initials: "JD",
+        tooltip: "JD 7"
+      },
+      {
+        image: "https://picsum.photos/200?random=3",
+        initials: "JD",
+        tooltip: "JD 8"
+      },
+      {
+        image: "https://picsum.photos/200?random=3",
+        initials: "JD",
+        tooltip: "JD 9"
+      }
+    ]
+
     def ten_avatars(size: "sm")
-      images = [
-        {
-          image: "https://picsum.photos/200?random=1",
-          initials: "JD"
-        },
-        {
-          image: "https://picsum.photos/200?random=2",
-          initials: "JD"
-        },
-        {
-          image: nil,
-          initials: "JD"
-        },
-        {
-          image: nil,
-          initials: nil
-        },
-        {
-          image: "https://picsum.photos/200?random=3",
-          initials: "JD"
-        },
-        {
-          image: "https://picsum.photos/200?random=3",
-          initials: "JD"
-        },
-        {
-          image: "https://picsum.photos/200?random=3",
-          initials: "JD"
-        },
-        {
-          image: "https://picsum.photos/200?random=3",
-          initials: "JD"
-        },
-        {
-          image: "https://picsum.photos/200?random=3",
-          initials: "JD"
-        },
-        {
-          image: "https://picsum.photos/200?random=3",
-          initials: "JD"
-        }
-      ]
-      render(::BuildoutDesignSystem::Avatar.new(size: size, images: images))
+      render_with_template(locals: { images: TEN_AVATARS, size: size })
+      # render(::BuildoutDesignSystem::Avatar.new(size: size, images: images))
+    end
+
+    def ten_avatars_limit_5(size: "sm")
+      render_with_template(locals: { images: TEN_AVATARS, size: size })
+      # render(::BuildoutDesignSystem::Avatar.new(size: size, images: images))
     end
 
     # @param initials "Initials" text
