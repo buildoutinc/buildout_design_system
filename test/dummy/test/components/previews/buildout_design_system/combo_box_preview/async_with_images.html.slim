@@ -1,0 +1,24 @@
+= render(BuildoutDesignSystem::ComboBox.new(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png", async: true, prefix_class: "fa-search")) do
+  label.form-label Hello World
+  = select_tag "hello_world", [], id: "tester"
+
+
+javascript:
+    const testSelect = document.getElementById("tester")
+    testSelect.addEventListener("inputChange", async ({detail}) => {
+        if (detail.value === "") {
+            detail.callBack([])
+            return;
+        }
+
+        const res = await fetch(`/search/${detail.value}`)
+        const data = await res.json()
+        const dataToReturn = data.map(({name, id}) => ({
+            label: name,
+            value: id,
+            renderOption: (option) => {
+                return `<div class="d-flex align-items-center gap-1"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png"/>${option.label}</div>`
+            }
+        }))
+        detail.callBack(dataToReturn)
+    })
