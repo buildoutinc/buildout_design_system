@@ -1,5 +1,5 @@
 = simple_form_for :user, :url => '/users', id: "test-form" do |f|
-  = f.input :toggle, as: :toggle, label: false, variant: variant
+  = f.input :toggle, as: :toggle, label: false, variant: variant, "data-attr": "cool"
   = f.submit "submit me"
 
 javascript:
