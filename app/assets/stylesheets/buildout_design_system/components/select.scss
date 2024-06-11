@@ -1,0 +1,7 @@
+.form-select {
+  &.is-invalid {
+    background-color: $input-invalid-bg-color;
+    border-width: $input-border-width + 1px;
+  }
+}
+

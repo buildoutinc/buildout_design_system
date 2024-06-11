@@ -1,1 +1,1 @@
-= select_tag(:test, options_for_select(%w[First Second Third Fourth Fifth]), class: "form-select")
+= select_tag(:test, options_for_select(%w[First Second Third Fourth Fifth]), class: "form-select #{is_invalid ? "is-invalid" : ""}")
