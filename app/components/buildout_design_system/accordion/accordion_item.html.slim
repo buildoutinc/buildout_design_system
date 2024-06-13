@@ -7,6 +7,6 @@
         = @title
       - actions.each do |action|
         div= action
-  .accordion-collapse.collapse[id=@id]
+  .accordion-collapse id=@id class=("collapse" unless @open)
     .accordion-body
       = content
