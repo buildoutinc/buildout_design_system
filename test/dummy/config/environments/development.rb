@@ -59,4 +59,8 @@ Rails.application.configure do
 
   config.lookbook.ui_theme = "blue"
   config.lookbook.project_name = "Buildout Design System"
+
+  config.assets.debug = true
+  config.assets.check_precompiled_asset = false
+
 end
