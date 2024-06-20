@@ -1,12 +1,12 @@
 .accordion-item
   div.accordion-header
-    button.accordion-button.collapsed[type="button" data-bs-toggle="collapse" data-bs-target="##{@id}"]
+    button.accordion-button class=("collapsed" unless @open) type="button" data-bs-toggle="collapse" data-bs-target="##{@id}"
       .flex-grow-1
         - if @icon
           i.accordion-icon.me-4 class=@icon
         = @title
       - actions.each do |action|
         div= action
-  .accordion-collapse id=@id class=("collapse" unless @open)
+  .accordion-collapse id=@id class=(@open ? "show" : "collapse") aria-labelledby=@id
     .accordion-body
       = content
