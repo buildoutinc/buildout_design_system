@@ -1,8 +1,8 @@
 .form-check.form-switch class="#{@variant}"
   - if @form_context.present?
-    = @form_context.check_box @field_name, class: "form-check-input", role: "switch", checked: @checked, disabled: @disabled, id: @id
+    = @form_context.check_box @field_name, class: "form-check-input", role: "switch", checked: @checked, disabled: @disabled, id: @id, **@attrs
   - else
-    input.form-check-input id="#{@id}" role="switch" type="checkbox" checked=(@checked ? "checked" : nil) disabled=(@disabled ? "disabled" : nil)
+    input.form-check-input id="#{@id}" role="switch" type="checkbox" checked=(@checked ? "checked" : nil) disabled=(@disabled ? "disabled" : nil) *@attrs
   label.inner-label for="#{@id}"
     - if @variant == BuildoutDesignSystem::Toggle::VARIANT[:verbose]
       span.position-absolute.indicator.on-indicator

@@ -21,6 +21,7 @@ module BuildoutDesignSystem
       @off_icon = off_icon
       @form_context = attrs[:form_context]
       @field_name = attrs[:field_name]
+      @attrs = attrs.except(:id, :form_context, :field_name)
     end
 
     private
