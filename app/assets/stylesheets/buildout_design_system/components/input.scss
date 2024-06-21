@@ -1,6 +1,8 @@
 input.form-control {
   height: $input-height;
+}
 
+.form-control {
   &:not(:disabled) {
     background: $input-bg;
   }
