@@ -8,13 +8,13 @@ module BuildoutDesignSystem
       lg: "lg"
     }.freeze
 
-    def initialize( # rubocop:disable Lint/MissingSuper
-      images: [],
-      size: "sm"
-    )
-
-      @images = images.is_a?(Array) ? images : [images]
+    def initialize(images: [], size: "sm", display_limit: nil)
+      @images = Array.wrap(images)
       @size_class = SIZES[size.to_sym] ? "avatar-#{size}" : ""
+      display_limit ||= @images.count
+
+      @visible_images = @images[0..(display_limit - 1)]
+      @hidden_images = @images[display_limit..]
     end
   end
 end

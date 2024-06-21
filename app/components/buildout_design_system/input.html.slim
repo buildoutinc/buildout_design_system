@@ -1,0 +1,6 @@
+- input_class = "form-control #{@class_name}"
+
+- if @form_context.present?
+  = @form_context.text_field(@field_name, class: input_class, type: "#{@type}", **@attrs)
+- else
+  input class=input_class type="#{@type}" *@attrs

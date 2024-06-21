@@ -1,8 +1,4 @@
-ul.nav class="#{@variant}" role="tablist"
+ul.nav class="#{@variant} #{@direction}" role="tablist"
   - if tabs?
     - tabs.each do | tab |
       = tab
-.tab-content
-  - if tab_panes?
-    - tab_panes.each do | tab_pane |
-      = tab_pane

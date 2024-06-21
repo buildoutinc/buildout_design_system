@@ -1,9 +1,11 @@
-// .table {
-//   thead {
-//     background-color: $ds-color-neutral-100;
+.table {
+  thead th {
+    font-weight: 500;
+    --#{$prefix}table-bg: #{$storm-grey-100};
+    padding: 8px;
+  }
 
-//     td {
-//       font-weight: 500;
-//     }
-//   }
-// }
+  th, td {
+    border-bottom: 1px solid $storm-grey-300;
+  }
+}

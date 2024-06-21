@@ -1,0 +1,93 @@
+input.form-control {
+  height: $input-height;
+}
+
+.form-control {
+  &:not(:disabled) {
+    background: $input-bg;
+  }
+
+  &:read-only {
+    background: $input-disabled-bg;
+  }
+
+  &.is-invalid {
+    background-color: $input-invalid-bg-color;
+    border-width: $input-border-width + 1px;
+  }
+}
+
+.input-group {
+  border: $input-border-width solid var(--border-color);
+  border-radius: $input-border-radius;
+  background: $input-group-addon-bg;
+  transition: $input-transition;
+  height: $input-height;
+  --border-color: #{$input-border-color};
+
+  &:has(.is-invalid) {
+    --border-color: #{$input-invalid-border-color};
+    border-width: $input-border-width + 1px;
+    background: $input-invalid-border-color;
+    color: $input-invalid-bg-color;
+
+    &:focus-within {
+      border-color: $input-invalid-border-color;
+      box-shadow: 0 0 0 0.25rem rgba($danger, 0.25);
+    }
+
+    & + .helper-message {
+      color: $input-invalid-helper-color;
+    }
+  }
+
+  &:focus-within {
+    border-color: $input-focus-border-color;
+    box-shadow: 0 0 0 0.25rem rgba($primary, 0.25);
+  }
+
+  input.form-control {
+    border: 0;
+    height: 100%;
+    margin: 0 !important;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:focus:not(.is-invalid) {
+      border-color: $border-color;
+    }
+  }
+
+  > :first-child {
+    border-top-left-radius: calc(#{$input-border-radius} - 1px);
+    border-bottom-left-radius: calc(#{$input-border-radius} - 1px);
+  }
+
+  > :last-child {
+    border-top-right-radius: calc(#{$input-border-radius} - 1px);
+    border-bottom-right-radius: calc(#{$input-border-radius} - 1px);
+  }
+
+  .input-group-text {
+    color: currentColor;
+    border: 0;
+    background: transparent;
+    flex-shrink: 0;
+    min-width: $input-height;
+    padding: 0 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .input-group-text:first-child {
+    border-right: 1px solid var(--border-color);
+  }
+
+  .input-group-text:last-child {
+    margin: 0 !important;
+    border-left: 1px solid var(--border-color);
+  }
+}

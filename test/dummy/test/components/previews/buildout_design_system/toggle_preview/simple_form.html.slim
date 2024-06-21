@@ -1,0 +1,12 @@
+= simple_form_for :user, :url => '/users', id: "test-form" do |f|
+  = f.input :toggle, as: :toggle, label: false, variant: variant, "data-attr": "cool"
+  = f.submit "submit me"
+
+javascript:
+    const form = document.getElementById("test-form");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const dataForAlert = [...formData].map(formField => `${formField[0]}: ${formField[1]}`).join("\n")
+        alert(dataForAlert)
+    });

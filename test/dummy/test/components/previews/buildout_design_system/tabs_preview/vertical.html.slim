@@ -1,0 +1,14 @@
+= render(BuildoutDesignSystem::Card.new()) do 
+  .d-flex
+    div
+      = render(BuildoutDesignSystem::Tabs.new(variant: "pills", direction: "vertical")) do |tab_container|
+        = tab_container.with_tab(name: "tab1contentver", label: "Tab 1", active: true)
+        = tab_container.with_tab(name: "tab2contentver", label: "Tab 2", icon: "fa-otter")
+    .flex-grow-1
+      = render(BuildoutDesignSystem::TabPanes.new()) do | pane |
+        = pane.with_tab_pane(name: "tab1contentver", active: true) do
+          .p-4
+            p Tab 1 Content
+        = pane.with_tab_pane(name: "tab2contentver") do
+          .p-4
+            p Tab 2 Content

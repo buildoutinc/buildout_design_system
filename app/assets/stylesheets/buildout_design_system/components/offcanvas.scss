@@ -1,0 +1,11 @@
+.offcanvas-header {
+  border-bottom: 1px solid var(--#{$prefix}border-color);
+}
+
+.offcanvas-footer {
+  padding: map-get($spacers, 2);
+  border-top: 1px solid var(--#{$prefix}border-color);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

@@ -1,0 +1,10 @@
+= render(BuildoutDesignSystem::Card.new()) do | card |
+    = render(BuildoutDesignSystem::Button.new({ variant: "primary", class_name: "dropdown-toggle" }, data: { "bs-toggle": "dropdown"}, aria: { expanded: "false"})) do
+      | Open Dropdown
+    ul.dropdown-menu.dropdown-menu-end
+      li
+        = render(BuildoutDesignSystem::DropdownItem.new(label: "Action", path: "#"))
+      li 
+        = render(BuildoutDesignSystem::DropdownItem.new(label: "Another Action", startIcon: "fa-bomb", path: "#"))
+      li 
+        = render(BuildoutDesignSystem::DropdownItem.new(label: "Third Action", startIcon: "fa-bomb", endIcon: "fa-globe", shortcut: "⌘S"))

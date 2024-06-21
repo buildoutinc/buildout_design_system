@@ -1,5 +1,5 @@
 .alert.d-flex.align-items-start.gap-2 class="alert-#{@status} #{@class_name} #{@dismissable ? "alert-dismissable" : ""}" role="alert"
-  i.fa-solid.fa-fw class="#{@icon}"
+  i.fa-solid.fa-fw.mt-1 class="#{@icon}"
   .alert-content.flex-grow-1
     - if @title.present?
       h6.alert-heading.m-0 = @title

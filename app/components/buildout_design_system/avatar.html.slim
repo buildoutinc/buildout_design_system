@@ -1,23 +1,14 @@
 .ds-avatar-container
-  - if @images.length > 5
-    - @images[0..3].each do |avatar|
-      - if avatar[:image].present?
-        = image_tag avatar[:image], class: "ds-avatar #{@size_class}"
-      - if !avatar[:image].present? && avatar[:initials].present?
-        .ds-avatar class="#{@size_class}"
-          = avatar[:initials]
-      - if !avatar[:image].present? && !avatar[:initials].present?
-        .ds-avatar class="#{@size_class}"
-          i.fa-solid.fa-user
-    .ds-avatar class="#{@size_class} "
-      span.ds-avatar-more +#{@images.length - 4}
-  - else
-    - @images.each do |avatar|
-      - if avatar[:image].present?
-        = image_tag avatar[:image], class: "ds-avatar #{@size_class}"
-      - if !avatar[:image].present? && avatar[:initials].present?
-        .ds-avatar class="#{@size_class}"
-          = avatar[:initials]
-      - if !avatar[:image].present? && !avatar[:initials].present?
-        .ds-avatar class="#{@size_class}"
-          i.fa-solid.fa-user
+  - @visible_images.each do |avatar|
+    - if avatar[:image].present?
+      = image_tag avatar[:image], class: "ds-avatar #{@size_class}", "data-bs-toggle": ("tooltip" if avatar[:tooltip]), "data-bs-title": (avatar[:tooltip] if avatar[:tooltip]), "data-bs-html": "true"
+    - elsif avatar[:initials].present?
+      .ds-avatar class="#{@size_class}" data-bs-toggle=("tooltip" if avatar[:tooltip]) data-bs-title=(avatar[:tooltip] if avatar[:tooltip]) data-bs-html="true"
+        = avatar[:initials]
+    - else
+      .ds-avatar class="#{@size_class}" data-bs-toggle=("tooltip" if avatar[:tooltip]) data-bs-title=(avatar[:tooltip] if avatar[:tooltip]) data-bs-html="true"
+        i.fa-solid.fa-user
+  - if @hidden_images.present?
+    - tooltip = @hidden_images.map { |image| image[:tooltip] }.join("<br/>")
+    .ds-avatar class="#{@size_class} " data-bs-toggle=("tooltip" if tooltip.present?) data-bs-title=(tooltip) data-bs-html="true"
+      span.ds-avatar-more +#{@hidden_images.length}

@@ -12,29 +12,30 @@
 // --------------------------------------------------
 // CONFIGURATION
 // --------------------------------------------------
-$prefix: "ds-";
-// $utilities: $custom-utils;
-$enable-dark-mode: false;
+$prefix: "ds-" !default;
+$utilities: $custom-utils !default;
+$enable-dark-mode: false !default;
+$link-decoration: none !default;
 
 // --------------------------------------------------
 // TYPOGRAPHY
 // --------------------------------------------------
-$font-family-sans-serif: "Proxima Nova", sans-serif;
-$font-size-base: 1rem; // 16px
-$font-size-lg: $font-size-base * 1.25; // 20px
-$font-size-sm: $font-size-base * 0.875; // 14px
+$font-family-sans-serif: "Proxima Nova", sans-serif !default;
+$font-size-base: 1rem !default; // 16px
+$font-size-lg: $font-size-base * 1.25 !default; // 20px
+$font-size-sm: $font-size-base * 0.875 !default; // 14px
 
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-bold:600;
-$font-weight-bolder: 700;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold:600 !default;
+$font-weight-bolder: 700 !default;
 
-$h1-font-size: $font-size-base * 2.986;
-$h2-font-size: $font-size-base * 2.488;
-$h3-font-size: $font-size-base * 2.074;
-$h4-font-size: $font-size-base * 1.728;
-$h5-font-size: $font-size-base * 1.44;
-$h6-font-size: $font-size-base * 1.2;
+$h1-font-size: $font-size-base * 2.986 !default;
+$h2-font-size: $font-size-base * 2.488 !default;
+$h3-font-size: $font-size-base * 2.074 !default;
+$h4-font-size: $font-size-base * 1.728 !default;
+$h5-font-size: $font-size-base * 1.44 !default;
+$h6-font-size: $font-size-base * 1.2 !default;
 
 $font-sizes: (
   1: $h1-font-size,
@@ -44,16 +45,16 @@ $font-sizes: (
   5: $h5-font-size,
   6: $h6-font-size,
   "base": $font-size-base,
-);
+) !default;
 
-$line-height: 137.5%; // close to 22px for 16px font
+$line-height: 137.5% !default; // close to 22px for 16px font
 
 // --------------------------------------------------
 // SPACING
 // Spacers are used for margin, padding, and other spacing needs.
 // They are always calculated in multiples of 4px.
 // --------------------------------------------------
-$spacer: 1rem; // 16px Base
+$spacer: 1rem !default; // 16px Base
 $spacers: (
   0: 0,
   "0-5": ($spacer * 0.125), // 2px
@@ -67,16 +68,16 @@ $spacers: (
   8: ($spacer * 2), // 32px
   9: ($spacer * 2.25), // 36px
   10: ($spacer * 2.5), // 40px
-);
+) !default;
 
 // --------------------------------------------------
 // BOOTSTRAP GRID SYSTEM
 // --------------------------------------------------
-$enable-grid-classes: false !default;
+$enable-grid-classes: true !default;
 $enable-cssgrid: true !default;
-$grid-columns: 12;
-$grid-gutter-width: map-get($spacers, 6);
-$gutters: $spacers;
+$grid-columns: 12 !default;
+$grid-gutter-width: map-get($spacers, 6) !default;
+$gutters: $spacers !default;
 
 
 // --------------------------------------------------
@@ -84,100 +85,121 @@ $gutters: $spacers;
 // NOTE: This requires some review as it is recommended that shadows
 // should be reflective of the color of the element that is emitting the shadow.
 // --------------------------------------------------
-$box-shadow: 0 0.25rem 0.5rem rgba($black, 0.25);
-$box-shadow-xs: 0 1px 0 0 rgba($black, 0.25);
-$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.25);
-$box-shadow-md: 0 0.5rem 1rem rgba($black, 0.25);
-$box-shadow-lg: 0 0.75rem 1.5rem rgba($black, 0.25);
-$box-shadow-xl: 0 1rem 2rem rgba($black, 0.35);
-$box-shadow-inset: inset $box-shadow;
+$box-shadow: 0 0.25rem 0.5rem rgba($black, 0.25) !default;
+$box-shadow-xs: 0 1px 0 0 rgba($black, 0.25) !default;
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.25) !default;
+$box-shadow-md: 0 0.5rem 1rem rgba($black, 0.25) !default;
+$box-shadow-lg: 0 0.75rem 1.5rem rgba($black, 0.25) !default;
+$box-shadow-xl: 0 1rem 2rem rgba($black, 0.35) !default;
+$box-shadow-inset: inset $box-shadow !default;
 
 // --------------------------------------------------
 // TRANSITIONs
 // --------------------------------------------------
-$standard: cubic-bezier(0.2, 0, 0, 1);
-$standard-decelerate: cubic-bezier(0, 0, 0, 1);
-$standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
-$emphasized-standard: $standard;
-$emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
-$emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+$standard: cubic-bezier(0.2, 0, 0, 1) !default;
+$standard-decelerate: cubic-bezier(0, 0, 0, 1) !default;
+$standard-accelerate: cubic-bezier(0.3, 0, 1, 1) !default;
+$emphasized-standard: $standard !default;
+$emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1) !default;
+$emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15) !default;
 
 // Durations
 // This is used for utilities like changing a checkbox, etc.
-$short: 50ms;
-$short2: 100ms;
-$short3: 150ms;
-$short4: 200ms;
+$short: 50ms !default;
+$short2: 100ms !default;
+$short3: 150ms !default;
+$short4: 200ms !default;
 
 // These are used for items that need to travel (expand, contract), like opening a popup, etc.
-$medium: 250ms;
-$medium2: 300ms;
-$medium3: 350ms;
-$medium4: 400ms;
+$medium: 250ms !default;
+$medium2: 300ms !default;
+$medium3: 350ms !default;
+$medium4: 400ms !default;
 
 // These can be used for more major transitions, like opening a modal, etc.
-$long: 450ms;
-$long2: 500ms;
-$long3: 550ms;
-$long4: 600ms;
+$long: 450ms !default;
+$long2: 500ms !default;
+$long3: 550ms !default;
+$long4: 600ms !default;
 
 // These probably will be used the least. Shoudl be for automatic animations.
-$xlong: 700ms;
-$xlong2: 800ms;
-$xlong3: 900ms;
-$xlong4: 1000ms;
+$xlong: 700ms !default;
+$xlong2: 800ms !default;
+$xlong3: 900ms !default;
+$xlong4: 1000ms !default;
 
 
 // --------------------------------------------------
 // BORDERS
 // --------------------------------------------------
-$border-radius: map-get($spacers, 1); // 4px
-$border-radius-lg: map-get($spacers, 2); // 8px
-$border-radius-sm: map-get($spacers, "0-5"); // 2px
-$border-width: 1px;
+$border-radius: map-get($spacers, 1) !default; // 4px
+$border-radius-lg: map-get($spacers, 2) !default; // 8px
+$border-radius-sm: map-get($spacers, "0-5") !default; // 2px
+$border-width: 1px !default;
 
 // --------------------------------------------------
-// INPUTS / BUTTONS
+// INPUTS / BUTTONS / FORMS
 // --------------------------------------------------
-$input-padding-x: $spacer; // 16px
-$input-padding-y: map-get($spacers, 2); // 8px
-$input-line-height: 1.2; // close to 22px for 16px font
+$form-label-font-weight: 700 !default;
+$input-padding-x: $spacer !default; // 16px
+$input-padding-y: map-get($spacers, 2) !default; // 8px
+$input-line-height: 1.375 !default; // close to 22px for 16px font
 
-$btn-line-height: $input-line-height;
-$btn-padding-x: $input-padding-x;
-$btn-padding-y: $input-padding-y;
+$btn-line-height: $input-line-height !default;
+$btn-padding-x: $input-padding-x !default;
+$btn-padding-y: $input-padding-y !default;
+$input-height: 40px !default;
+$button-height: 40px !default;
+$sm-button-height: 32px !default;
+$lg-button-height: 46px !default;
+$form-feedback-valid-color: $storm-grey-300;
+$form-feedback-invalid-color: $solid-pink-400;
+$form-feedback-icon-valid: none;
+$form-feedback-icon-invalid: none;
+
+// --------------------------------------------------
+// SELECT
+// --------------------------------------------------
+$form-select-bg-position: right 0.75rem center;
+$form-select-bg-size: 0.75rem;
+$form-select-feedback-icon-padding-end: 3rem;
 
 // --------------------------------------------------
 // CARDS
 // --------------------------------------------------
-$card-cap-padding-y: $spacer;
-$card-cap-padding-x: $spacer; // 16px
-$card-border-width: 1px;
+$card-cap-padding-y: $spacer !default;
+$card-cap-padding-x: $spacer !default; // 16px
+$card-border-width: 1px !default;
 
 // --------------------------------------------------
 // LIST GROUPS
 // --------------------------------------------------
-$list-group-bg: transparent;
+$list-group-bg: transparent !default;
 
 // --------------------------------------------------
 // TABS
 // --------------------------------------------------
-$nav-link-padding-y: map-get($spacers, 3); // 12px;
-$nav-link-padding-x: $spacer; // 16px;
-$navbar-brand-height: 1.5;
-$nav-tabs-border-radius: 0;
-$nav-tabs-border-width: 0;
-$nav-tabs-link-active-bg: transparent;
+$nav-link-padding-y: map-get($spacers, 3) !default; // 12px
+$nav-link-padding-x: $spacer !default; // 16px
+$navbar-brand-height: 1.5 !default;
+$nav-tabs-border-radius: 0 !default;
+$nav-tabs-border-width: 0 !default;
+$nav-tabs-link-active-bg: transparent !default;
+
+// --------------------------------------------------
+// POPOVER
+// --------------------------------------------------
+$popover-box-shadow: $box-shadow;
 
 // --------------------------------------------------
 // BADGES
 // --------------------------------------------------
-$badge-padding-x: map-get($spacers, 3); // 12px;
-$badge-padding-y: map-get($spacers, 1); // 4px;
+$badge-padding-x: map-get($spacers, 3) !default; // 12px
+$badge-padding-y: map-get($spacers, 1) !default; // 4px
 
 
 // --------------------------------------------------
 // TABLES
 // --------------------------------------------------
-$table-bg: none;
-$table-border-width: 0;
+$table-bg: none !default;
+$table-border-width: 0 !default;

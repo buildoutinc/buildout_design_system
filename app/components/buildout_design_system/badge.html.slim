@@ -1,4 +1,4 @@
-span.badge.rounded-pill class="#{@variant} #{@placement} #{@class_name}" *@attrs
+span.badge.rounded-pill class="#{@variant} #{@placement} #{@class_name} badge-#{@size}" *@attrs
   - if @icon.present?
-    i.fa.fa-solid class="#{@icon}"
+    i.fa.fa-solid class="#{@icon} #{"fa-sm" if @size == "sm"}"
   = content

@@ -7,6 +7,20 @@
   font-weight: $font-weight-bold;
   gap: map-get($spacers, 2);
   justify-content: center;
+  --btn-height: #{$button-height};
+  height: var(--btn-height);
+
+  &.btn-icon {
+    padding: map-get($spacers, 2);
+  }
+
+  &.btn-sm {
+    --btn-height: #{$sm-button-height};
+  }
+
+  &.btn-lg {
+    --btn-height: #{$lg-button-height};
+  }
 
   &.end {
     flex-direction: row-reverse;
@@ -19,18 +33,20 @@
     --#{$prefix}btn-color: #{$purple-heart-50};
   }
   &.btn-neutral {
-    --#{$prefix}btn-color: #{$storm-grey-50};
-    --#{$prefix}btn-bg: #{$neutral};
-    --#{$prefix}btn-border-color: #{$neutral};
-    --#{$prefix}btn-hover-color: #{$storm-grey-50};
-    --#{$prefix}btn-hover-bg: #{$neutral-emphasis};
-    --#{$prefix}btn-hover-border-color: #{neutral-emphasis};
-    --#{$prefix}btn-active-color: #{$storm-grey-50};
-    --#{$prefix}btn-active-bg: #{$neutral-emphasis};
-    --#{$prefix}btn-active-border-color: #{$neutral-emphasis};
-    --#{$prefix}btn-disabled-color: #{$storm-grey-50};
-    --#{$prefix}btn-disabled-bg: #{$storm-grey-400};
-    --#{$prefix}btn-disabled-border-color: #{$storm-grey-400};
+    @include button-variant(
+      $neutral, // bg
+      $neutral, // border
+      $storm-grey-50,  // color
+      $neutral-emphasis, // hover-bg
+      $neutral-emphasis, // hover-border
+      $storm-grey-50, // hover-color
+      $neutral-emphasis, // active-bg
+      $neutral-emphasis, // active-border
+      $storm-grey-50, // active-color
+      $storm-grey-400, // disabled-bg
+      $storm-grey-400, // disabled-border
+      $storm-grey-50 // disabled-color
+    )
   }
   &.btn-info {
     --#{$prefix}btn-color: #{$seagull-50};
@@ -38,34 +54,136 @@
   &.btn-success {
     --#{$prefix}btn-color: #{$mountain-meadow-50};
   }
-  &.btn-warning {
+  &.btn-warning { 
     --#{$prefix}btn-color: #{$harvest-gold-50};
   }
   &.btn-danger {
     --#{$prefix}btn-color: #{$solid-pink-50};
   }
 
+  &.btn-outline-neutral {
+    @include button-outline-variant(
+      $neutral, // color
+      $neutral-emphasis, // hover-color
+      $storm-grey-50, // active-bg
+      $neutral-emphasis, // active-border
+      $neutral // active-color
+    )
+  }
+  
+
   &.btn-text-primary {
-    --#{$prefix}btn-color: #{$buildout-blue-500};
+    --#{$prefix}btn-color: #{$primary};
+    --#{$prefix}btn-hover-bg: #{$buildout-blue-50};
   }
 
   &.btn-text-secondary {
-    --#{$prefix}btn-color: #{$purple-heart-500};
+    --#{$prefix}btn-color: #{$secondary};
+    --#{$prefix}btn-hover-bg: #{$purple-heart-50};
   }
 
   &.btn-text-info {
-    --#{$prefix}btn-color: #{$seagull-500};
+    --#{$prefix}btn-color: #{$info};
+    --#{$prefix}btn-hover-bg: #{$seagull-50};
   }
 
   &.btn-text-success {
-    --#{$prefix}btn-color: #{$mountain-meadow-500};
+    --#{$prefix}btn-color: #{$success};
+    --#{$prefix}btn-hover-bg: #{$mountain-meadow-50};
   }
 
   &.btn-text-warning {
-    --#{$prefix}btn-color: #{$harvest-gold-500};
+    --#{$prefix}btn-color: #{$warning};
+    --#{$prefix}btn-hover-bg: #{$harvest-gold-50};
   }
 
   &.btn-text-danger {
-    --#{$prefix}btn-color: #{$solid-pink-500};
+    --#{$prefix}btn-color: #{$danger};
+    --#{$prefix}btn-hover-bg: #{$solid-pink-50};
+  }
+
+  &.btn-text-neutral {
+    --#{$prefix}btn-color: #{$neutral};
+    --#{$prefix}btn-hover-bg: #{$storm-grey-50};
+
+    &:hover {
+      --#{$prefix}btn-color: #{$neutral-emphasis};
+    }
+  }
+
+
+
+  &.btn-shaded {
+
+    &-primary {
+      --#{$prefix}btn-bg: #{$buildout-blue-50};
+      --#{$prefix}btn-color: #{$buildout-blue-500};
+
+      &:hover {
+        --#{$prefix}btn-hover-bg: #{$buildout-blue-100};
+        --#{$prefix}btn-hover-color: #{$buildout-blue-600};
+      }
+    }
+
+    &-secondary {
+      --#{$prefix}btn-bg: #{$purple-heart-50};
+      --#{$prefix}btn-color: #{$purple-heart-500};
+
+      &:hover {
+        --#{$prefix}btn-hover-bg: #{$purple-heart-100};
+        --#{$prefix}btn-hover-color: #{$purple-heart-600};
+      }
+    }
+
+    &-neutral {
+      --#{$prefix}btn-bg: #{$storm-grey-50};
+      --#{$prefix}btn-color: #{$storm-grey-500};
+
+      &:hover {
+        --#{$prefix}btn-hover-bg: #{$storm-grey-100};
+        --#{$prefix}btn-hover-color: #{$storm-grey-600};
+      }
+    }
+
+    &-info {
+      --#{$prefix}btn-bg: #{$seagull-50};
+      --#{$prefix}btn-color: #{$seagull-500};
+
+      &:hover {
+        --#{$prefix}btn-hover-bg: #{$seagull-100};
+        --#{$prefix}btn-hover-color: #{$seagull-600};
+      }
+    }
+
+    &-success {
+      --#{$prefix}btn-bg: #{$mountain-meadow-50};
+      --#{$prefix}btn-color: #{$mountain-meadow-500};
+
+      &:hover {
+        --#{$prefix}btn-hover-bg: #{$mountain-meadow-100};
+        --#{$prefix}btn-hover-color: #{$mountain-meadow-600};
+      }
+    }
+
+    &-warning {
+      --#{$prefix}btn-bg: #{$harvest-gold-50};
+      --#{$prefix}btn-color: #{$harvest-gold-500};
+
+      &:hover {
+        --#{$prefix}btn-hover-bg: #{$harvest-gold-100};
+        --#{$prefix}btn-hover-color: #{$harvest-gold-600};
+      }
+    }
+
+    &-danger {
+      --#{$prefix}btn-bg: #{$solid-pink-50};
+      --#{$prefix}btn-color: #{$solid-pink-500};
+
+      &:hover {
+        --#{$prefix}btn-hover-bg: #{$solid-pink-100};
+        --#{$prefix}btn-hover-color: #{$solid-pink-600};
+      }
+    }
   }
 }
+

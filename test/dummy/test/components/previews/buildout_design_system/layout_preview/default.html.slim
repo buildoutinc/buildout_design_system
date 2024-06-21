@@ -1,0 +1,8 @@
+= render(BuildoutDesignSystem::Card.new()) do 
+  = render(BuildoutDesignSystem::Layout.new(class_name: "", type: type, gap: gap, direction: direction, align: align, justify: justify, columns: columns)) do |layout|
+    = layout.with_column() do
+      p Column 1
+    = layout.with_column() do
+      p Column 2
+    = layout.with_column() do
+      p Column 3
