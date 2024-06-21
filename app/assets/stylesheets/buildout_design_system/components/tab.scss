@@ -13,6 +13,7 @@
 
 
     .nav-link {
+      text-align: center;
       border: $border-width solid transparent;
       padding: calc(#{$nav-link-padding-y} - 1px) calc(#{$nav-link-padding-x} - 1px);
       border-radius: var(--#{$prefix}nav-pills-border-radius);
@@ -37,6 +38,7 @@
     --#{$prefix}nav-tabs-link-active-border-color: #{$body-color};
     --#{$prefix}nav-link-color: #{$text-muted};
 
+    text-align: center;
     display: flex;
     gap: map-get($spacers, "0-5");
     padding-bottom: -var(--#{$prefix}nav-tabs-border-width);
@@ -44,7 +46,7 @@
     .nav-link {
       display: inline-flex;
       align-items: center;
-      gap: map-get($spacers,2);
+      gap: map-get($spacers, 2);
       padding: map-get($spacers, 3) $nav-link-padding-x;
       border: solid transparent;
       border-width: 2px var(--#{$prefix}nav-tabs-border-width) 0;
@@ -60,12 +62,42 @@
 
       &.active {
         border: solid $nav-tabs-link-active-border-color;
-        border-width: 2px var(--#{$prefix}nav-tabs-border-width)  0;
+        border-width: 2px var(--#{$prefix}nav-tabs-border-width) 0;
         border-right-color: var(--#{$prefix}nav-tabs-border-color);
         border-left-color: var(--#{$prefix}nav-tabs-border-color);
         color: var(--#{$prefix}nav-tabs-link-active-border-color);
         font-weight: $font-weight-bold;
         background-color: $card-bg;
+      }
+    }
+  }
+
+  &.nav-text {
+    --#{$prefix}nav-link-padding-x: 2rem;
+
+    .nav-link {
+      color: $text-muted;
+      display: flex;
+      align-items: center;
+
+      .text-container {
+        position: relative;
+        flex-grow: 1;
+      }
+
+      &.active {
+        color: $secondary;
+        font-weight: $font-weight-bold;
+
+        .text-container::after {
+          content: "";
+          width: 2px;
+          right: calc(var(--#{$prefix}nav-link-padding-x) * -1);
+          position: absolute;
+          background-color: $secondary;
+          top: 0;
+          bottom: 0;
+        }
       }
     }
   }

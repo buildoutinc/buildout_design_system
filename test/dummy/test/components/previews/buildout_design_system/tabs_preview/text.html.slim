@@ -1,0 +1,14 @@
+.bg-white
+  .row.gx-0
+    .col-2.bg-light.border-end
+      = render(BuildoutDesignSystem::Tabs.new(variant: "text", direction: "vertical")) do |tab_container|
+        = tab_container.with_tab(name: "tab1text", label: "Tab 1", active: true)
+        = tab_container.with_tab(name: "tab2text", label: "Tab 2", icon: "fa-otter")
+    .col
+      = render(BuildoutDesignSystem::TabPanes.new()) do | pane |
+        = pane.with_tab_pane(name: "tab1text", active: true) do
+          .p-4
+            p Tab 1 Content
+        = pane.with_tab_pane(name: "tab2text") do
+          .p-4
+            p Tab 2 Content

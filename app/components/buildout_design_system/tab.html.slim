@@ -1,4 +1,4 @@
-li.nav-item.text-center
+li.nav-item
   a.nav-link(
     class=@class_names
     data-bs-target=("##{@name}" if @name.present?)
@@ -7,4 +7,4 @@ li.nav-item.text-center
   )
     - if @icon.present?
       i.fa.fa-solid.me-2.fa-xs class="#{@icon}"
-    = @label
+    span.text-container= @label
