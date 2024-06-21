@@ -59,4 +59,12 @@ Rails.application.configure do
 
   config.lookbook.ui_theme = "blue"
   config.lookbook.project_name = "Buildout Design System"
+
+  config.lookbook.listen_paths = ["../../app/assets", "../../app/components"]
+  config.lookbook.listen_extensions = ["js", "css", "slim"]
+
+  config.assets.debug = true
+  config.assets.check_precompiled_asset = false
+
+
 end
