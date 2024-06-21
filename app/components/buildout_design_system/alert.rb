@@ -2,6 +2,8 @@
 
 module BuildoutDesignSystem
   class Alert < ViewComponent::Base
+    renders_one :action, "Action"
+
     STATUSES = {
       info: "info",
       success: "success",
@@ -16,18 +18,21 @@ module BuildoutDesignSystem
       warning: "fa-exclamation-triangle"
     }.freeze
 
-    def initialize( # rubocop:disable Lint/MissingSuper
-      status: "info",
-      icon: nil,
-      title: nil,
-      class_name: "",
-      dismissable: false
-    )
+    def initialize(status: "info", icon: nil, title: nil, class_name: "", dismissable: false, **attrs)
       @status = STATUSES.fetch(status.to_sym) || "info"
       @icon =  icon || DEFAULT_ICONS.fetch(status.to_sym)
       @title = title
-      @class_name = class_name
+      @class_name = class_name || attrs[:class]
       @dismissable = dismissable
+      @attrs = attrs.except(:class)
+    end
+
+    class Action < ViewComponent::Base
+      attr_reader :attrs, :class_name
+
+      def call
+        content
+      end
     end
   end
 end

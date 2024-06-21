@@ -202,3 +202,9 @@ $badge-padding-y: map-get($spacers, 1) !default; // 4px
 // --------------------------------------------------
 $table-bg: none !default;
 $table-border-width: 0 !default;
+
+// --------------------------------------------------
+// ALERT
+// --------------------------------------------------
+$alert-padding-y: 0.75rem !default;
+$alert-padding-x: 0.75rem !default;
