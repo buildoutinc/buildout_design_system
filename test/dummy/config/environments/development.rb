@@ -97,6 +97,7 @@ Rails.application.configure do
     accent_700: "#1D357E",
     accent_800: "#192755",
     accent_900: "#15192C",
+    header_bg: "#1D357E",
   }
 
   config.lookbook.listen_paths = ["../../app/assets", "../../app/components"]

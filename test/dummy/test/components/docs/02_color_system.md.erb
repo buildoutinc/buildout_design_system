@@ -1,6 +1,154 @@
 ---
 title: Color System
 label: Color System
+data: {
+  "colors": [
+    {
+      title: "Buildout Blue",
+      var: "$buildout-blue",
+      name: "buildout_blue",
+    },
+    {
+      title: "Purple Heart",
+      var: "$purple-heart",
+      name: "purple_heart",
+    },
+    {
+      title: "Strawberry",
+      var: "$strawberry",
+      name: "strawberry",
+    },
+    {
+      title: "Seagull",
+      var: "$seagull",
+      name: "seagull",
+    },
+    {
+      title: "Mountain Meadow",
+      var: "$mountain-meadow",
+      name: "mountain_meadow",
+    },
+    {
+      title: "Harvest Gold",
+      var: "$harvest-gold",
+      name: "harvest_gold",
+    },
+    {
+      title: "Solid Pink",
+      var: "$solid-pink",
+      name: "solid_pink",
+    },
+    {
+      title: "Storm Grey",
+      var: "$storm-grey",
+      name: "storm_grey",
+    }
+  ],
+  "buildout_blue": {
+    "50": "#DDEBFD",
+    "100": "#A8BAF0",
+    "200": "#87A0E8",
+    "300": "#6685E0",
+    "400": "#456BD8",
+    "500": "#2450D0",
+    "600": "#2042A7",
+    "700": "#1D357E",
+    "800": "#192755",
+    "900": "#1B2137",
+    "950": "#0E162F"
+  },
+  "purple_heart": {
+    "50": "#F2EAFD",
+    "100": "#C192F3",
+    "200": "#A165E3",
+    "300": "#924FDC",
+    "400": "#8338D5",
+    "500": "#7422CE",
+    "600": "#651DB3",
+    "700": "#551997",
+    "800": "#46147C",
+    "900": "#2E0E52",
+    "950": "#1F0A33"
+  },
+  "strawberry": {
+    "50": "#FFF0F9",
+    "100": "#FFE4F4",
+    "200": "#FFC9EB",
+    "300": "#FF9CD9",
+    "400": "#FF5FBD",
+    "500": "#FF30A1",
+    "600": "#F50D7D",
+    "700": "#E20067",
+    "800": "#B00450",
+    "900": "#920945",
+    "950": "#5B0026"
+  },
+  "seagull": {
+    "50": "#D5F2F8",
+    "100": "#B5E7F3",
+    "200": "#89D9EC",
+    "300": "#65C9E3",
+    "400": "#50BFDC",
+    "500": "#4AB4D7",
+    "600": "#43A3C1",
+    "700": "#3A8EA4",
+    "800": "#32798B",
+    "900": "#24575F",
+    "950": "#102C3C"
+  },
+  "mountain_meadow": {
+    "50": "#EDFCF4",
+    "100": "#E4F6EF",
+    "200": "#B3E5D2",
+    "300": "#82D5B5",
+    "400": "#50C498",
+    "500": "#1FB37B",
+    "600": "#1AA96F",
+    "700": "#159F63",
+    "800": "#0F9557",
+    "900": "#0A8B4B",
+    "950": "#05291E"
+  },
+  "harvest_gold": {
+    "50": "#FCF9F0",
+    "100": "#F8EFDC",
+    "200": "#EED8A9",
+    "300": "#E5BF77",
+    "400": "#DBA74A",
+    "500": "#D18624",
+    "600": "#CD7C22",
+    "700": "#C66D1F",
+    "800": "#BE601C",
+    "900": "#B54A17",
+    "950": "#3A1F10"
+  },
+  "solid_pink": {
+    "50": "#FAEBE9",
+    "100": "#ECB5BB",
+    "200": "#E18A92",
+    "300": "#D5646D",
+    "400": "#CB4E53",
+    "500": "#C2403E",
+    "600": "#B23A3D",
+    "700": "#9E3439",
+    "800": "#8B2D37",
+    "900": "#6A2332",
+    "950": "#3F1217"
+  },
+  "storm_grey": {
+    "50": "#F7F8F8",
+    "100": "#EEEEF2",
+    "200": "#D8DADF",
+    "300": "#B5B8C4",
+    "400": "#8E93A4",
+    "500": "#6E7487",
+    "600": "#4F5463",
+    "700": "#40434F",
+    "800": "#353741",
+    "900": "#2E3038",
+    "950": "#1C1D21"
+  },
+}
 ---
 
 Colors give us the ability to create contrast, meaning, and hierarchy. 
@@ -12,81 +160,40 @@ Each color has a specific purpose and meaning.
 Here you can find all of the colors that are used in the Blueprint Design System and their 
 shades with their variables and hex code.
 
-### Buildout Blue
-
-<div class="flex gap-2">
-  <div class="col">
-    <div class="swatch" style="background: #ddebfd"></div>
-    <div class="swatch-label">50</div>
-    <div class="swatch-label"><code>$buildout-blue-50</code></div>
-    <div class="swatch-label"><code>#DDEBFD</code></div>
+<div class="swatches">
+  <% page.data[:colors].each do |color| %>
+  <div class="swatch-col">
+    <h3><%= color.title %></h3>
+    <div class="flex flex-col" style="gap: 16px">
+      <% page.data[color[:name]].each do |code, value| %>
+      <div class="flex gap-2">
+        <div class="swatch" style="background: <%= value %>"></div>
+        <div class="flex flex-col">
+          <div class="swatch-label font-bold"><%= code %></div>
+          <%= code style: "margin: 0" do %>
+            <%=color.var %>-<%= code %>
+            <%= value %>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
-  <div class="col">
-    <div class="swatch" style="background: #ddebfd"></div>
-    <div class="swatch-label">100</div>
-    <div class="swatch-label"><code>$buildout-blue-50</code></div>
-    <div class="swatch-label"><code>#DDEBFD</code></div>
-  </div>
-  <div class="col">
-    <div class="swatch" style="background: #ddebfd"></div>
-    <div class="swatch-label">200</div>
-    <div class="swatch-label"><code>$buildout-blue-50</code></div>
-    <div class="swatch-label"><code>#DDEBFD</code></div>
-  </div>
-  <div class="col">
-    <div class="swatch" style="background: #ddebfd"></div>
-    <div class="swatch-label">300</div>
-    <div class="swatch-label"><code>$buildout-blue-50</code></div>
-    <div class="swatch-label"><code>#DDEBFD</code></div>
-  </div>
-  <div class="col">
-    <div class="swatch" style="background: #ddebfd"></div>
-    <div class="swatch-label">400</div>
-    <div class="swatch-label"><code>$buildout-blue-50</code></div>
-    <div class="swatch-label"><code>#DDEBFD</code></div>
-  </div>
-  <div class="col">
-    <div class="swatch" style="background: #ddebfd"></div>
-    <div class="swatch-label">500</div>
-    <div class="swatch-label"><code>$buildout-blue-50</code></div>
-    <div class="swatch-label"><code>#DDEBFD</code></div>
-  </div>
-  <div class="col">
-    <div class="swatch" style="background: #ddebfd"></div>
-    <div class="swatch-label">50</div>
-    <div class="swatch-label"><code>$buildout-blue-50</code></div>
-    <div class="swatch-label"><code>#DDEBFD</code></div>
-  </div>
-  <div class="col">
-    <div class="swatch" style="background: #ddebfd"></div>
-    <div class="swatch-label">50</div>
-    <div class="swatch-label"><code>$buildout-blue-50</code></div>
-    <div class="swatch-label"><code>#DDEBFD</code></div>
-  </div>
-  <div class="col">
-    <div class="swatch" style="background: #ddebfd"></div>
-    <div class="swatch-label">600</div>
-    <div class="swatch-label"><code>$buildout-blue-50</code></div>
-    <div class="swatch-label"><code>#DDEBFD</code></div>
-  </div>
-  <div class="col">
-    <div class="swatch" style="background: #ddebfd"></div>
-    <div class="swatch-label">50</div>
-    <div class="swatch-label"><code>$buildout-blue-50</code></div>
-    <div class="swatch-label"><code>#DDEBFD</code></div>
-  </div>
-  <div class="col">
-    <div class="swatch" style="background: #ddebfd"></div>
-    <div class="swatch-label">50</div>
-    <div class="swatch-label"><code>$buildout-blue-50</code></div>
-    <div class="swatch-label"><code>#DDEBFD</code></div>
-  </div>
+  <% end %>
 </div>
 
 <style type="text/css">
+  .swatches {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .swatch-col {
+    flex: 0 0 45%;
+  }
   .swatch {
-    width: 100%;
-    height: 100%;
+    flex: 0 0 108px;
+    height: 108px;
     border-radius: 4px;
   }
 </style>
