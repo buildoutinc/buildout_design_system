@@ -3,7 +3,7 @@
 
 
 = render(BuildoutDesignSystem::Modal.new(class_name: "", size: size, id: "exampleModal", centered: centered)) do |modal|
-  - modal.with_header(title: "Modal Title")
+  - modal.with_header(title: "Modal Title", id: "exampleModalId")
   - modal.with_body do
     | Modal Body
   - modal.with_footer do

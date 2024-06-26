@@ -1,0 +1,16 @@
+
+= render(BuildoutDesignSystem::Card.new()) do | card |
+  
+  = render(BuildoutDesignSystem::Tabs.new()) do | tab_container |
+    = tab_container.with_tab(name: "tab1contentdef", active: true, id: "fancyID") do 
+      .text-primary This is Tab!
+    = tab_container.with_tab(name: "tab2contentdef", label: "Tab 2", icon: "fa-otter")
+
+  = render(BuildoutDesignSystem::TabPanes.new()) do | pane |
+    = pane.with_tab_pane(name: "tab1contentdef", active: true) do
+      .p-4
+        p Tab 1 Content
+    
+    = pane.with_tab_pane(name: "tab2contentdef") do
+      .p-4
+        p Tab 2 Content

@@ -1,4 +1,4 @@
-.progress-container class="#{@variant}" 
+.progress-container class="#{@variant}" *@attrs
   - if @steps.present?
     - @steps.each do | step, index |
       .progress-step

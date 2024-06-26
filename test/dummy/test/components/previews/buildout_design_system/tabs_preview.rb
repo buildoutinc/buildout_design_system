@@ -14,5 +14,7 @@ module BuildoutDesignSystem
     def vertical; end
 
     def text; end
+
+    def block; end
   end
 end

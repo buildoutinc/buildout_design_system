@@ -4,7 +4,11 @@ li.nav-item
     data-bs-target=("##{@name}" if @name.present?)
     data-bs-toggle="tab"
     href="#"
+    *@attrs
   )
     - if @icon.present?
       i.fa.fa-solid.me-2.fa-xs class="#{@icon}"
-    span.text-container= @label
+    - if @label.present? && content.nil?
+      span.text-container= @label
+    - else 
+      = content

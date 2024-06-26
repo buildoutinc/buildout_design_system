@@ -5,9 +5,11 @@ module BuildoutDesignSystem
     renders_many :accordion_items, ::BuildoutDesignSystem::Accordion::AccordionItem
 
     def initialize( # rubocop:disable Lint/MissingSuper
-      variant: "primary"
+      variant: "primary",
+      **attrs
     )
       @variant = variant
+      @attrs = attrs
     end
   end
 end

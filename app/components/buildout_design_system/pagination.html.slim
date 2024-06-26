@@ -1,5 +1,5 @@
 - pages = @options[:total] && @options[:per_page] ? (@options[:total] / @options[:per_page].to_f).ceil : 1
-nav.pagination-container class="#{@align}" aria-label="page navigation"
+nav.pagination-container class="#{@align}" aria-label="page navigation" *@attrs
   ul.pagination
     - if @options[:show_first_last]
       li.page-item.first class="#{@options[:current_page] == 1 ? 'disabled' : ''}"
