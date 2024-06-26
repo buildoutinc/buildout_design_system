@@ -100,11 +100,9 @@ Rails.application.configure do
     header_bg: "#1D357E",
   }
 
-  config.lookbook.listen_paths = ["../../app/assets", "../../app/components"]
+  config.lookbook.listen_paths = ["../../app/assets", "../../app/components", "../views"]
   config.lookbook.listen_extensions = ["js", "css", "slim"]
 
   config.assets.debug = true
   config.assets.check_precompiled_asset = false
-
-
 end
