@@ -1,4 +1,4 @@
-ul.nav class="#{@variant} #{@direction}" role="tablist"
+ul.nav class="#{@variant} #{@direction}" role="tablist" *@attrs
   - if tabs?
     - tabs.each do | tab |
       = tab

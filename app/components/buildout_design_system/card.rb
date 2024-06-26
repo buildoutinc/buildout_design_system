@@ -14,13 +14,16 @@ module BuildoutDesignSystem
     class CardHeaderComponent < ViewComponent::Base
       attr_reader :class_name
 
-      def initialize(class_name: "")
+      def initialize(class_name: "", **attrs)
         super()
         @class_name = class_name
+        @attrs = attrs
       end
 
       def call
-        content_tag :span, content, { class: class_name }
+        content_tag :div, { class: "card-header", **@attrs } do
+          content_tag :div, content, class_name.present? ? { class: class_name } : nil
+        end
       end
     end
 
@@ -41,27 +44,29 @@ module BuildoutDesignSystem
     class CardTitleComponent < ViewComponent::Base
       attr_reader :class_name
 
-      def initialize(class_name: "", title: "")
+      def initialize(class_name: "", title: "", **attrs)
         super()
         @class_name = class_name
         @title = title
+        @attrs = attrs
       end
 
       def call
-        content_tag :h5, @title, { class: "card-title #{class_name}" }
+        content_tag :h5, @title, { class: "card-title #{class_name}", **@attrs}
       end
     end
 
     class CardFooterComponent < ViewComponent::Base
       attr_reader :class_name
 
-      def initialize(class_name: "")
+      def initialize(class_name: "", **attrs)
         super()
         @class_name = class_name
+        @attrs = attrs
       end
 
       def call
-        content_tag :div, content, { class: "card-footer d-flex gap-2 #{class_name}" }
+        content_tag :div, content, { class: "card-footer d-flex gap-2 #{class_name}", **@attrs }
       end
     end
   end

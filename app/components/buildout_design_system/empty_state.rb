@@ -5,11 +5,13 @@ module BuildoutDesignSystem
     def initialize( # rubocop:disable Lint/MissingSuper
       title:,
       text: nil,
-      icon: "fa-exclamation"
+      icon: "fa-exclamation",
+      **attrs
     )
       @title = title
       @icon = icon
       @text = text
+      @attrs = attrs
     end
   end
 end
