@@ -2,8 +2,13 @@
 
 module BuildoutDesignSystem
   class TablePreview < ViewComponent::Preview
-    def default
-      render_with_template
-    end
+    # @!group Table
+
+    # Table
+    # -------------------------
+    # Tables are used to organize cells of data.
+    def default; end
+
+    # @!endgroup
   end
 end

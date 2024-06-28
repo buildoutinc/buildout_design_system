@@ -1,23 +1,16 @@
-table.table
-  thead
-    tr
-      th #
-      th First
-      th Last
-      th Handle
-  tbody
-    tr
-      th 1
-      td Mark
-      td Otto
-      td @mdo
-    tr
-      th 2
-      td Jacob
-      td Thornton
-      td @cool
-    tr
-      th 3
-      td Larry
-      td Bird
-      td @twitter
+.mb-4= render BuildoutDesignSystem::Table.new do |component|
+  = component.with_header do |header|
+    = header.with_cell do
+      | Header One
+    = header.with_cell do
+      | Header Two
+  = component.with_row do |row|
+    = row.with_cell do
+      | 1
+    = row.with_cell do
+      | 2
+  = component.with_row do |row|
+    = row.with_cell do
+      | 3
+    = row.with_cell do
+      | 4
