@@ -4,6 +4,7 @@ module BuildoutDesignSystem
     renders_one :image, "CardImageComponent"
     renders_one :title, "CardTitleComponent"
     renders_one :footer, "CardFooterComponent"
+    renders_one :body, "CardBodyComponent"
 
     def initialize(class_name: "", **attrs)
       super(**attrs)
@@ -67,6 +68,20 @@ module BuildoutDesignSystem
 
       def call
         content_tag :div, content, { class: "card-footer d-flex gap-2 #{class_name}", **@attrs }
+      end
+    end
+
+    class CardBodyComponent < ViewComponent::Base
+      attr_reader :class_name
+
+      def initialize(class_name: "", **attrs)
+        super()
+        @class_name = class_name
+        @attrs = attrs
+      end
+
+      def call
+        content_tag :div, content, { class: "card-body #{class_name}", **@attrs }
       end
     end
   end

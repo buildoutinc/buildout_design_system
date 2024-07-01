@@ -1,2 +1,3 @@
-= render(BuildoutDesignSystem::Card.new()) do 
-  = content
+= render(BuildoutDesignSystem::Card.new()) do |card|
+  - card.with_body do
+    = body

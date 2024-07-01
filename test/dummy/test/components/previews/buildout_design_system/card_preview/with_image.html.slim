@@ -1,12 +1,13 @@
 = render(BuildoutDesignSystem::Card.new()) do  |card|
   - card.with_image(image_url: image_url)
 
-  - card.with_title(title: title)
+  - card.with_title(title: title, class_name: "p-4")
 
-  = content
+  - card.with_body() do
+    = body
 
   - card.with_footer(id: "fancyFooterID") do
     = render(BuildoutDesignSystem::Button.new({variant: "primary"})) do
       | Click Me
     = render(BuildoutDesignSystem::Button.new({ variant: "secondary"})) do 
-      | Click Me Too 
+      | Click Me Too

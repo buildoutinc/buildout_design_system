@@ -3,9 +3,10 @@
     = image
   - if header?
     = header
-  .card-body
+  = content
+  - if body?
     - if title?
         = title
-    = content
+    = body
   - if footer?
     = footer

@@ -6,23 +6,23 @@ module BuildoutDesignSystem
     # -------------------------
     # Cards provide a small section for information.
     #
-    # @param content  textarea "Card Text Body Content"
-    def default(content: "Hello World!")
+    # @param body  textarea "Card Text Body Content"
+    def default(body: "Hello World!")
       render_with_template(locals: {
-        content: content
+        body: body
       })
     end
 
-    def with_header(content: "Hello World!", header: "Header")
+    def with_header(body: "Hello World!", header: "Header")
       render_with_template(locals: {
-        content: content,
+        body: body,
         header: header
       })
     end
 
-    def with_image(content: "Hello World!", title: "Card Title", image_url: "https://picsum.photos/200/200")
+    def with_image(body: "Hello World!", title: "Card Title", image_url: "https://picsum.photos/200/200")
       render_with_template(locals: {
-        content: content,
+        body: body,
         title: title,
         image_url: image_url
       })
