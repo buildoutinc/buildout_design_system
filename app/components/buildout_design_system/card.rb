@@ -1,9 +1,9 @@
 module BuildoutDesignSystem
   class Card < ViewComponent::Base
-    renders_one :header, "CardHeaderComponent"
-    renders_one :image, "CardImageComponent"
-    renders_one :title, "CardTitleComponent"
-    renders_one :footer, "CardFooterComponent"
+    renders_one :header, "CardHeader"
+    renders_one :image, "CardImage"
+    renders_one :footer, "CardFooter"
+    renders_one :body, CardBody
 
     def initialize(class_name: "", **attrs)
       super(**attrs)
@@ -11,7 +11,7 @@ module BuildoutDesignSystem
       @attrs = attrs
     end
 
-    class CardHeaderComponent < ViewComponent::Base
+    class CardHeader < ViewComponent::Base
       attr_reader :class_name
 
       def initialize(class_name: "", **attrs)
@@ -27,7 +27,7 @@ module BuildoutDesignSystem
       end
     end
 
-    class CardImageComponent < ViewComponent::Base
+    class CardImage < ViewComponent::Base
       attr_reader :image_url, :class_name
 
       def initialize(image_url: "", class_name: "")
@@ -41,22 +41,7 @@ module BuildoutDesignSystem
       end
     end
 
-    class CardTitleComponent < ViewComponent::Base
-      attr_reader :class_name
-
-      def initialize(class_name: "", title: "", **attrs)
-        super()
-        @class_name = class_name
-        @title = title
-        @attrs = attrs
-      end
-
-      def call
-        content_tag :h5, @title, { class: "card-title #{class_name}", **@attrs}
-      end
-    end
-
-    class CardFooterComponent < ViewComponent::Base
+    class CardFooter < ViewComponent::Base
       attr_reader :class_name
 
       def initialize(class_name: "", **attrs)

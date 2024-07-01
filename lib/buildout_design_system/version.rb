@@ -1,3 +1,3 @@
 module BuildoutDesignSystem
-  VERSION = "0.1.13"
+  VERSION = "1.0.0"
 end
