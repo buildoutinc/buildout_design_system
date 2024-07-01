@@ -21,21 +21,23 @@ $link-decoration: none !default;
 // TYPOGRAPHY
 // --------------------------------------------------
 $font-family-sans-serif: "Proxima Nova", sans-serif !default;
-$font-size-base: 1rem !default; // 16px
-$font-size-lg: $font-size-base * 1.25 !default; // 20px
-$font-size-sm: $font-size-base * 0.875 !default; // 14px
+$font-size-base: 0.875rem !default; // 14px
+$font-size-lg: $font-size-base * 1.214 !default; // 17px
+$font-size-sm: $font-size-base * 0.857 !default; // 12px
 
 $font-weight-light: 300 !default;
 $font-weight-normal: 400 !default;
 $font-weight-bold:600 !default;
 $font-weight-bolder: 700 !default;
 
-$h1-font-size: $font-size-base * 2.986 !default;
-$h2-font-size: $font-size-base * 2.488 !default;
-$h3-font-size: $font-size-base * 2.074 !default;
-$h4-font-size: $font-size-base * 1.728 !default;
-$h5-font-size: $font-size-base * 1.44 !default;
-$h6-font-size: $font-size-base * 1.2 !default;
+$h1-font-size: $font-size-base * 3.571 !default; // 50px
+$h2-font-size: $font-size-base * 3 !default; // 42px
+$h3-font-size: $font-size-base * 2.5 !default; // 35px
+$h4-font-size: $font-size-base * 2.071 !default; // 29px
+$h5-font-size: $font-size-base * 1.714 !default; // 24px
+$h6-font-size: $font-size-base * 1.429 !default; // 20px
+$display-1-size: $font-size-base * 5.143 !default; // 72px
+$display-2-size: $font-size-base * 4.286 !default; // 60px
 
 $font-sizes: (
   1: $h1-font-size,
@@ -45,6 +47,10 @@ $font-sizes: (
   5: $h5-font-size,
   6: $h6-font-size,
   "base": $font-size-base,
+  "lg": $font-size-lg,
+  "sm": $font-size-sm,
+  "display-1": $display-1-size,
+  "display-2": $display-2-size,
 ) !default;
 
 $line-height: 137.5% !default; // close to 22px for 16px font

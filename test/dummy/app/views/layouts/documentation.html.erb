@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Dummy</title>
+    <title>Blueprint Design System</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,8 +13,11 @@
 
   <body>
     <%= render(BuildoutDesignSystem::SvgGradient.new)  %>
-    <div class="p-4">
-      <%= yield %>
-    </div>
+    <%= render("partials/sidebar") %>
+    <main class="d-flex align-items-center justify-content-center flex-col layout">
+      <section class="container m">
+        <%= yield %>
+      </section>
+    </main>
   </body>
 </html>

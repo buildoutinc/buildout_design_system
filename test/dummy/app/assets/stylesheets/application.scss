@@ -1,3 +1,29 @@
 @import "buildout_design_system/setup";
 @import "bootstrap";
 @import "buildout_design_system/components";
+
+
+/** Documentation Styles **
+  *  These styles are used to render the documentation pages.
+  */
+:root {
+  --sidebar-width: 264px;
+}
+
+.sidebar {
+  position: fixed;
+  left: map-get($spacers, 2);
+  top: map-get($spacers, 2);
+  bottom: map-get($spacers, 2);
+  width: var(--sidebar-width);
+  border: $border-width solid $border-color;
+  box-shadow: $box-shadow-sm;
+}
+
+.layout {
+  padding-left: calc(var(--sidebar-width) + #{map-get($spacers, 4)});
+}
+
+p {
+  max-width: 75ch;
+}

@@ -21,6 +21,7 @@ gem "simple_form"
 group :development do
   gem "listen"
   gem "actioncable"
+  gem "rails_live_reload"
 end
 
 # Start debugger with binding.b [https://github.com/ruby/debug]
