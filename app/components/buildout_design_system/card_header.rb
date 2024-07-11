@@ -1,7 +1,9 @@
 module BuildoutDesignSystem
-  class Card < ViewComponent::Base
+  class CardHeader < ViewComponent::Base
+    attr_reader :attrs, :class_name
+
     def initialize(class_name: "", **attrs)
-      super(**attrs)
+      super()
       @class_name = class_name
       @attrs = attrs
     end

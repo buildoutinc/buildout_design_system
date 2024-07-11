@@ -1,2 +1,12 @@
-= render(BuildoutDesignSystem::Card.new()) do 
-  = content
+= render(BuildoutDesignSystem::Card.new()) do
+  = render(BuildoutDesignSystem::CardHeader.new()) do
+    h5.m-0 Card Header Content
+  = render(BuildoutDesignSystem::CardBody.new()) do
+    div Card body content
+  div Content flush with the edge of the card
+  = render(BuildoutDesignSystem::CardImage.new(image_url: image_url))
+  = render(BuildoutDesignSystem::CardBody.new()) do
+    = render(BuildoutDesignSystem::CardTitle.new(title: title))
+    div Another Card body content
+  = render(BuildoutDesignSystem::CardFooter.new()) do
+    div Card footer content

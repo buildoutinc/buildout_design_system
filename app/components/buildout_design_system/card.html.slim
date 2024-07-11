@@ -1,11 +1,2 @@
 .card class="#{@class_name}" *@attrs
-  - if image
-    = image
-  - if header?
-    = header
-  .card-body
-    - if title?
-        = title
-    = content
-  - if footer?
-    = footer
+  = content
