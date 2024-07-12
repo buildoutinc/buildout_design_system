@@ -5,7 +5,7 @@
 
   = content
 
-  - card.with_footer do
+  - card.with_footer(id: "fancyFooterID") do
     = render(BuildoutDesignSystem::Button.new({variant: "primary"})) do
       | Click Me
     = render(BuildoutDesignSystem::Button.new({ variant: "secondary"})) do 
