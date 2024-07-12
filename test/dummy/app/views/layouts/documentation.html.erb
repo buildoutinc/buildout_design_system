@@ -14,10 +14,8 @@
   <body>
     <%= render(BuildoutDesignSystem::SvgGradient.new)  %>
     <%= render("partials/sidebar") %>
-    <main class="d-flex align-items-center justify-content-center flex-col layout">
-      <section class="container m">
-        <%= yield %>
-      </section>
+    <main class="layout">
+      <%= yield %>
     </main>
   </body>
 </html>

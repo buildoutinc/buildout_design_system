@@ -1,18 +1,36 @@
-div.d-flex.justify-content-center.flex-column style="min-height: 75vh"
-    h1.m-0.fw-bolder.fs-display-1 Buildout's Blueprint
-    h4.m-0.text-muted.text-uppercase Design System
+.hero.my-2.me-2.p-10.d-flex.align-items-center.rounded style="height: 40vh"
+  .container
+    .d-flex.flex-column
+      h1.m-0.fw-bolder blueprint
+      h6.m-0.text-uppercase Design System
 
-    .mt-6
-      p This is a living style guide for Buildout's Blueprint Design System. It is a collection of reusable components and guidelines for creating consistent, on-brand user experiences.
+.container
+  .mt-10
+    h2.fw-bold Discover Our Design System
+    p.fs-lg.lh-base.mb-10 This is a living document that outlines the design system for Buildout's products. It includes guidelines for colors, typography, iconography, and components.
 
-    .mt-6
-      h3 Understanding the Blueprint Design System
-
-      p A Design System is a philosophy and set of guidelines for creating consistent, on-brand user experiences. The system is used to understand how we as a brand have certain patterns, styles, and guidelines that helps us create a consisten experience throughout all of our products.
-      p 
-        | A Design System consist of the following: 
-        strong Theory 
-        | and 
-        strong Library.
-      
-      p We will do our best to guide you in understanding the tonality, visual language, and the philosophy of Buildout's brand. We will also provide you with a library of components that you can use to create consistent, on-brand user experiences.
+    .grid.columns-1.columns-xl-2.gap-4.mt-10
+      a.g-col.doc-section href="/colors"
+        .section-icon
+          i.far.fa-lg.fa-palette
+        .section-meta
+          h5.m-0 Colors
+          p.m-0 Learn about the colors that make up Buildout's brand.
+      a.g-col.doc-section href="/typography"
+        .section-icon
+          i.far.fa-lg.fa-font
+        .section-meta
+          h5.m-0 Typography
+          p.m-0 Learn about typography and the fonts that make up the design system.
+      a.g-col.doc-section href="/iconography"
+        .section-icon
+          i.far.fa-lg.fa-icons
+        .section-meta
+          h5.m-0 Iconography
+          p.m-0 Learn about what icons and when to use them.
+      a.g-col.doc-section href="/components"
+        .section-icon
+          i.far.fa-lg.fa-cubes
+        .section-meta
+          h5.m-0 Components
+          p.m-0 Learn about the available UI Kit components to use in your projects.
