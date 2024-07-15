@@ -12,12 +12,13 @@ module BuildoutDesignSystem
       xl: "modal-xl"
     }.freeze
 
-    def initialize(class_name: "", size: nil, centered: false, **attrs)
+    def initialize(class_name: "", size: nil, centered: false, scrollable: false, **attrs)
       super(**attrs)
       @class_name = class_name
       @attrs = attrs
       @size = SIZES.fetch(size&.to_sym, nil)
       @centered = centered
+      @scrollable = scrollable
     end    
 
   end
