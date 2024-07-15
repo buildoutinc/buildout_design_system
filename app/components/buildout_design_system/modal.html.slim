@@ -1,5 +1,5 @@
 .modal.fade class="#{@class_name}" *@attrs
-  .modal-dialog class="#{ @size ? @size : '' } #{ @centered ? 'modal-dialog-centered' : '' }"
+  .modal-dialog class="#{ @size ? @size : '' } #{ @centered ? 'modal-dialog-centered' : '' } #{ @scrollable ? 'modal-dialog-scrollable' : ''}"
     .modal-content
       - if header?
         = header
