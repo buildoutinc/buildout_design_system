@@ -22,7 +22,7 @@ $link-decoration: none !default;
 // --------------------------------------------------
 $font-family-sans-serif: "Proxima Nova", sans-serif !default;
 $font-size-base: 1rem !default; // 16px
-$font-size-lg: $font-size-base * 1.25 !default; // 20px
+$font-size-lg: $font-size-base * 1.125 !default; // 18px
 $font-size-sm: $font-size-base * 0.875 !default; // 14px
 
 $font-weight-light: 300 !default;
@@ -45,6 +45,8 @@ $font-sizes: (
   5: $h5-font-size,
   6: $h6-font-size,
   "base": $font-size-base,
+  "large": $font-size-lg,
+  "small": $font-size-sm,
 ) !default;
 
 $line-height: 137.5% !default; // close to 22px for 16px font
