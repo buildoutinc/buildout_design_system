@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    buildout_design_system (1.1.1)
+    buildout_design_system (1.1.2)
       rails (>= 6.0)
       view_component (~> 3.5)
 
