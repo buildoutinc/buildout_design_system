@@ -34,7 +34,7 @@ module BuildoutDesignSystem
       @icon = values[:icon]
       @class_name = values[:class_name] || values[:class]
       @placement = values.fetch(:placement, "start")
-      @attrs = values.except(values_to_not_spread)
+      @attrs = values.except(*values_to_not_spread)
       @variant = badge_variant(values)
     end
 

@@ -46,7 +46,7 @@ module BuildoutDesignSystem
       @placement = values.fetch(:placement, "start")
       @class_name = values[:class_name] || values[:class]
       @button_type = values[:type] || values[:button_type] || "button"
-      @attrs = values.except(values_to_not_spread)
+      @attrs = values.except(*values_to_not_spread)
     end
 
     private
