@@ -1,19 +1,30 @@
 class DsComboBox extends HTMLElement {
-    static observedAttributes = ["is-searching", "no-results", "image"];
+    static observedAttributes = ["is-searching", "no-results"];
 
     constructor() {
         super();
 
-        this.showDropdown = this.showDropdown.bind(this);
-        this.filterDropdown = this.filterDropdown.bind(this);
-        this.valueSelected = this.valueSelected.bind(this);
-        this.targetElementNotInsideComboBox = this.targetElementNotInsideComboBox.bind(this);
-        this.handleAsyncOptions = this.handleAsyncOptions.bind(this);
         this.dropdown;
         this.dropdownOptions = [];
         this.input;
         this.noResultsText;
         this.originalSelect;
+        this._renderOption = option => option.label
+    }
+
+    get renderOption() {
+        return this._renderOption;
+    }
+
+    // this allows users to call element.renderOption and pass in their own render function
+    set renderOption(renderOptionFunction) {
+        if (typeof renderOptionFunction !== "function") {
+            console.error("renderOption only allows functions");
+            return;
+        }
+
+        this._renderOption = renderOptionFunction;
+        this.setupDropdownOptions()
     }
 
     connectedCallback() {
@@ -33,15 +44,10 @@ class DsComboBox extends HTMLElement {
     }
 
     selectAdded() {
-        this.isAsync = this.hasAttribute("async")
         this.originalSelect.classList.add("d-none");
-        this.setupInput();
+        this.setupInputContainer();
         this.addLoadingIcon();
         this.setupDropdown();
-        if (this.hasAttribute("prefix_class")) this.setupInputIcon()
-        if (this.originalSelect.getAttribute("default_image")) {
-            this.setupInputImage(this.originalSelect.getAttribute("default_image"))
-        }
         this.addEventListener("keydown", (e) => {
             if (e.key === "Escape") {
                 if (document.activeElement === this.input) {
@@ -54,6 +60,15 @@ class DsComboBox extends HTMLElement {
         })
     }
 
+    setupInputContainer() {
+        const label = document.createElement("label");
+        label.classList.add("d-block", "m-0");
+        this.appendChild(label);
+
+        if (this.hasAttribute("prefix_class")) this.setupInputIcon(label)
+        this.setupInput(label);
+    }
+
     addLoadingIcon() {
         this.loadingIcon = document.createElement("div")
         this.loadingIcon.classList.add("search-icon-container", "d-none")
@@ -63,16 +78,16 @@ class DsComboBox extends HTMLElement {
         this.appendChild(this.loadingIcon)
     }
 
-    setupInput() {
+    setupInput(label) {
         this.input = document.createElement("input");
         this.input.classList.add("form-select");
         this.input.value = this.selectedOptionText();
         this.input.readOnly = this.hasAttribute("disable_search")
-        this.appendChild(this.input)
+        label.appendChild(this.input)
 
         this.input.addEventListener("focus", this.showDropdown)
         this.input.addEventListener("input", (e) => {
-            if (this.isAsync) {
+            if (this.hasAttribute("async")) {
                 this.handleAsync(e)
             } else {
                 const wordToSearch = e.target.value.toLowerCase();
@@ -88,11 +103,11 @@ class DsComboBox extends HTMLElement {
             const customEvent = new CustomEvent("inputChange", {
                 detail: {value: e.target.value, callBack: this.handleAsyncOptions}
             })
-            this.originalSelect.dispatchEvent(customEvent);
+            this.dispatchEvent(customEvent);
         }, 300)
     }
 
-    handleAsyncOptions(options) {
+    handleAsyncOptions = (options) => {
         this.dropdownOptions = options;
         this.removeAttribute("is-searching");
         this.setupDropdownOptions();
@@ -122,16 +137,12 @@ class DsComboBox extends HTMLElement {
     }
 
     addOptionContent(button, option) {
-        if (option.renderOption) {
-            button.innerHTML = option.renderOption(option)
-        } else {
-            button.appendChild(document.createTextNode(option.label))
-        }
+        button.innerHTML = this.renderOption(option)
     }
 
     setupDropdown() {
         this.dropdown = document.createElement("div")
-        this.dropdown.classList.add("item-container", "w-100")
+        this.dropdown.classList.add("item-container", "w-100", "mt-0-5")
         this.dropdownOptions = [...this.originalSelect.querySelectorAll("option")].filter(option => option.value !== "")
             .map(option => ({
                 value: option.value,
@@ -140,10 +151,10 @@ class DsComboBox extends HTMLElement {
         this.setupDropdownOptions()
 
         this.noResultsText = document.createElement("div")
-        const buttonHtml = this.isAsync ? "" : `<div><button class="btn btn-text-primary mt-2" type="button"><i class="fa-solid fa-undo" aria-hidden="true"></i>Reset Search</button></div>`
+        const buttonHtml = this.hasAttribute("async") ? "" : `<div><button class="btn btn-text-primary mt-2" type="button"><i class="fa-solid fa-undo" aria-hidden="true"></i>Reset Search</button></div>`
         this.noResultsText.innerHTML = `No results found for <span></span>${buttonHtml}`;
         this.noResultsText.classList.add("d-none", "text-center");
-        if (!this.isAsync) {
+        if (!this.hasAttribute("async")) {
             this.noResultsText.querySelector("button").addEventListener("click", () => {
                 this.input.value = "";
                 this.filterDropdown("");
@@ -155,8 +166,8 @@ class DsComboBox extends HTMLElement {
         this.appendChild(this.dropdown)
     }
 
-    valueSelected(e) {
-        if (this.isAsync) {
+    valueSelected = (e) => {
+        if (this.hasAttribute("async")) {
             this.originalSelect.innerHTML = `<option value='${e.target.dataset.value}'>${e.target.textContent}</option>`
         }
         this.originalSelect.value = e.target.dataset.value;
@@ -166,7 +177,7 @@ class DsComboBox extends HTMLElement {
         this.hideDropdown();
     }
 
-    filterDropdown(wordToSearch) {
+    filterDropdown = (wordToSearch)  => {
         let noResultsFound = true;
 
         this.dropdown.querySelectorAll(".dropdown-item").forEach(button => {
@@ -185,7 +196,7 @@ class DsComboBox extends HTMLElement {
         }
     }
 
-    showDropdown() {
+    showDropdown = () => {
         if (this.dropdown.classList.contains("show")) return;
 
         this.dropdown.classList.add("show");
@@ -198,7 +209,7 @@ class DsComboBox extends HTMLElement {
         window.addEventListener("focusin", this.targetElementNotInsideComboBox);
     }
 
-    targetElementNotInsideComboBox(e) {
+    targetElementNotInsideComboBox = (e)  =>{
         if (!this.contains(e.target)) this.hideDropdown()
     }
 
@@ -217,7 +228,7 @@ class DsComboBox extends HTMLElement {
         const selectedOption = this.selectedOption()
         if (selectedOption) {
             return selectedOption.textContent;
-        } else if (this.isAsync) {
+        } else if (this.hasAttribute("async")) {
             return "Type to search"
         }
     }
@@ -242,17 +253,17 @@ class DsComboBox extends HTMLElement {
 
     setupPrefixContainer() {
         this.classList.add("has-prefix")
-        const prefixContainer = document.createElement("div")
-        this.appendChild(prefixContainer)
+        const prefixContainer = document.createElement("span")
         prefixContainer.classList.add("prefix-container")
         return prefixContainer
     }
 
-    setupInputIcon() {
+    setupInputIcon(label) {
         const prefixContainer = this.setupPrefixContainer();
         const icon = document.createElement("i")
         icon.classList.add(this.getAttribute("prefix_class"), "fas")
         prefixContainer.appendChild(icon)
+        label.appendChild(prefixContainer);
     }
 
     showLoadingIcon() {

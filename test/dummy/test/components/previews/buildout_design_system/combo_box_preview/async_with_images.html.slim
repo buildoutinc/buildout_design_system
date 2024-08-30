@@ -1,11 +1,14 @@
-= render(BuildoutDesignSystem::ComboBox.new(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png", async: true, prefix_class: "fa-search")) do
+= render(BuildoutDesignSystem::ComboBox.new(image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png", async: true, prefix_class: "fa-search", id: "tester")) do
   label.form-label Hello World
-  = select_tag "hello_world", [], id: "tester"
+  = select_tag "hello_world", []
 
 
 javascript:
-    const testSelect = document.getElementById("tester")
-    testSelect.addEventListener("inputChange", async ({detail}) => {
+    const comboBox = document.getElementById("tester")
+    comboBox.renderOption = (option) => {
+        return `<div class="d-flex align-items-center gap-1"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${option.value}.png"/>${option.label}</div>`
+    }
+    comboBox.addEventListener("inputChange", async ({detail}) => {
         if (detail.value === "") {
             detail.callBack([])
             return;
@@ -16,9 +19,6 @@ javascript:
         const dataToReturn = data.map(({name, id}) => ({
             label: name,
             value: id,
-            renderOption: (option) => {
-                return `<div class="d-flex align-items-center gap-1"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png"/>${option.label}</div>`
-            }
         }))
         detail.callBack(dataToReturn)
     })
