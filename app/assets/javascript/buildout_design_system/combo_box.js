@@ -30,6 +30,12 @@ class DsComboBox extends HTMLElement {
     connectedCallback() {
         this.classList.add("position-relative", "d-block")
 
+        if (this.querySelector("select")) {
+            this.originalSelect = this.querySelector("select");
+            this.selectAdded();
+            return;
+        }
+
         // with how dom gets created this will not have the select yet so we need to add a callback for when it is created.
         const observer = new MutationObserver((mutations, obs) => {
             const select = this.querySelector("select");
@@ -48,6 +54,14 @@ class DsComboBox extends HTMLElement {
         this.setupInputContainer();
         this.addLoadingIcon();
         this.setupDropdown();
+        this.addListeners();
+    }
+
+    addListeners() {
+        this.addEventListener("selectUpdated", (e) => {
+            this.valueChanged(e.detail.value)
+        })
+
         this.addEventListener("keydown", (e) => {
             if (e.key === "Escape") {
                 if (document.activeElement === this.input) {
@@ -171,13 +185,21 @@ class DsComboBox extends HTMLElement {
             this.originalSelect.innerHTML = `<option value='${e.target.dataset.value}'>${e.target.textContent}</option>`
         }
         this.originalSelect.value = e.target.dataset.value;
-        this.originalSelect.dispatchEvent(new Event('change'));
-        this.dropdown.querySelectorAll(".dropdown-item").forEach(button => button.classList.remove("active"));
-        e.target.classList.add("active");
+        const customEvent = new CustomEvent("selectChange", {detail: {value: e.target.dataset.value}})
+        this.dispatchEvent(customEvent);
+        this.valueChanged(e.target.dataset.value)
+    }
+
+    valueChanged = (selectedValue) => {
+        const stringSelectedValue = String(selectedValue);
+        const dropdownItems = this.dropdown.querySelectorAll(".dropdown-item")
+        dropdownItems.forEach(button => button.classList.remove("active"));
+        const selectedButton = [...dropdownItems].find(button => button.dataset.value === stringSelectedValue)
+        selectedButton.classList.add("active");
         this.hideDropdown();
     }
 
-    filterDropdown = (wordToSearch)  => {
+    filterDropdown = (wordToSearch) => {
         let noResultsFound = true;
 
         this.dropdown.querySelectorAll(".dropdown-item").forEach(button => {
@@ -209,7 +231,7 @@ class DsComboBox extends HTMLElement {
         window.addEventListener("focusin", this.targetElementNotInsideComboBox);
     }
 
-    targetElementNotInsideComboBox = (e)  =>{
+    targetElementNotInsideComboBox = (e) => {
         if (!this.contains(e.target)) this.hideDropdown()
     }
 

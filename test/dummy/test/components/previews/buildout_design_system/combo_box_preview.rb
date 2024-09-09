@@ -18,5 +18,9 @@ module BuildoutDesignSystem
     def non_async_with_images
       render_with_template
     end
+
+    def non_async_with_react
+      render_with_template
+    end
   end
 end
