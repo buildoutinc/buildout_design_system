@@ -1,0 +1,3 @@
+= render(BuildoutDesignSystem::ComboBox.new(disable_search: disable_search)) do
+  label.form-label Hello World
+  = select_tag "hello_world", options_for_select([%w[First first], %w[Second second], %w[Third third], %w[Fourth fourth]]), prompt: with_blank ? "Please select an option" : nil

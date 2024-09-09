@@ -1,0 +1,9 @@
+= render(BuildoutDesignSystem::ComboBox.new(prefix_class: "fa-search", id: "tester")) do
+  label.form-label Hello World
+  = select_tag "hello_world", options_for_select(ApplicationHelper::MOCK_DATA.map { |d| [d[:name], d[:id]] })
+
+javascript:
+    const comboBox = document.getElementById("tester")
+    comboBox.renderOption = (option) => {
+        return `<div class="d-flex align-items-center gap-1"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${option.value}.png"/>${option.label}</div>`
+    }
