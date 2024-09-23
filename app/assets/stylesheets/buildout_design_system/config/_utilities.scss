@@ -30,4 +30,16 @@ $custom-utils: (
       12: 12,
     )
   ),
+  "shadow": (
+    property: box-shadow,
+    class: shadow,
+    values: (
+      null: $box-shadow,
+      sm: $box-shadow-sm,
+      md: $box-shadow-md,
+      lg: $box-shadow-lg,
+      xl: $box-shadow-xl,
+      2xl: $box-shadow-2xl,
+    )
+  )
 );
