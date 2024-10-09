@@ -76,7 +76,7 @@ $nav-tabs-link-active-border-color: $body-color !default;
 $nav-link-padding-x: $spacer !default;
 $nav-link-padding-y: $spacer * 0.75 !default;
 // Progress Bar
-$progress-height:1.25rem !default;
+$progress-height: 1.25rem !default;
 $progress-bar-bg: $secondary !default;
 $progress-bg: $body-bg !default;
 $progress-border-radius: 1.25rem !default;
@@ -138,3 +138,9 @@ $dropdown-link-hover-bg: $body-bg;
 $dropdown-box-shadow: $box-shadow-sm;
 $dropdown-link-active-bg: $storm-grey-100;
 $dropdown-link-active-color: $body-color;
+
+// --------------------------------------------------
+// TOAST
+// --------------------------------------------------
+$toast-background-color: $card-bg;
+$toast-header-background-color: $card-cap-bg;
