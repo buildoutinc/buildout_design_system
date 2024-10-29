@@ -1,2 +1,6 @@
 = render(BuildoutDesignSystem::Card.new()) do
-  = render(BuildoutDesignSystem::ProgressBar.new(variant: variant, title: title, steps: steps, progress: progress))
+  = render(BuildoutDesignSystem::CardHeader.new()) do
+    = render(BuildoutDesignSystem::CardTitle.new(title: 'Progress Bar'))
+  
+  = render(BuildoutDesignSystem::CardBody.new()) do
+    = render(BuildoutDesignSystem::ProgressBar.new(variant: variant, title: title, steps: steps, progress: progress))
