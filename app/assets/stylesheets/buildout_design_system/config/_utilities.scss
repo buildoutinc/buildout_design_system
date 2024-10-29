@@ -1,6 +1,6 @@
 $custom-utils: (
   "min-height": (
-    property:  min-height,
+    property: min-height,
     class: min-h,
     values: (
       0: 0,
@@ -9,7 +9,7 @@ $custom-utils: (
       75: 75%,
       100: 100%,
       auto: auto,
-    )
+    ),
   ),
   "columns": (
     css-var: true,
@@ -28,7 +28,7 @@ $custom-utils: (
       10: 10,
       11: 11,
       12: 12,
-    )
+    ),
   ),
   "shadow": (
     property: box-shadow,
@@ -40,6 +40,17 @@ $custom-utils: (
       lg: $box-shadow-lg,
       xl: $box-shadow-xl,
       2xl: $box-shadow-2xl,
-    )
-  )
+    ),
+  ),
+  "font-weight": (
+      property: font-weight,
+      class: fw,
+      values: (
+        light: $font-weight-light,
+        normal: $font-weight-normal,
+        bold: $font-weight-bold,
+        bolder: $font-weight-bolder,
+        black: $font-weight-black,
+      ),
+    ),
 );

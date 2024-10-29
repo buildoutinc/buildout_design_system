@@ -1,6 +1,8 @@
-= render(BuildoutDesignSystem::Card.new()) do 
-  h6 An example of a layout with columns that span multiple columns.
-  .p-5
+= render(BuildoutDesignSystem::Card.new(class: "shadow")) do 
+  = render(BuildoutDesignSystem::CardHeader.new()) do 
+    h6.m-0 An example of a layout with columns that span multiple columns.
+  
+  = render(BuildoutDesignSystem::CardBody.new()) do
     = render(BuildoutDesignSystem::Layout.new(class_name: "", type: type, gap: gap, direction: direction, align: align, justify: justify, columns: 12)) do |layout|
       = layout.with_column(span: 3, class_name: 'border border-success') do
         p Left Sidebar

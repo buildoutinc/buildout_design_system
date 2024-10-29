@@ -1,8 +1,12 @@
-= render(BuildoutDesignSystem::Card.new()) do 
-  = render(BuildoutDesignSystem::Layout.new(class_name: "", type: type, gap: gap, direction: direction, align: align, justify: justify, columns: columns)) do |layout|
-    = layout.with_column() do
-      p Column 1
-    = layout.with_column() do
-      p Column 2
-    = layout.with_column() do
-      p Column 3
+= render(BuildoutDesignSystem::Card.new(class: "shadow-sm")) do
+  = render(BuildoutDesignSystem::CardHeader.new()) do
+    h6.m-0.fw-black Example of a Layout
+  
+  = render(BuildoutDesignSystem::CardBody.new()) do
+    = render(BuildoutDesignSystem::Layout.new(class_name: "", type: type, gap: gap, direction: direction, align: align, justify: justify, columns: columns)) do |layout|
+      = layout.with_column(class_name: "border-primary border") do
+        p Column 1
+      = layout.with_column(class_name: "border-primary border") do
+        p Column 2
+      = layout.with_column(class_name: "border-primary border") do
+        p Column 3
