@@ -32,6 +32,11 @@
   &.btn-secondary {
     --#{$prefix}btn-color: #{$purple-heart-50};
   }
+  &.btn-as-text {
+    --#{$prefix}btn-hover-bg: transparent !important;
+    --btn-height: auto;
+    padding: 0;
+  }
   &.btn-neutral {
     @include button-variant(
       $neutral, // bg
@@ -54,7 +59,7 @@
   &.btn-success {
     --#{$prefix}btn-color: #{$mountain-meadow-50};
   }
-  &.btn-warning { 
+  &.btn-warning {
     --#{$prefix}btn-color: #{$harvest-gold-50};
   }
   &.btn-danger {
@@ -70,7 +75,7 @@
       $neutral // active-color
     )
   }
-  
+
 
   &.btn-text-primary {
     --#{$prefix}btn-color: #{$primary};
