@@ -34,6 +34,7 @@ $custom-utils: (
     property: box-shadow,
     class: shadow,
     values: (
+      none: none,
       null: $box-shadow,
       sm: $box-shadow-sm,
       md: $box-shadow-md,
@@ -43,14 +44,14 @@ $custom-utils: (
     ),
   ),
   "font-weight": (
-      property: font-weight,
-      class: fw,
-      values: (
-        light: $font-weight-light,
-        normal: $font-weight-normal,
-        bold: $font-weight-bold,
-        bolder: $font-weight-bolder,
-        black: $font-weight-black,
-      ),
+    property: font-weight,
+    class: fw,
+    values: (
+      light: $font-weight-light,
+      normal: $font-weight-normal,
+      bold: $font-weight-bold,
+      bolder: $font-weight-bolder,
+      black: $font-weight-black,
     ),
+  ),
 );
