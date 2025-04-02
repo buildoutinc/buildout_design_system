@@ -1,0 +1,86 @@
+.card
+  .card-body
+    .card-title 
+      h6 Sticky Bordered Table
+    .table-responsive style="max-width: 100%; height: 300px; overflow: auto"
+      table.table.sticky-table style="width: max-content"
+        thead
+          tr.sticky-heading
+            th.sticky-cell style="width: 20vw"
+              | Name
+            th style="width: 10vw"
+              | Age
+            th style="width: 15vw"
+              | Occupation
+            th style="width: 15vw"
+              | Location
+            th style="width: 10vw"
+              | Salary
+            th style="width: 15vw"
+              | Hobbies
+            th style="width: 15vw"
+              | Skills
+            th style="width: 15vw"
+              | Experience
+        tbody
+          - people.each do |person|
+            tr
+              th.sticky-cell
+                | #{person[:name]}
+              td
+                | #{person[:age]}
+              td
+                | #{person[:occupation]}
+              td
+                | #{person[:location]}
+              td 
+                | #{person[:salary]}
+              td 
+                | #{person[:hobbies]}
+              td 
+                | #{person[:skills]}
+              td 
+                | #{person[:experience]}
+
+.card.mt-4
+  .card-body
+    .card-title 
+      h6 Bordered Table
+    table.table.table-bordered.mb-0
+      thead
+        tr
+          th
+            | Name
+          th
+            | Age
+          th
+            | Occupation
+          th
+            | Location
+          th
+            | Salary
+          th
+            | Hobbies
+          th
+            | Skills
+          th
+            | Experience
+      tbody
+        - people.each do |person|
+          tr
+            th
+              | #{person[:name]}
+            td
+              | #{person[:age]}
+            td
+              | #{person[:occupation]}
+            td
+              | #{person[:location]}
+            td 
+              | #{person[:salary]}
+            td 
+              | #{person[:hobbies]}
+            td 
+              | #{person[:skills]}
+            td 
+              | #{person[:experience]}

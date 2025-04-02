@@ -1,5 +1,61 @@
 .table {
+
+  &.sticky-table {
+    border: 1px solid #{$table-border-color};
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0;
+    table-layout: fixed;
+    white-space: nowrap;
+    width: max-content;
+
+    th, td {
+      border: solid #{$table-border-color};
+      border-width: 1px 0 0;
+
+      &.sticky-cell {
+        border-width: 1px 1px 0 1px;
+      }
+    }
+
+    thead {
+      th {
+        border-width: 1px 0 1px;
+
+        &.sticky-cell {
+          border-width: 1px;
+        }
+      }
+    }
+  }
+
+  .sticky-cell {
+    left: 0;
+    position: sticky;
+    z-index: 2;
+  }
+
+  .sticky-heading {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    &.sticky-cell {
+      z-index: 4;
+    }
+  }
+
+  thead {
+    th {
+      background-color: $table-heading-color;
+    }
+  }
+
   tr {
     border-bottom: 1px solid #{$table-border-color};
+  }
+
+  td {
+    background-color: $table-bg;
   }
 }
