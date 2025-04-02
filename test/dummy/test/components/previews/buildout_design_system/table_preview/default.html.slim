@@ -1,16 +1,18 @@
-.mb-4= render BuildoutDesignSystem::Table.new do |component|
-  = component.with_header do |header|
-    = header.with_cell do
-      | Header One
-    = header.with_cell do
-      | Header Two
-  = component.with_row do |row|
-    = row.with_cell do
-      | 1
-    = row.with_cell do
-      | 2
-  = component.with_row do |row|
-    = row.with_cell do
-      | 3
-    = row.with_cell do
-      | 4
+.card
+  .card-body
+    = render BuildoutDesignSystem::Table.new do |component|
+      = component.with_header do |header|
+        = header.with_cell do
+          | Header One
+        = header.with_cell do
+          | Header Two
+      = component.with_row do |row|
+        = row.with_cell do
+          | 1
+        = row.with_cell do
+          | 2
+      = component.with_row do |row|
+        = row.with_cell do
+          | 3
+        = row.with_cell do
+          | 4
