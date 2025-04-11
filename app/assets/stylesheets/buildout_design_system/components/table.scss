@@ -1,29 +1,29 @@
 .table {
 
   &.sticky-table {
-    border: 1px solid #{$table-border-color};
     border-collapse: separate;
     border-spacing: 0;
     margin: 0;
     table-layout: fixed;
     white-space: nowrap;
     width: max-content;
+    
 
     th, td {
       border: solid #{$table-border-color};
-      border-width: 1px 0 0;
+      border-width: 0 0 1px;
 
       &.sticky-cell {
-        border-width: 1px 1px 0 1px;
+        border-width: 0 1px 1px 0;
       }
     }
 
     thead {
       th {
-        border-width: 1px 0 1px;
+        border-width: 0 0 1px;
 
         &.sticky-cell {
-          border-width: 1px;
+          border-width: 0 1px 1px 0;
         }
       }
     }
